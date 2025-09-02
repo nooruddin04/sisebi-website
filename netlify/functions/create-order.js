@@ -3,8 +3,8 @@ const Razorpay = require("razorpay");
 
 exports.handler = async function(event) {
   try {
-    const { amount, currency } = JSON.parse(event.body || "{}");
-    if (!amount || !currency) throw new Error("Amount or currency missing");
+    console.log("Event body:", event.body);  // <-- for debugging
+    const { amount, currency } = JSON.parse(event.body);
 
     const razorpay = new Razorpay({
       key_id: process.env.RAZORPAY_KEY_ID,
@@ -12,8 +12,8 @@ exports.handler = async function(event) {
     });
 
     const options = {
-      amount: amount,
-      currency: currency,
+      amount,
+      currency,
       receipt: "receipt_" + Date.now(),
     };
 
@@ -23,10 +23,7 @@ exports.handler = async function(event) {
       body: JSON.stringify(order)
     };
   } catch (err) {
-    console.error("Error in create-order:", err); // log for Netlify
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: err.message })
-    };
+    console.error("Error in create-order:", err);
+    return { statusCode: 500, body: err.toString() };
   }
 };
