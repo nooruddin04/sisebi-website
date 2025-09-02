@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HS Code Data Search</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+    h1 { color: #0056a6; }
+    #description { margin-bottom: 20px; font-size: 18px; font-style: italic; color: #444; }
+    input[type=text], input[type=number] { padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #0056a6;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    button:hover { background: #003f73; }
+    table.dataTable {
+      margin: 10px auto;
+      border-collapse: collapse;
+      width: 95% !important;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 12px;
+    }
+    #footer { margin-top: 30px; font-size: 14px; color: #777; }
+     #ds { font-size: 14px; color: #777; }
+    .filter-row th { padding: 4px !important; vertical-align: bottom; }
+    .filter-row select, .filter-row input { width: 100%; font-size: 12px; padding: 2px; box-sizing: border-box; }
+    .min-max-container { display:flex; flex-direction: column; }
+    .min-max-container input { margin-bottom: 2px; }
+/* Header */
+.site-header {
+  background: linear-gradient(135deg, #004aad, #0077cc);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+.site-title {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+.site-tagline {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+  font-style: italic;
+}
+
+/* Info & Use Sections */
+.info-section, .use-section, .contact-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.info-section h2, .use-section h2, .contact-section h2 {
+  color: #004aad;
+  margin-bottom: 15px;
+}
+.info-section p, .use-section p, .contact-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+.use-section ol {
+  padding-left: 20px;
+}
+.use-section li {
+  margin-bottom: 10px;
+}
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+}
+.contact-section li {
+  margin: 8px 0;
+}
+.contact-section a {
+  color: #0077cc;
+  text-decoration: none;
+}
+.contact-section a:hover {
+  text-decoration: underline;
+}
+/* Modal background */
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  max-height: 80vh;   /* restrict popup height to 80% of screen */
+  overflow-y: auto;   /* enable vertical scroll inside */
+  padding-right: 10px; /* avoid scrollbar overlap */
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+.close:hover {
+  color: red;
+}
+}
+.hidden {
+  display: none;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+
+<!-- Header Branding -->
+<header class="site-header">
+  <div class="container">
+    <!--<h1 class="site-title">SISEBI</h1>-->
+    <p class="site-tagline">SISEBI - <b>S</b>cope for <b>I</b>mport <b>S</b>ubstitution and <b>E</b>xport <b>B</b>usiness in <b>I</b>ndia</p>
+  </div>
+</header>
+<!-- Horizontal Tabs -->
+<div style="display:flex; justify-content:center; gap:20px; margin:20px 0;">
+  <button onclick="openModal('aboutModal')" 
+          style="padding:10px 20px; background:#007bff; color:white; border:none; border-radius:6px; cursor:pointer;">
+    🌍 About SISEBI
+  </button>
+
+  <button onclick="openModal('useModal')" 
+          style="padding:10px 20px; background:#28a745; color:white; border:none; border-radius:6px; cursor:pointer;">
+    📌 How to Use
+  </button>
+
+  <button onclick="openModal('userModal')" 
+          style="padding:10px 20px; background:#6c63ff; color:white; border:none; border-radius:6px; cursor:pointer;">
+    👤 User Panel
+  </button>
+</div>
+
+<!-- User Info Section -->
+<!-- Collapsible User Info Section -->
+<!--
+<section id="user-info" style="margin:15px auto; max-width:600px; display:none;">
+  <div onclick="toggleUserPanel()" style="background:#007bff; color:white; padding:10px 15px; border-radius:8px; cursor:pointer; font-weight:bold; text-align:center;">
+    👤 User Panel ▼
+  </div>
+  <div id="userPanelContent" style="display:none; padding:15px; background:#eef6ff; border-radius:0 0 8px 8px; text-align:center;">
+    <p id="userEmail" style="font-weight:bold;"></p>
+    <p id="subscriptionDetails"></p>
+    <button onclick="signOut()" style="background:#d9534f; color:white; padding:6px 12px; border:none; border-radius:5px; cursor:pointer;">Sign Out</button>
+  </div>
+</section>
+
+<section id="about" class="p-6 text-left">
+  <h2 class="text-2xl font-bold mb-2"><button onclick="openModal('aboutModal')">🌍 About SISEBI</button></h2>
+ <p>SISEBI is an Artificial intelligence led trade intelligence platform designed to help Indian businesses discover opportunities for import substitution and export growth.<button onclick="openModal('aboutModal')" class="mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Click to Read More</button></p>
+ </section>
+
+<section id="howtouse" class="p-6 text-left">
+  <h2 class="text-2xl font-bold mb-2"><button onclick="openModal('useModal')">📌 How to Use</button></h2>
+  <p>To identify new new business opportunities. <button onclick="openModal('useModal')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Click to Read in Details</button></p>
+  </section>
+-->
+<!-- About Modal -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+    <h3>🌍 About SISEBI</h3>
+    <p>
+      SISEBI (Scope for Import Substitution and Export Business in India) is a trade intelligence platform (supported by India's last 8 years Import/ Export total 40 crore data points covering all '12000 +' 8 digit HSN codes, 253 country codes)  that empowers businesses, policymakers, and entrepreneurs with actionable insights.  
+      <br><br>
+      Our platform provides <b>data-driven reports on HSN codes</b>, highlighting areas where India can substitute imports with domestic production and expand exports globally.  
+      <br><br>
+      Whether you are a <b>manufacturer, exporter, or policymaker</b>, SISEBI helps you discover untapped opportunities, track import/ exports, and stay ahead in global trade.
+    </p>
+      <div id="ds">
+        The data, statistics, and analysis presented in this report are primarily derived from the DGCI&S' open-source trade data and other publicly available sources
+     </div>
+  </div>
+</div>
+
+<!-- How to Use Modal -->
+<div id="useModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('useModal')">&times;</span>
+    <h3>📌 How to Use</h3>
+    <p>
+      ✅ Enter an <b>HSN code</b> in the search box of *HS Code Data Search* to view Import/ Export current and historical view for any particular commodity.</br><br>
+      ✅ In the *Complete Data* table section, <b>current & historical Import/ Export values, prices and growth rates</b> are available for all commodities</br><br>
+     ✅ There are also <b>filters</b> and <b>sortings</b> available in each columns to easily find out specific products as per your expectation from huge dataset </br><br>
+     ✅ Click <b>Download</b> button which is there at the start of every row to request for the complete detailed report which includes <br><br>
+           <b>Executive summary, country wise/ year wise Import/ Export data and analysis</b> to thoroughly guide you in prefeasibilty evaluation and decision makings </br><br>
+      ✅ After login with Google, Popup will come, there you can preview the <b>outline report</b> to understand what all will be there in the complete report </br><br>
+      ✅ To access the <b>complete report with detailed insights, trends,  analysis and historical data</b>,</br><br>
+           a) choose a subscription plan if you are requesting the report for the time first or your subscription plan is expired.<br><br>
+      ✅ You can choose between two available subscription plans <br>
+                1) 10 reports downloaded or 1 month subscription duration expired, whichever happens first.<br>
+                2) 200 reports downloaded or 365 days subscription duration expired, whichever happens first.<br><br>
+      ✅ As per your selected subscription plan, you will directed to do payment via RazorPay.<br><br>
+      ✅ After payment, you will get complete report within 24 hours in your gmail account.<br>.<br>
+          b) If there's already active subscription plan, report request will be made immediately and will be sent to your gmail account within 24 hours<br><br><br>
+    </p>
+  </div>
+</div>
+<div id="userModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('userModal')">&times;</span>
+    <h3>👤 User Panel</h3>
+    <p id="userEmail"></p>
+    <p id="subscriptionDetails"></p>
+    <div id="userPanelButtons"></div> <!-- Placeholder for Sign In / Sign Out -->
+  </div>
+</div>
+
+<h1>HS Code Data Search</h1>
+<div id="description">
+  Get current and historical Export & Import data of India for any product (HSN wise).
+</div>
+<input type="text" id="hscode" placeholder="Enter HS Code (e.g. 39052900)">
+<button onclick="searchHSCode()">Search</button>
+
+<div id="result"></div>
+
+<h2 style="margin-top:40px;">Complete Data</h2>
+<div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
+  ⏳ Loading data, please wait...
+</div>
+<table id="csvTable" class="display" style="width:95%"></table>
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <h2>📬 Contact Us</h2>
+    <p>
+      Have questions or need support? Get in touch with us:
+    </p>
+    <ul>
+      <li>Email: <a href="mailto:sisebi.info@gmail.com">sisebi.info@gmail.com</a></li>
+      <li>Contact No:+91 7738980548</a></li>
+      <li>Registered office address: Tender Dry Products, Plot 114, New sector 50, Seawoods west, Navi Mumbai, Maharashtra, India, 400706</a></li> 
+    </ul>
+  </div>
+</section>
+<!-- Policies Section -->
+<!--<section id="policies" style="margin:20px auto; max-width:700px; text-align:center;">
+  <h2>📜 Policies</h2>
+
+  <p>
+    Refund Policy – <a href="#" onclick="openPolicy('refund')">Click to read refund policy</a>
+  </p>
+  <p>
+    Cancellation Policy – <a href="#" onclick="openPolicy('cancellation')">Click to read cancellation policy</a>
+  </p>
+  <p>
+    Privacy Policy – <a href="#" onclick="openPolicy('privacy')">Click to read privacy policy</a>
+  </p>
+</section>-->
+
+<!-- Modal Popup -->
+<div id="policyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePolicy()">&times;</span>
+    <div id="policyText"></div>
+  </div>
+</div>
+<div id="footer">
+   <p>
+<a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> | 
+<a href="refund-policy.html" target="_blank" rel="noopener noreferrer">Refund & Cancellation</a> | 
+<a href="terms.html" target="_blank" rel="noopener noreferrer">Terms & Conditions</a> | 
+<a href="contact.html" target="_blank" rel="noopener noreferrer">Contact Us</a>
+  </p>
+  <p>&copy; 2025 SISEBI. All rights reserved.</p>
+    Developed and maintained by <b>Tender Dry Products</b>
+</div>
+
+<!-- Report Modal -->
+<div id="reportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+     background: rgba(0,0,0,0.6); z-index:9999; justify-content:center; align-items:center; overflow-y: auto;">
+  <div style="background:white; padding:30px; border-radius:12px; width:900px; max-width:95%; 
+              box-shadow:0 6px 20px rgba(0,0,0,0.25); position:relative; animation:fadeIn 0.3s ease;top:300px;">
+    
+    <!-- Close button -->
+    <button onclick="closeReportModal()" 
+      style="position:absolute; top:5px; right:15px; background:none; border:none; font-size:30px; color:black; cursor:pointer;">✖</button>
+
+    <!-- Heading -->
+    <h2 style="margin-bottom:10px; font-size:22px; color:#222;">📊 SISEBI detailed Report Preview</h2>
+    <p style="margin:5px 0 20px 0; font-size:15px; color:#555;">
+        ✅ SISEBI report provides holistic information on the chosen HSN commodity’s 
+        India Import/Export current & historical data and predictive analysis 
+        for fact-based decision making. Below is the summary table of what all will be covered in the detailed report for the selected HSN code
+    </p>
+
+    <!-- Report Outline -->
+    <div id="reportOutline" style="border:1px solid #ddd; border-radius:8px; background:#f9f9f9; padding:20px; margin-bottom:25px;">
+      <!-- JS injects content here -->
+    </div>
+
+    <!-- Subscription Plans -->
+    <h3 style="text-align:center; margin-bottom:15px; color:#444;">Choose Your Subscription Plan</h3>
+    <div id="subscriptionCards" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+      <!-- Plan cards injected by JS -->
+    </div>
+
+    <!-- Trust Footer -->
+    <div style="margin-top:30px; text-align:center; font-size:13px; color:#777; border-top:1px solid #eee; padding-top:15px;">
+      <p>🔒 Secure payments powered by <strong>Razorpay</strong> | ✅ Instant confirmation</p>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes fadeIn { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+.plan-card {
+  flex:1; min-width:220px; background:#fdfdfd; border:1px solid #ddd; border-radius:10px; 
+  padding:20px; text-align:center; box-shadow:0 3px 8px rgba(0,0,0,0.05);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.plan-card:hover { transform:translateY(-5px); box-shadow:0 6px 16px rgba(0,0,0,0.1); }
+.plan-title { font-size:18px; font-weight:600; margin-bottom:10px; color:#222; }
+.plan-price { font-size:22px; color:#0077cc; margin-bottom:8px; }
+.plan-duration { font-size:14px; color:#666; margin-bottom:15px; }
+.plan-btn {
+  padding:10px 18px; border:none; border-radius:6px; background:#0077cc; color:white; 
+  font-size:15px; cursor:pointer; transition:background 0.2s ease;
+}
+.plan-btn:hover { background:#005fa3; }
+</style>
+
+<script>
+let data = [];
+let table;
+
+// Show loader initially
+document.getElementById("loader").style.display = "flex";
+
+fetch("data.csv")
+  .then(res => res.text())
+  .then(text => {
+    data = text.trim().split(/\r?\n/).map(r => r.split(",").map(c => c.replace(/^"|"$/g, "").trim()));
+
+    buildDataTable();
+
+    // Hide loader after table is ready
+    document.getElementById("loader").style.display = "none";
+  })
+  .catch(err => {
+    document.getElementById("loader").innerText = "⚠️ Failed to load data!";
+    console.error(err);
+  });
+
+// Normalize HS Code
+function normalizeCode(code) {
+  if (!code) return "";
+  return code.toString().trim().replace(/\.0$/, "").replace(/^0+/, "");
+}
+
+// HS Code Search
+function searchHSCode() {
+  let code = normalizeCode(document.getElementById("hscode").value);
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerHTML = "";
+
+  if (!code) {
+    alert("Please enter an HS Code!");
+    return;
+  }
+
+  const header = data[0];
+  const matches = data.filter((row, i) => i > 0 && normalizeCode(row[0]) === code);
+
+  if (matches.length === 0) {
+    resultDiv.innerHTML = `<p style="color:red;">No data found for HS Code ${code}</p>`;
+    return;
+  }
+
+  let tableHtml = "<table border='1' style='margin:20px auto;width:95%;border-collapse:collapse;'><tr>";
+  header.forEach(h => { tableHtml += `<th style='background:#0056a6;color:white;'>${h}</th>`; });
+  tableHtml += "</tr>";
+
+  matches.forEach(row => {
+    tableHtml += "<tr>";
+   //tableHtml += `<td><button class="download-btn" data-hsn="${normalizeCode(row[0])}">Download</button></td>`;
+    row.forEach(cell => { tableHtml += `<td>${cell}</td>`; });
+    tableHtml += "</tr>";
+  });
+
+  tableHtml += "</table>";
+  resultDiv.innerHTML = tableHtml;
+
+  //attachDownloadHandlers();
+}
+
+// Check if column is numeric
+function isNumericColumn(index) {
+  for (let i = 1; i < Math.min(11, data.length); i++) { // check first 10 rows
+    const cell = data[i][index];  // current cell value
+
+    if (cell !== undefined && cell !== null && cell.toString().trim() !== "") {
+      const val = parseFloat(cell.toString().replace(/,/g, ''));
+      if (!isNaN(val)) return true;
+    }
+  }
+  return false;
+}
+
+// Build DataTable
+function buildDataTable() {
+  const headers = data[0];
+  const rows = data.slice(1);
+
+  // Header + filter row
+  let headerHtml = "<thead><tr>";
+  headerHtml += `<th>Download</th>`;  // ✅ New column for button
+  headers.forEach(h => headerHtml += `<th>${h}</th>`);
+  headerHtml += "</tr><tr class='filter-row'>";
+  headerHtml += `<th></th>`;  // ✅ Empty filter cell for Download col
+  headers.forEach((h, i) => {
+    if (isNumericColumn(i)) {
+      headerHtml += `<th><div class="min-max-container">
+                      <input type="number" placeholder="Min">
+                      <input type="number" placeholder="Max">
+                    </div></th>`;
+    } else {
+      headerHtml += `<th><select><option value="">All</option></select></th>`;
+    }
+  });
+  headerHtml += "</tr></thead>";
+
+  let bodyHtml = "<tbody>";
+  rows.forEach(row => {
+    bodyHtml += "<tr>";
+    bodyHtml += `<td><button class="download-btn" data-hsn="${normalizeCode(row[0])}">Download</button></td>`;
+    row.forEach(cell => { bodyHtml += `<td>${cell}</td>`; });
+    bodyHtml += "</tr>";
+  });
+  bodyHtml += "</tbody>";
+
+  document.getElementById("csvTable").innerHTML = headerHtml + bodyHtml;
+
+  table = $("#csvTable").DataTable({
+    pageLength: 25,
+    orderCellsTop: true,
+    fixedHeader: true
+  });
+
+  // Filters
+  table.columns().every(function() {
+    const column = this;
+    const headerCell = $(column.header()).closest("thead").find("tr.filter-row th").eq(column.index());
+    if (column.index() === 0) return; // Skip download column
+    if (isNumericColumn(column.index())) {
+      const minInput = headerCell.find('input').eq(0);
+      const maxInput = headerCell.find('input').eq(1);
+
+      minInput.add(maxInput).on('input', function() { table.draw(); });
+
+      $.fn.dataTable.ext.search.push(function(settings, dataRow) {
+        if (settings.nTable !== table.table().node()) return true; // only for this table
+        const val = parseFloat(dataRow[column.index()].replace(/,/g, '')) || 0;
+        const min = parseFloat(minInput.val()) || null;
+        const max = parseFloat(maxInput.val()) || null;
+        if ((min !== null && val < min) || (max !== null && val > max)) return false;
+        return true;
+      });
+
+    } else {
+      let select = headerCell.find("select");
+      column.data().unique().sort().each(function(d) {
+        if (d) select.append('<option value="' + d + '">' + d + '</option>');
+      });
+      select.on("change", function() {
+        column.search($(this).val() ? "^" + $.fn.dataTable.util.escapeRegex($(this).val()) + "$" : "", true, false).draw();
+      });
+    }
+  });
+
+  attachDownloadHandlers();
+}
+
+// Attach unified download handler
+function attachDownloadHandlers() {
+  // Remove old handlers to avoid duplicates
+  $('#csvTable').off('click', '.download-btn');
+
+  // Use event delegation
+  $('#csvTable').on('click', '.download-btn', async function () {
+    const hsn = this.getAttribute("data-hsn");
+    const user = auth.currentUser || await googleSignIn();
+    const sub = await checkSubscription(user.email);
+
+    if (sub) {
+      const confirmDownload = confirm(`Do you want to download the complete report for HSN ${hsn}?`);
+      if (!confirmDownload) return;
+
+      // Allow download and decrement remaining
+      await db.collection("subscriptions").doc(user.email).update({
+        downloadsRemaining: firebase.firestore.FieldValue.increment(-1)
+      });
+
+      // Log report request
+      await db.collection("reportRequests").add({
+        userEmail: user.email,
+        hsnCode: hsn,
+        requestTime: firebase.firestore.FieldValue.serverTimestamp(),
+        status: "pending",
+        outlineDownloaded: true
+      });
+
+      alert(`Customized report for HSN ${hsn} will be emailed within 24 hours.`);
+      await updateUserPanel();
+    } else {
+      openReportModal(hsn);
+    }
+  });
+}
+
+// Your Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyCPmrYpBDpVYlyAIByya5p1GQv2Da0R-8c",
+  authDomain: "sisebi-f4762.firebaseapp.com",
+  projectId: "sisebi-f4762",
+  storageBucket: "sisebi-f4762.firebasestorage.app",
+  messagingSenderId: "110205052657",
+  appId: "1:110205052657:web:bab0c19ed4236a25712b50",
+  measurementId: "G-K8444QJ82B"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+function googleSignIn() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return auth.signInWithPopup(provider).then(result => result.user);
+}
+
+// Subscription plans
+const plans = [
+    {id: 'monthly10', name: '10 reports/month', price: 2000, downloads: 10, durationDays: 30},
+    {id: 'yearly200', name: '200 reports/year', price: 20000, downloads: 200, durationDays: 365}
+];
+
+// Check subscription
+async function checkSubscription(userEmail) {
+    const doc = await db.collection("subscriptions").doc(userEmail).get();
+    if(!doc.exists) return null;
+    const data = doc.data();
+    const today = new Date();
+    if(today > data.expiryDate.toDate() || data.downloadsRemaining <= 0) return null;
+    return data;
+}
+
+// Update subscription after payment
+async function saveSubscription(userEmail, plan) {
+    const startDate = new Date();
+    const expiryDate = new Date();
+    expiryDate.setDate(startDate.getDate() + plan.durationDays);
+
+await db.collection("subscriptions").doc(userEmail).set({
+    subscriptionType: plan.id,
+    startDate: firebase.firestore.Timestamp.fromDate(startDate),   // ✅ fix
+    expiryDate: firebase.firestore.Timestamp.fromDate(expiryDate), // ✅ fix
+    downloadsRemaining: plan.downloads
+});
+}
+
+let currentHSN = null; // store HSN code user clicked
+
+async function selectPlanAndPay(planId) {
+  closeReportModal();
+  const plan = plans.find(p => p.id === planId);
+  const user = firebase.auth().currentUser;
+  if(!user) { alert("Please sign in!"); return; }
+
+  // ✅ Step 1: Call Netlify function to create order
+  const orderResponse = await fetch("/.netlify/functions/create-order", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      amount: plan.price * 100,  // paise
+      currency: "INR"
+    })
+  });
+
+  const order = await orderResponse.json();
+
+  // ✅ Step 2: Pass order_id into Razorpay Checkout
+  const options = {
+    key: "rzp_live_RByTLc8155z5qS",  // public key only
+    amount: plan.price * 100,
+    currency: "INR",
+    name: "HSN Reports",
+    description: plan.name,
+    order_id: order.id, // 🔑 very important
+    handler: async function (response) {
+      // Save subscription in Firestore
+      await saveSubscription(user.email, plan);
+
+      // Log report request
+      await db.collection("reportRequests").add({
+        userEmail: user.email,
+        hsnCode: currentHSN,
+        requestTime: firebase.firestore.FieldValue.serverTimestamp(),
+        status: "pending",
+        outlineDownloaded: true,
+        paymentId: response.razorpay_payment_id,
+        orderId: response.razorpay_order_id
+      });
+
+      alert(`Payment successful! Outline report for HSN ${currentHSN} will be emailed within 24 hours.`);
+      await updateUserPanel();
+    },
+    prefill: { email: user.email },
+    theme: { color: "#3399cc" }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.open();
+}
+
+currentHSN = null;
+
+function openReportModal(hsn) {
+    currentHSN = hsn;
+    //document.getElementById("modalHSN").innerText = hsn;
+
+    // Inject report outline
+    const reportOutline = document.getElementById("reportOutline");
+    reportOutline.innerHTML = `
+      <ul style="line-height:1.6; padding-left:20px; font-size:15px; color:#444;">
+        <li>Executive summary</li>
+        <li>Major commodities covered</li>
+        <li>Commodities Major utilisation</li>
+        <li>India’s Import Export ratio in last year/ last 4 years/ last 8 years</li>
+         <li>India’s Top 5 Importing countries with values in last year/ last 4 years/ last 8 years</li>
+        <li>India’s Top 5 Exporting countries with values in last year/ last 4 years/ last 8 years</li>
+        <li>India’s Import values in last year and growth in last 4 years/ last 8 years</li>
+        <li>India’s Import price in last year and growth in last 4 years/ last 8 years</li>
+        <li>India’s Export values in last year and growth in last 4 years/ last 8 years</li>
+        <li>India’s Export price in last year and growth in last 4 years/ last 8 years</li>
+        <li>India’s Export Analysis of this HSN Code</li>
+        <li>Future prediction of Import and Export values and Volumes in near and long term</li>
+          <li>Annexure 1: Country & Year wise India’s Import value (₹ Crore)</li>
+          <li>Annexure 2: Country & Year wise India’s Import value (US$ Mn)</li>
+          <li>Annexure 3: Country & Year wise India’s Import volume (Units)</li>
+          <li>Annexure 4: Country & Year wise India’s Export value (₹ Crore)</li>
+          <li>Annexure 5: Country & Year wise India’s Export value (US$ Mn)</li>
+          <li>Annexure 6: Country & Year wise India’s Export volume (Units)</li>
+           <li>Notes</li>
+      </ul>
+<p style="margin-top:10px; font-size:14px;">
+        📄 To review sample report outline, 
+        <a href="https://docs.google.com/document/d/1-EPk-6MH23NrsrLC3f1YsNNPsIm_MB1b/edit?tab=t.0" 
+           target="_blank" style="color:#0077cc; text-decoration:underline;">
+          click here
+        </a>.
+      </p>
+      <p style="margin-top:15px; font-weight:500; color:#333;">
+        ✅ You can opt for any of the below given subscription plans to receive the detailed report.
+      </p>      
+    `;
+
+    // Fill subscription cards
+    const subscriptionContainer = document.getElementById("subscriptionCards");
+    subscriptionContainer.innerHTML = "";
+    plans.forEach(plan => {
+      const div = document.createElement("div");
+      div.className = "plan-card";
+      div.innerHTML = `
+        <div class="plan-title">${plan.name}</div>
+        <div class="plan-price">₹${plan.price}</div>
+        <div class="plan-downloads">${plan.downloads} downloads</div>
+        <div class="plan-duration">${plan.durationDays} days</div>
+        <p style="font-size:13px; color:#666; margin-top:10px;">
+          Subscription expires when you reach <b>${plan.downloads} reports</b> 
+          OR after <b>${plan.durationDays} days</b>, whichever comes first.
+        </p>
+        <button class="plan-btn" onclick="selectPlanAndPay('${plan.id}')">Select & Pay</button>
+      `;
+      subscriptionContainer.appendChild(div);
+    });
+
+    document.getElementById("reportModal").style.display = "flex";
+}
+
+function closeReportModal() {
+    document.getElementById("reportModal").style.display = "none";
+}
+function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+// Close when clicking outside modal content
+window.onclick = function(event) {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach(m => {
+    if (event.target == m) {
+      m.style.display = "none";
+    }
+  });
+}
+ function openPolicy(type) {
+  const policyText = document.getElementById("policyText");
+
+  if (type === "refund") {
+    policyText.innerHTML = `
+      <h3>Refund Policy</h3>
+      <p>Currently, we do not offer refunds for reports once purchased. 
+      Please review previews and subscription details carefully before making a payment.</p>
+    `;
+  } else if (type === "cancellation") {
+    policyText.innerHTML = `
+      <h3>Cancellation Policy</h3>
+      <p>Once subscribed, cancellation is not available during the active period. 
+      Your plan will remain valid until the end date, after which you may choose not to renew.</p>
+    `;
+  } else if (type === "privacy") {
+    policyText.innerHTML = `
+      <h3>Privacy Policy</h3>
+      <p>We value your privacy. Your email and subscription data are stored securely 
+      and are used only to provide access to our reports. We do not share your personal 
+      information with third parties without consent.</p>
+    `;
+  }
+
+  document.getElementById("policyModal").style.display = "block";
+}
+
+function closePolicy() {
+  document.getElementById("policyModal").style.display = "none";
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+  const modal = document.getElementById("policyModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
+
+async function updateUserPanel() {
+  const user = auth.currentUser;
+  const emailEl = document.getElementById("userEmail");
+  const subDetailsEl = document.getElementById("subscriptionDetails");
+  const buttonsDiv = document.getElementById("userPanelButtons");
+
+  buttonsDiv.innerHTML = ""; // Clear old buttons
+
+  if (user) {
+    emailEl.innerText = `Logged in as: ${user.email}`;
+
+    const doc = await db.collection("subscriptions").doc(user.email).get();
+    if (doc.exists) {
+      const sub = doc.data();
+      const today = new Date();
+      const startDate = sub.startDate.toDate();
+      const expiryDate = sub.expiryDate.toDate();
+      const daysPassed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+      const planName = plans.find(p => p.id === sub.subscriptionType)?.name || sub.subscriptionType;
+
+      subDetailsEl.innerText =
+        `Plan: ${planName} | Reports left: ${sub.downloadsRemaining} | Days passed: ${daysPassed} | Expires: ${expiryDate.toDateString()}`;
+    } else {
+      subDetailsEl.innerText = "No subscription plan taken.";
+    }
+
+    // Show Sign Out button
+    const signOutBtn = document.createElement("button");
+    signOutBtn.innerText = "Sign Out";
+    signOutBtn.style.cssText = "background:#d9534f; color:white; padding:6px 12px; border:none; border-radius:5px; cursor:pointer;";
+    signOutBtn.onclick = signOut;
+    buttonsDiv.appendChild(signOutBtn);
+
+  } else {
+    emailEl.innerText = "Not logged in.";
+    subDetailsEl.innerText = "";
+
+    // Show Sign In button
+    const signInBtn = document.createElement("button");
+    signInBtn.innerText = "Sign In with Google";
+    signInBtn.style.cssText = "background:#6c63ff; color:white; padding:6px 12px; border:none; border-radius:5px; cursor:pointer;";
+    signInBtn.onclick = async () => {
+      await googleSignIn();
+      //updateUserPanel(); // refresh panel after login
+    };
+    buttonsDiv.appendChild(signInBtn);
+  }
+}
+
+// Listen for auth state change
+auth.onAuthStateChanged(updateUserPanel);
+
+// Sign Out function
+function signOut() {
+  auth.signOut().then(() => {
+    alert("Signed out successfully!");
+    document.getElementById("loader").style.display = "flex"; // show loader
+    location.reload();
+  });
+}
+
+
+function toggleUserPanel() {
+  const panel = document.getElementById("userPanelContent");
+  if (panel.style.display === "none" || panel.style.display === "") {
+    panel.style.display = "block";
+  } else {
+    panel.style.display = "none";
+  }
+}
+
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6728691686729170"
+     crossorigin="anonymous"></script>
+<!-- displayad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6728691686729170"
+     data-ad-slot="7640316636"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>
