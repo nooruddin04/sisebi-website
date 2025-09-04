@@ -173,10 +173,14 @@
   </button>
 
   <button onclick="openModal('useModal')" 
-          style="padding:10px 20px; background:#28a745; color:white; border:none; border-radius:6px; cursor:pointer;">
+          style="padding:10px 20px; background:#45023c; color:white; border:none; border-radius:6px; cursor:pointer;">
     📌 How to Use
   </button>
-
+  <button onclick="openModal('faqModal')" 
+          style="padding:10px 20px; background:#28a745; color:white; border:none; border-radius:6px; cursor:pointer;">
+    🤔 FAQs
+  </button>
+  
   <button onclick="openModal('userModal')" 
           style="padding:10px 20px; background:#6c63ff; color:white; border:none; border-radius:6px; cursor:pointer;">
     👤 User Panel
@@ -245,6 +249,70 @@
       ✅ After payment, you will get complete report within 24 hours in your gmail account.<br>.<br>
           b) If there's already active subscription plan, report request will be made immediately and will be sent to your gmail account within 24 hours<br><br><br>
     </p>
+  </div>
+</div>
+  <div id="faqModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+    <h3>Frequently Asked Questions (FAQs)</h3>
+        <div class="faq-container">
+
+      <h4>1. What is SISEBI?</h4>
+      <p>SISEBI (Scope for Import Substitution and Export Business in India) is an AI-led trade intelligence platform. It helps businesses, entrepreneurs, and policymakers identify high-potential import substitution and export opportunities from India’s trade data.</p>
+
+      <h4>2. How reliable is the data?</h4>
+      <p>All insights are based on official trade statistics covering the past 8 years of India’s exports and imports across 12,000+ commodities- and 253 country codes. Data is processed, cleaned, and structured for meaningful analysis.</p>
+
+      <h4>3. What do I get for free?</h4>
+      <p>You can search any HSN code or product on the website and instantly see its latest trade value, price, and growth rates.</p>
+      <p>You can also do filters, sorting on every relevant columns in the table on the website and instantly find our commodities as per your expectation.</p>
+      <p>For e.g., You want to find out all commodities for which import growth rates are in between 10 to 50% annual average. Just put 10 in 'min' and 50 in 'Max' 
+      cells in the 'Last 4 years import value average annual growth (%)' column. Instantly you will see just filter results in the table. You can do sorting
+      in the ascending and descending order just by clicking up and down arrows which are there along with the all the Header cells in table</p> 
+          
+      <h4>4. What do I get in the paid subscription?</h4>
+      <p>Number of detailed reports as per your subscription plan. The detailed report for each HS Code includes:
+        <ul>
+          <li>Executive summary</li>
+          <li>Major commodities under the HS Code</li>
+          <li>Major importing and exporting countries along with their corresponding trade values</li>
+          <li>Import/ Export analysis</li>
+          <li>Forecast and future outlook</li>
+          <li>Opportunities for import substitution/export expansion</li>
+          <li>Annexures for Country-wise and year-wise import/export last 8 years values and volumes</li>
+          <li>& lot more</li>
+                    
+        </ul>
+        All at a fraction of the cost of traditional market research reports.
+      </p>
+
+      <h4>5. Who should use SISEBI?</h4>
+      <p>It’s designed for:
+        <ul>
+          <li>Entrepreneurs planning to start a new industry</li>
+          <li>Businesses looking to expand into new product lines</li>
+          <li>Exporters finding new destinations</li>
+          <li>Employees looking for market data for prefeasibility studies</li>
+          <li>Investors researching sectoral growth potential</li>
+        </ul>
+      </p>
+
+      <h4>6. How do I make payments?</h4>
+      <p>Payments are securely processed through Razorpay. Once payment is confirmed, your report is generated and shared via email within 24 hours.</p>
+
+      <h4>7. Do I need any technical knowledge?</h4>
+      <p>No. The platform is built to be simple and user-friendly. Just search your product/HSN code, apply filters, and you’ll get structured results instantly.</p>
+
+      <h4>8. Can I access it on mobile?</h4>
+      <p>The website works on mobile, but we recommend using a laptop or computer for the best experience.</p>
+
+      <h4>9. What if I need customized reports?</h4>
+      <p>For specialized requirements (specific regions, commodities, or advanced analysis), you can contact us directly. We can prepare tailor-made reports at reasonable pricing.</p>
+
+      <h4>10. Why choose SISEBI over traditional consultants?</h4>
+      <p>Conventional market studies cost lakhs and take weeks to prepare. SISEBI gives you instant, data-driven insights at minimal cost, so you can act faster and with more confidence.</p>
+
+    </div>
   </div>
 </div>
 <div id="userModal" class="modal">
@@ -874,6 +942,7 @@ function toggleUserPanel() {
 </script>
 </body>
 </html>
+
 
 
 
