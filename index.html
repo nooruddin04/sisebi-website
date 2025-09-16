@@ -500,7 +500,7 @@ function searchHSCode() {
 
   matches.forEach(row => {
     tableHtml += "<tr>";
-   //tableHtml += `<td><button class="download-btn" data-hsn="${normalizeCode(row[0])}">Download</button></td>`;
+   //tableHtml += `<td><button class="download-btn" data-hsn="${normalizeCode(row[0])}">Download Complete Report</button></td>`;
     row.forEach(cell => { tableHtml += `<td>${cell}</td>`; });
     tableHtml += "</tr>";
   });
@@ -531,7 +531,7 @@ function buildDataTable() {
 
   // Header + filter row
   let headerHtml = "<thead><tr>";
-  headerHtml += `<th>Download</th>`;  // ✅ New column for button
+  headerHtml += `<th>Download Complete Report</th>`;  // ✅ New column for button
   headers.forEach(h => headerHtml += `<th>${h}</th>`);
   headerHtml += "</tr><tr class='filter-row'>";
   headerHtml += `<th></th>`;  // ✅ Empty filter cell for Download col
@@ -949,6 +949,7 @@ function toggleUserPanel() {
 </script>
 </body>
 </html>
+
 
 
 
