@@ -613,7 +613,10 @@ function buildDataTable() {
   // Filters
   table.columns().every(function() {
     const column = this;
-    const headerCell = $(column.header()).closest("thead").find("tr.filter-row th").eq(column.index());
+    const headerCell = $(column.header()).closest("thead").find("tr.filter-row th").filter(function() {
+      return $(this).index() === $(column.header()).index();
+    });
+
     if (column.index() === 0) return; // Skip download column
     if (isNumericColumn(column.index())) {
       const minInput = headerCell.find('input').eq(0);
@@ -1010,6 +1013,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
