@@ -152,17 +152,20 @@
   display: none;
 }
     /* Spinner overlay */
+/* Spinner overlay */
 #spinnerOverlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(255, 255, 255, 0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
+  display: none;            /* hidden by default */
   z-index: 9999;
+
+  display: flex;            /* flex to center loader */
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
 }
 
 #spinnerOverlay .loader {
@@ -1027,6 +1030,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
