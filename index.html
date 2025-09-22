@@ -633,17 +633,24 @@ function buildDataTable() {
         }, 50); // small delay so spinner actually appears
       });
 
-      $.fn.dataTable.ext.search.push(function(settings, dataRow) {
-        if (settings.nTable !== table.table().node()) return true; // only for this table
-        const raw = dataRow[column.index()] || "";
-        const cleaned = raw.toString().replace(/,/g, '').replace(/%/g, '').trim();
-        const val = parseFloat(cleaned);
-        const min = parseFloat(minInput.val()) || null;
-        const max = parseFloat(maxInput.val()) || null;
-        if (isNaN(val)) return true; // allow row if value can't be parsed      
-        if ((min !== null && val < min) || (max !== null && val > max)) return false;
-        return true;
-      });
+     $.fn.dataTable.ext.search.push(function(settings, dataRow) {
+    if (settings.nTable !== table.table().node()) return true; // only for this table
+
+    const valRaw = dataRow[column.index()];
+    if (!valRaw) return false;
+
+    // Remove commas, spaces, and any invisible unicode chars
+    const valClean = valRaw.replace(/[^0-9.\-eE]/g, '');
+    const val = parseFloat(valClean);
+    if (isNaN(val)) return false;
+
+    const min = parseFloat(minInput.val()) || null;
+    const max = parseFloat(maxInput.val()) || null;
+
+    if ((min !== null && val < min) || (max !== null && val > max)) return false;
+    return true;
+});
+
 
     } else {
       let select = headerCell.find("select");
@@ -1016,6 +1023,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
