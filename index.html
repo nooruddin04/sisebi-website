@@ -607,7 +607,7 @@ function buildDataTable() {
   table = $("#csvTable").DataTable({
     pageLength: 25,
     orderCellsTop: true,
-    fixedHeader: true
+    fixedHeader: true,
       columnDefs: [
     { targets: [7, 12], type: 'num' }  // replace with zero-based indices of your two columns
   ]
@@ -1016,6 +1016,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
