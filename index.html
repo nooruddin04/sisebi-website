@@ -629,9 +629,12 @@ function buildDataTable() {
 
       $.fn.dataTable.ext.search.push(function(settings, dataRow) {
         if (settings.nTable !== table.table().node()) return true; // only for this table
-        const val = parseFloat(dataRow[column.index()].replace(/,/g, '')) || 0;
+        const raw = dataRow[column.index()] || "";
+        const cleaned = raw.toString().replace(/,/g, '').replace(/%/g, '').trim();
+        const val = parseFloat(cleaned);
         const min = parseFloat(minInput.val()) || null;
         const max = parseFloat(maxInput.val()) || null;
+        if (isNaN(val)) return true; // allow row if value can't be parsed      
         if ((min !== null && val < min) || (max !== null && val > max)) return false;
         return true;
       });
@@ -1007,6 +1010,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
