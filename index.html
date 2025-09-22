@@ -151,6 +151,33 @@
 .hidden {
   display: none;
 }
+    /* Spinner overlay */
+#spinnerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#spinnerOverlay .loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #0077cc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
@@ -573,7 +600,7 @@ function buildDataTable() {
     row.forEach(cell => { bodyHtml += `<td>${cell}</td>`; });
     bodyHtml += "</tr>";
   });
-  bodyHtml += "</tbody>";
+  bodyHtml += "</tbody>"
 
   document.getElementById("csvTable").innerHTML = headerHtml + bodyHtml;
 
@@ -592,7 +619,13 @@ function buildDataTable() {
       const minInput = headerCell.find('input').eq(0);
       const maxInput = headerCell.find('input').eq(1);
 
-      minInput.add(maxInput).on('input', function() { table.draw(); });
+      minInput.add(maxInput).on('input', function() {
+        $("#spinnerOverlay").show();   // show spinner
+        setTimeout(() => {
+          table.draw();
+          $("#spinnerOverlay").hide(); // hide spinner after redraw
+        }, 50); // small delay so spinner actually appears
+      });
 
       $.fn.dataTable.ext.search.push(function(settings, dataRow) {
         if (settings.nTable !== table.table().node()) return true; // only for this table
@@ -969,8 +1002,12 @@ function toggleUserPanel() {
   <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
   <input type="email" name="email">
 </form>
+  <div id="spinnerOverlay">
+  <div class="loader"></div>
+</div>
 </body>
 </html>
+
 
 
 
