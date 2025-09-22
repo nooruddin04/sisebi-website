@@ -162,8 +162,6 @@
   background: rgba(255, 255, 255, 0.7);
   display: none;            /* hidden by default */
   z-index: 9999;
-
-  display: flex;            /* flex to center loader */
   align-items: center;      /* vertical center */
   justify-content: center;  /* horizontal center */
 }
@@ -573,6 +571,13 @@ function isNumericColumn(index) {
   return false;
 }
 
+function showSpinner() {
+  document.getElementById('spinnerOverlay').style.display = 'flex';
+}
+function hideSpinner() {
+  document.getElementById('spinnerOverlay').style.display = 'none';
+}
+  
 // Build DataTable
 function buildDataTable() {
   const headers = data[0];
@@ -629,10 +634,10 @@ function buildDataTable() {
       const maxInput = headerCell.find('input').eq(1);
 
       minInput.add(maxInput).on('input', function() {
-        $("#spinnerOverlay").show();   // show spinner
+        showSpinner();
         setTimeout(() => {
           table.draw();
-          $("#spinnerOverlay").hide(); // hide spinner after redraw
+         hideSpinner();
         }, 50); // small delay so spinner actually appears
       });
 
@@ -1030,6 +1035,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
