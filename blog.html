@@ -81,7 +81,7 @@
 
       const title = `<div class="post-title">${post.title}</div>`;
       const date = `<div class="post-date">${new Date(post.date).toDateString()}</div>`;
-      const content = `<div class="post-content collapsed whitespace-pre-line" id="content-${index}">${post.content}</div>`;
+      const content = `<div class="post-content collapsed" id="content-${index}">${post.content.replace(/\n/g, "<br>")}</div>`;
       const toggle = `<span class="read-more" onclick="toggleContent(${index})">Read More</span>`;
 
       card.innerHTML = title + date + content + toggle;
