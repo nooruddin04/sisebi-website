@@ -31,4 +31,10 @@
     <priority>0.8</priority>
   </url>
 
+      <url>
+    <loc>https://sisebi.netlify.app/blog.html</loc>
+    <lastmod>2025-09-26</lastmod>
+    <priority>1</priority>
+  </url>
+
 </urlset>
