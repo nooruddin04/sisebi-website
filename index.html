@@ -220,6 +220,10 @@
           style="padding:10px 20px; background:#6c63ff; color:white; border:none; border-radius:6px; cursor:pointer;">
     👤 User Panel
   </button>
+  <button onclick="openBlog()" 
+        style="padding:10px 20px; background:#ff9800; color:white; border:none; border-radius:6px; cursor:pointer;">
+  📰 Blog
+</button>
 </div>
 
 <!-- User Info Section -->
@@ -991,7 +995,9 @@ function toggleUserPanel() {
     panel.style.display = "none";
   }
 }
-
+function openBlog() {
+    window.location.href = "blog.html";  // Redirects to blog.html
+  }
 </script>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6728691686729170"
@@ -1014,6 +1020,7 @@ function toggleUserPanel() {
 </div>
 </body>
 </html>
+
 
 
 
