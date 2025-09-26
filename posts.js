@@ -1,6 +1,83 @@
 // posts.js
 const posts = [
   {
+    title: "Import substition opportunities in TELESCOPIC SIGHTS FOR FITTING TO ARMS in India",
+    date: "2025-09-07",
+    content: `
+      HSN Code: 90131010\n
+Commodity: TELESCOPIC SIGHTS FOR FITTING TO ARMS\n
+- Last year import (mm$) in India:57\n
+- Last 4 years Import average growth rate (%) in India: 3016\n
+- Import/ Export ratio in values last year in India: 29.5\n
+- Import/ Export ratio in values last 4 years in India: 19.5\n
+
+Very good import substitution Make in India opportunity. \n
+
+Easily find such insights and detail reports at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>
+      `
+  },
+    {
+    title: "Export opportunities in wagon in India",
+    date: "2025-09-06",
+    content: `
+      HSN Code: 86069190\n
+Commodity: Other vans and wagons\n
+- Last year export (mm$) from India:18\n
+- Last 4 years export average growth rate (%) from India: 11312\n
+- Import/ Export ratio in values last year in India: 0\n
+- Import/ Export ratio in values last 4 years in India: 0\n
+
+Very good Export via Make in India opportunity. \n
+
+Easily find such insights and detail reports at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+
+Provide your views, queries in the comment.
+      `
+  },
+  {
+    title: "Import substitution opportunity in SUPERPHOSPHATES in India",
+    date: "2025-09-05",
+    content: `
+      HSN Code: 31031100\n
+Commodity: SUPERPHOSPHATES CONTAINING BY WEIGHT 35 % OR MORE OF DIPHOSPHORUS PENTAOXIDE (P2O5)\n
+- Last year import (mm$) in India:165\n
+- Last 4 years Import average growth rate (%) in India: 3016\n
+- Import/ Export ratio in values last year in India: 8251\n
+- Import/ Export ratio in values last 4 years in India: 1659\n
+
+Very good import substitution Make in India opportunity. \n
+
+Easily find such insights and detail reports at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+
+Provide your views, queries in the comment.
+      `
+  },
+  {
+    title: "India’s trade story is at a crossroads.",
+    date: "2025-09-04",
+    content: `
+      India’s trade story is at a crossroads.\n
+
+On one hand, we remain one of the world’s largest consumer markets — importing thousands of commodities every year. On the other, rising global tariffs and supply chain shocks are forcing businesses everywhere to rethink sourcing and market strategies.\n
+
+This opens up two big questions for India’s economy:\n
+- Which imports can we realistically substitute with domestic production?\n
+- Where do the best new export opportunities lie, given shifting global trade flows?\n
+
+The answers to these questions aren’t always obvious. They require data — not guesswork.\n
+
+We would love to hear from you\n
+
+- Which sectors do you think hold the strongest potential for import substitution in India?\n
+- And for exports, where should India be looking beyond the US market?\n
+
+Let’s spark a discussion. The more perspectives, the better the insights for everyone.
+      `
+  },
+  {
     title: "Unlocking Trade Opportunities: Why India Needs Smarter Import Substitution and Export Insights",
     date: "2025-09-04",
     content: `
@@ -16,8 +93,7 @@ The case for import substitution has never been stronger. By encouraging domesti
 
 At the same time, shifting global trade patterns create another powerful opportunity. With significant tariffs currently being imposed by the United States on various imports, exporters worldwide are actively looking for alternative destinations. India, with its growing demand and strategic positioning, can both benefit as a supplier and pivot towards new markets for its own exports.\n
 
-This is where SISEBI (Scope for Import Substitution and Export Business in India) <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
-      website</a> comes in. \n
+<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">This is where SISEBI (Scope for Import Substitution and Export Business in India)  website</a> comes in. \n
 
 On our platform, you can explore current import and export values, pricing trends, and four-year growth data for more than 12,000 commodities traded by India. Powerful filters and sorting tools make it simple to identify the most promising opportunities — whether you are looking to substitute imports domestically or expand into export markets abroad.\n
 
@@ -31,8 +107,8 @@ For businesses and professionals ready to take the next step, we also offer a su
 
 In today’s fast-changing global economy, timely and data-driven insights are not optional — they are the foundation of smart strategy. SISEBI provides exactly that, enabling entrepreneurs, policymakers, and investors to move from data to decisions with confidence.\n
 
-Visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
-      Homepage</a> to explore the platform and see how you can uncover the next big opportunity in trade.
+<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      vist Homepage</a> to explore the platform and see how you can uncover the next big opportunity in trade.
       `
   },
   {
