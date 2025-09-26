@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISEBI Insights</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9fafb;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .post-card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .post-card:hover {
+      transform: translateY(-3px);
+    }
+    .post-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #004080;
+    }
+    .post-date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 12px;
+    }
+    .post-content {
+      line-height: 1.6;
+    }
+    .post-content.collapsed {
+      max-height: 70px;
+      overflow: hidden;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #004080;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SISEBI Insights</h1>
+    <p>Latest analysis on India’s trade, import substitution & export opportunities</p>
+  </header>
+
+  <div class="container" id="posts-container"></div>
+
+  <script src="posts.js"></script>
+  <script>
+    const container = document.getElementById("posts-container");
+
+    // Sort posts by date (latest first)
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    posts.forEach((post, index) => {
+      const card = document.createElement("div");
+      card.className = "post-card";
+
+      const title = `<div class="post-title">${post.title}</div>`;
+      const date = `<div class="post-date">${new Date(post.date).toDateString()}</div>`;
+      const content = `<div class="post-content collapsed" id="content-${index}">${post.content}</div>`;
+      const toggle = `<span class="read-more" onclick="toggleContent(${index})">Read More</span>`;
+
+      card.innerHTML = title + date + content + toggle;
+      container.appendChild(card);
+    });
+
+    function toggleContent(index) {
+      const contentDiv = document.getElementById("content-" + index);
+      const toggleBtn = contentDiv.nextElementSibling;
+      if (contentDiv.classList.contains("collapsed")) {
+        contentDiv.classList.remove("collapsed");
+        toggleBtn.innerText = "Read Less";
+      } else {
+        contentDiv.classList.add("collapsed");
+        toggleBtn.innerText = "Read More";
+      }
+    }
+  </script>
+</body>
+</html>
