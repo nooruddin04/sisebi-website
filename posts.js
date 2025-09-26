@@ -16,7 +16,8 @@ The case for import substitution has never been stronger. By encouraging domesti
 
 At the same time, shifting global trade patterns create another powerful opportunity. With significant tariffs currently being imposed by the United States on various imports, exporters worldwide are actively looking for alternative destinations. India, with its growing demand and strategic positioning, can both benefit as a supplier and pivot towards new markets for its own exports.\n
 
-This is where SISEBI (Scope for Import Substitution and Export Business in India) https://sisebi.netlify.app/ comes in. \n
+This is where SISEBI (Scope for Import Substitution and Export Business in India) <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      website</a> comes in. \n
 
 On our platform, you can explore current import and export values, pricing trends, and four-year growth data for more than 12,000 commodities traded by India. Powerful filters and sorting tools make it simple to identify the most promising opportunities — whether you are looking to substitute imports domestically or expand into export markets abroad.\n
 
@@ -30,7 +31,8 @@ For businesses and professionals ready to take the next step, we also offer a su
 
 In today’s fast-changing global economy, timely and data-driven insights are not optional — they are the foundation of smart strategy. SISEBI provides exactly that, enabling entrepreneurs, policymakers, and investors to move from data to decisions with confidence.\n
 
-Visit https://sisebi.netlify.app/ to explore the platform and see how you can uncover the next big opportunity in trade.
+Visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a> to explore the platform and see how you can uncover the next big opportunity in trade.
       `
   },
   {
@@ -60,7 +62,8 @@ And the best part – you don’t need to spend lakhs anymore on bulky research 
 
 Whether you’re a businessman, employee with an entrepreneurial dream, or an industrialist planning your next move – SISEBI gives you the right data to make confident decisions.\n
 
-https://sisebi.netlify.app/ works best on computer/laptop.\n
+<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Website</a> works best on computer/laptop.\n
 
 If you’ve ever thought, “I wish I knew where the next big opportunity lies” – this is your starting point.  
       `
