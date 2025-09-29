@@ -17,8 +17,7 @@ Adjacent HSN codes of relevance:\n
 
 
  • 85183020 — wired headphones/earphones (connection via wire) \n
-Cusbuzz
-+1
+
 
  • 85189000 — parts, components, accessories for headphones/earphones etc. 
 
@@ -26,8 +25,6 @@ Cusbuzz
 This classification helps ensure we don’t overstep into adjacent categories, but allows us to see the full ecosystem (end units + parts).\n
 
 Trade data & financials\n
-
-Metric	Value / Remark\n
 - Last year imports	USD 334.95 million ≈ ₹ 2,962 crores\n
 - 4-year import growth (CAGR)	~ 15.73 %\n
 - Import/Export ratio (last year)	10.81×\n
