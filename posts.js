@@ -6,83 +6,44 @@ const posts = [
     content: `
 Introduction
 In India’s import-heavy electronics landscape, one category stands out for its scale, growth, and gap between import and export — HSN 85183011, covering True Wireless Stereo (TWS) headphones/earphones whose sound channels are not connected by wire. This is more than a niche gadget segment — it’s a strategic opportunity for domestic manufacturing, supply chain investment, and export growth.\n
-
 What exactly is HSN 85183011?\n
-
 As per official classification, this code includes headphones and earphones (TWS) and sets that may include microphone or loudspeaker units, where left and right channels are wirelessly connected (i.e., no physical wire between them). \n
-
-
 Adjacent HSN codes of relevance:\n
  • 85183019 — other varieties of headphones/earphones (non-TWS) \n
-
-
  • 85183020 — wired headphones/earphones (connection via wire) \n
-
-
  • 85189000 — parts, components, accessories for headphones/earphones etc. 
-
-
 This classification helps ensure we don’t overstep into adjacent categories, but allows us to see the full ecosystem (end units + parts).\n
-
 Trade data & financials\n
 - Last year imports	USD 334.95 million ≈ ₹ 2,962 crores\n
 - 4-year import growth (CAGR)	~ 15.73 %\n
 - Import/Export ratio (last year)	10.81×\n
 - Import/Export ratio (4-year average)	14.81×\n
-
 These ratios indicate that for every ₹ 100 worth of exports, India imports ~ ₹ 1,081 in this category — a stark imbalance.\n
-
 Tariffs, Duties & Taxes\n
-
 - Basic Customs Duty (BCD) for HSN 85183011 is 20 %. \n
-
-
 - Social Welfare Surcharge adds ~10 %. \n
-
-
 - Under Chapter 8518, GST is 18 % on these products. \n
-
 These layered costs make imported TWS units relatively expensive in India, creating a pricing buffer that a competitive domestic product could exploit.\n
-
 Strengths / Opportunities for India\n
-
 - High & growing demand for wireless audio accessories (driven by smartphone penetration, wearables, etc.)\n
-
 - Tariff protection supports local players to invest in manufacturing, R&D, quality\n
-
 - Adjacent parts/gear ecosystem can grow in parallel — e.g. battery modules, drivers, wireless chips, enclosures\n
-
 - Export potential — once quality, design, cost benchmarks are matched\n
-
 - Tech sovereignty — reducing dependency on imports, securing supply chains\n
-
 Challenges / considerations\n
-
 - Achieving global quality benchmarks (sound, reliability, latency)\n
-
 - Supply chain integration (chips, Bluetooth modules, battery, plastics)\n
-
 - Scale & capital investment to compete on costs\n
-
 - Certification, IP licensing, regulatory compliance\n
-
 - Ensuring design / brand differentiation against global incumbents\n
-
 Way forward / recommendations\n
-
 - Target mid to premium segment initially to avoid ultra-commodity cost pressures\n
-
 - Form industry consortia or clusters for parts & component sourcing\n
-
 - Leverage incentive schemes (PLI, electronics manufacturing zones, export incentives)\n
-
 - Build strong branding & export roadmap early on\n
-
 - Use data intelligence (like what SISEBI provides) to scan adjacent HS codes and trade gaps\n
-
 Conclusion\n
 HSN 85183011 (TWS headphones) is more than just a gadget category. The trade dynamics — large import base, fast growth, deep import dominance — make it a prime candidate for import substitution and indigenous manufacturing. With the right approach, India can not only fulfill domestic demand but emerge as a global supplier.\n
-
 To stay ahead with deeper HS-code trade insights and opportunity alerts, explore more on <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
       Homepage</a>\n
 .`
