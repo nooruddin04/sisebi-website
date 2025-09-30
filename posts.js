@@ -1,6 +1,27 @@
 // posts.js
 const posts = [
   {
+    title: "Line Pipes, India & the Global Stage: Why HSN 73051129 is a Strategic Export Win",
+    date: "2025-09-30",
+    content: `
+HSN 73051129 (non-galvanised pipes, longitudinally submerged arc welded, used for oil/gas pipelines) is one of the less talked about yet high-value export segments. This is not just steel pipes — this is backbone infrastructure for energy and upstream sectors.\n
+Key figures that demand attention:\n
+- Exports last year: US $738.46 million, which translates to ≈ ₹6500 crore.\n
+- Four-year average growth: 50.91% CAGR\n
+- Import / export ratio (by value): nearly 0 last year, 0.01 over 4 years — India imports virtually none from abroad in this category.\n
+- Related HSNs include 73051929 (non-galvanised “other line pipes”) and 730511 parent chapter (welded pipeline sections).\n
+What does all this tell us?\n
+- Domestic demand is being met and exceeded — India is already self-reliant here.\n
+- Global demand opportunity is huge — with strong growth, the gap is open for Indian manufacturers to capture more share.\n
+- Policy & strategic backing matters — with the “Make in India” thrust, incentives, export support and logistics must back this segment.\n
+Market intelligence is key — price trends will define winners.\n
+If you are in steel, pipe manufacturing, trading, or even in policy/investment space, this is one to watch.\n
+We’ve prepared a full deep dive — including market maps and next steps.\n
+To read the full version, go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+  {
     title: "HSN 85183011 (TWS Headphones): A High-Opportunity Import Substitution for India",
     date: "2025-09-29",
     content: `
