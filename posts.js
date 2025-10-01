@@ -1,6 +1,30 @@
 // posts.js
 const posts = [
   {
+    title: "HSN 29024100: Xylenes — O-Xylene (Ortho Xylene) — A Hidden “Make in India” Frontier",
+    date: "2025-10-01",
+    content: `
+HSN 29024100 corresponds specifically to xylenes: o-xylene, also called ortho xylene — one of three isomeric xylenes (others: m-xylene HS 29024200, p-xylene HS 29024300, and mixed xylene HS 29024400). \n
+O-xylene is widely used in solvents, coatings, petrochemical intermediates, phthalic anhydride manufacture, and specialty chemicals.\n
+Here’s what makes it a striking opportunity:\n
+- Last year imports: US$ 262.47 million → approx ₹ 2,329 crore (at ₹ 88.71/USD)\n
+- Four-year average import growth rate: ~ 24.07%\n
+- Import/Export ratio (by value) last year: ~ 749.9 : 1 — effectively negligible exports\n
+- Import/Export ratio averaged ~ 1.53 : 1 over last 4 years\n
+These numbers signal that India is almost entirely reliant on imported o-xylene despite growing domestic demand.\n
+Why hasn’t domestic production caught up?\n
+Potential constraints include access to aromatic feedstocks, technology licensing, purity/grade handling, environmental compliances, and scale economics.\n
+What to explore further:\n
+- Which specific grades (industrial vs reagent vs ultra-pure) are highest in import demand?\n
+- What are cost benchmarks (CIF landed cost, duty, logistics) vs feasible “Make in India” cost targets?\n
+Are there captive integration opportunities (e.g. from reformate, BTX streams) for chemical integrators or refiners?\n
+- What incentives or policy levers (customs, PLI, petrochemical clusters) can catalyze domestic setup?\n
+If you’re a chemical manufacturer, investor or policy planner, this could be among the most underrated “import substitution” plays in organics.\n
+To access the full report, go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+  {
     title: "Line Pipes, India & the Global Stage: Why HSN 73051129 is a Strategic Export Win",
     date: "2025-09-30",
     content: `
