@@ -1,6 +1,27 @@
 // posts.js
 const posts = [
    {
+    title: "Seizing the 'Make in India' Opportunity in Wireless Audio Systems",
+    date: "2025-10-07",
+    content: `
+The wireless audio sector in India is experiencing significant growth, with imports of wireless multiple loudspeakers (HSN Code: 85182210) totaling approximately ₹14,433 crore (USD 162.91 million) in the last year. Over the past four years, the sector has seen an average annual growth rate of 12.07%, indicating a strong and expanding market.\n
+Understanding the Product Landscape\n
+HSN Code 85182210 encompasses a range of wireless audio products, including:\n
+Multi-room wireless speaker systems\n
+Bluetooth-enabled loudspeakers\n
+Integrated audio solutions for commercial spaces\n
+These products are widely used in residential, commercial, and institutional settings, offering flexibility and convenience in audio setup.\n
+Import-Export Dynamics\n
+The import-to-export ratio for these products stands at 146:1, underscoring a significant gap between domestic demand and local supply. This disparity presents a compelling case for import substitution and local manufacturing.\n
+Government Initiatives Supporting Local Manufacturing\n
+The Indian government's 'Make in India' initiative aims to encourage domestic manufacturing and reduce dependency on imports. With the growing demand for wireless audio systems and the government's support, this sector offers a promising opportunity for local manufacturers to step in and cater to the domestic market.\n
+Conclusion\n
+The wireless audio sector presents a lucrative opportunity for businesses to invest in local manufacturing. By aligning with government initiatives and tapping into the growing demand, companies can establish a strong foothold in this expanding market.\n
+For more detailed insights and data-backed reports on this opportunity,,go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+   {
     title: "Exploring the ₹14,82,09,00,000 Opportunity in India's Audio Tech Sector",
     date: "2025-10-05",
     content: `
