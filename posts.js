@@ -1,6 +1,18 @@
 // posts.js
 const posts = [
     {
+    title: "Exploring the Ink Cartridge Market Under HSN Code 84439952: A Strategic Opportunity for Indian Manufacturers",
+    date: "2025-10-11",
+    content: `
+India's import of ink cartridges without print head assembly (HSN Code: 84439952) reached approximately ₹1039 crore in the last year, reflecting a consistent growth trend with an average annual increase of 11% over the past four years.\n
+The import-to-export ratio in value was 36% last year and 31% over the past four years, highlighting a substantial gap between imports and exports. This discrepancy underscores a significant opportunity for domestic manufacturing to meet the growing demand and reduce reliance on imports.\n
+Key players in the market include global brands such as HP, Canon, and Brother, who supply ink cartridges without print head assemblies to the Indian market. These products are integral components in various printing devices, including inkjet printers and multi-function printers.\n
+For Indian manufacturers, this presents a strategic opportunity to enter the ink cartridge market by producing high-quality, cost-effective alternatives to imported products. By leveraging local manufacturing capabilities, companies can not only cater to the domestic demand but also explore export opportunities to neighboring countries.\n
+To delve deeper into this market opportunity and understand the potential for growth, go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+    {
     title: "Seizing the ₹1270 Crore Opportunity: India's Coke Oven Plant Sector",
     date: "2025-10-09",
     content: `
