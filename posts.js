@@ -1,6 +1,27 @@
 // posts.js
 const posts = [
   {
+    title: "Unveiling a Hidden Export Powerhouse: HSN 87032291 – Motor Cars (1,000-1,500 cc, Spark-Ignition)",
+    date: "2025-10-02",
+    content: `
+In the world of automotive trade, one seldom spotlighted code is 87032291 — “Motor cars and other vehicles with spark-ignition engine, cylinder capacity exceeding 1,000 cc but not exceeding 1,500 cc.” 
+Busy Infotech Pvt. Ltd.\n
+Here’s what trade data reveals:\n
+- Last year, India exported USD 4,199 million, which translates to approximately ₹3,730 billion (at Rs 88.71/USD).\n
+- Over the past four years, this export line has clocked a compound annual growth rate (CAGR) of 10.12 %.\n
+- The import/export ratio for this code is extremely low — less than 0.01 both in the latest year and across four years — reflecting India’s near-self-sufficiency and export strength in this segment.\n
+Why it matters:\n
+- Strategic Export Niche: The ultra-low import penetration implies limited competition from abroad — a favorable zone for Indian producers and exporters.\n
+- Value Chain Opportunity: Players in engine components, fuel systems, electronics, and secondary parts can plug into this growth engine.\n
+- Market Intelligence: Knowing which makes or models (e.g. compact sedans/SUVs in 1,000–1,500 cc class) are driving this can help you align your product mix. (For example, data on Vitara Brezza under this code is already tracked. \n
+- Global Demand Mapping: Which geographies are importing such cars from India? Which have room for growing demand — and which segments are saturating?\n
+- Policy & Incentives: With this performance, lobbying for export incentives, duty concessions or easier trade terms becomes stronger.\n
+If you’re a manufacturer, auto parts supplier, trade analyst, or a B2B export business, this trend merits your attention.\n
+➡ To dig into destination markets, top exporters, margin breakdowns, and opportunity maps, go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+  {
     title: "HSN 29024100: Xylenes — O-Xylene (Ortho Xylene) — A Hidden “Make in India” Frontier",
     date: "2025-10-01",
     content: `
