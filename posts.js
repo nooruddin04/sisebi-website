@@ -1,5 +1,22 @@
 // posts.js
 const posts = [
+      {
+    title: "Exploring the Export Landscape of Cotton Bedsheets & Bed Covers (HSN Code 63041910)",
+    date: "2025-10-06",
+    content: `
+India's textile industry, particularly the segment dealing with cotton bedsheets and bed covers, has shown remarkable growth in recent years. Under HSN Code 63041910, these products have become a significant part of India's export portfolio.\n
+Export Performance\n
+In the previous year, India exported cotton bedsheets and bed covers worth approximately ₹63 billion (USD 711 million). Over the past four years, the average annual growth rate in exports has been 23%, reflecting a consistent upward trajectory in demand for these products.\n
+Minimal Import Dependency\n
+One of the standout features of this sector is its minimal import dependency. The import-to-export ratio for this category is exceptionally low, at 0.01 over the last four years. This indicates that India is largely self-sufficient in producing these items, with a strong export orientation.\n
+Global Demand\n
+The demand for Indian cotton bedsheets and bed covers is widespread, with key markets including the United States, the United Arab Emirates, and Saudi Arabia. These regions have been significant importers of Indian textile products, underscoring the global appeal of India's offerings.\n
+Opportunities for Growth\n
+The consistent growth in exports presents numerous opportunities for manufacturers and exporters. With the global trend leaning towards sustainable and quality textile products, Indian manufacturers are well-positioned to capitalize on this demand.\n
+For a deeper dive into the current trends, market dynamics, and strategies to leverage this growth, visit our full analysis: go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
      {
     title: "Exploring the Surge in India's Anticancer Drug Exports: A Strategic Overview",
     date: "2025-10-04",
