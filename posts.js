@@ -1,6 +1,26 @@
 // posts.js
 const posts = [
        {
+    title: "Exploring the Global Market for Cumin Seeds (HSN Code 9093129): A Strategic Export Opportunity",
+    date: "2025-10-10",
+    content: `
+India is a leading producer and exporter of cumin seeds, with HSN Code 9093129 covering high-quality seeds that are neither crushed nor ground. These seeds are integral to various cuisines and industries worldwide.\n
+Export Performance and Market Dynamics\n
+In 2024, India exported approximately $615 million (₹5460 crore) worth of cumin seeds under HSN Code 9093129. The export value has been growing at an average annual rate of 14% over the past four years, reflecting a robust demand and expanding market presence.\n
+The primary export destinations include the United States, Bangladesh, the United Arab Emirates, and Afghanistan. These markets value the distinct aroma and flavor of Indian cumin seeds, which are essential in various culinary and medicinal applications.\n
+Domestic Production vs. Import Trends\n
+India's import-to-export ratio for cumin seeds is notably low, indicating a self-sufficient production capacity. This trend underscores the potential for businesses to leverage domestic resources for export purposes, reducing dependency on imports and enhancing profitability.\n
+Strategic Insights for Exporters\n
+For businesses looking to enter or expand in the cumin seed export market, consider the following strategies:\n
+Quality Assurance: Ensure compliance with international quality standards to meet the expectations of global buyers.\n
+Market Research: Identify emerging markets and tailor marketing strategies to cater to regional preferences.\n
+Supply Chain Optimization: Streamline logistics and distribution channels to enhance efficiency and reduce costs.\n
+Brand Positioning: Develop a strong brand presence that highlights the unique qualities of Indian cumin seeds.\n
+For a comprehensive analysis and detailed insights into the cumin seed export market, visit our full report at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+       {
     title: "Exploring Export Opportunities in HSN Code 21069099",
     date: "2025-10-08",
     content: `
