@@ -1,5 +1,19 @@
 // posts.js
 const posts = [
+   {
+    title: "Exploring the ₹14,82,09,00,000 Opportunity in India's Audio Tech Sector",
+    date: "2025-10-05",
+    content: `
+India's import data for HSN Code 85183019 reveals a market valued at approximately ₹1,482 crore in the last year. This category encompasses a range of audio devices, including:\n
+Headphones and Earphones: Both wired and wireless variants.\n
+True Wireless Stereo (TWS) Devices: Popular among consumers for their convenience.\n
+Bluetooth Audio Receivers and Transmitters: Facilitating wireless audio streaming.\n
+Over the past four years, the sector has experienced an average annual growth rate of 12.47%. Despite this growth, the import-to-export ratio remains high, highlighting a substantial gap in domestic production.\n
+The Indian government's 'Make in India' initiative presents a strategic opportunity to localize production, reduce import dependency, and cater to the growing domestic demand.\n
+For a comprehensive analysis and insights into this market,go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
   {
     title: "Galvannealed Steel: A Strategic Opportunity for 'Make in India'",
     date: "2025-10-03",
