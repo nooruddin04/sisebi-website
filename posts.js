@@ -167,7 +167,7 @@ For a comprehensive analysis and insights into this market,go to <a href="https:
     content: `
 Galvannealed steel, characterized by its zinc coating and heat treatment, offers enhanced durability and is integral to various industries, including automotive, construction, and home appliances. Despite its importance, India continues to import a significant quantity of these products.\n
 Market Overview\n
-In the last fiscal year, India imported galvanized steel products under HSN Code 72104910 valued at approximately ₹21,188 crore (USD 238.82 million). Over the past four years, imports have grown at an average annual rate of 13.7%. However, the import-to-export ratio remains high at 84.69%, suggesting a substantial domestic market gap.\n
+In the last fiscal year, India imported galvanized steel products under HSN Code 72104910 valued at approximately ₹2118 crore (USD 238.82 million). Over the past four years, imports have grown at an average annual rate of 13.7%. However, the import-to-export ratio remains high at 84.69%, suggesting a substantial domestic market gap.\n
 Key Import Sources\n
 India's primary suppliers of galvannealed steel include:\n
 - Japan\n
