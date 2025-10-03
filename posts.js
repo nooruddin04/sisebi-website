@@ -1,5 +1,25 @@
 // posts.js
 const posts = [
+    {
+    title: "Seizing the ₹1270 Crore Opportunity: India's Coke Oven Plant Sector",
+    date: "2025-10-09",
+    content: `
+India's industrial landscape is witnessing a significant shift, with the coke oven plant sector emerging as a pivotal area for growth and self-reliance. Under HSN Code 84798960, coke oven plants, including components like coke dry quenching (CDQ) systems and heat recovery coke ovens, have seen substantial imports, highlighting a pressing need for domestic manufacturing capabilities.\n
+Import Trends and Growth\n
+In the past year, India imported coke oven plants valued at approximately ₹1270 crores, reflecting a steady demand. Over the last four years, the sector has experienced an average annual growth rate of 16.9%, signaling a robust and expanding market.\n
+Import-Export Dynamics\n
+The import-to-export ratio for the last year stands at 1792, emphasizing India's heavy reliance on imported coke oven plants. This disparity presents a significant opportunity for local manufacturers to bridge the gap and cater to the domestic demand.\n
+Strategic Opportunities\n
+The growing demand for coke oven plants, coupled with the government's 'Make in India' initiative, offers a conducive environment for establishing domestic manufacturing units. Key areas to focus on include:\n
+Technology Integration: Adopting advanced technologies to enhance efficiency and reduce emissions.\n
+Supply Chain Optimization: Developing a robust supply chain to ensure timely delivery and quality assurance.\n
+Skilled Workforce Development: Investing in training programs to build a skilled workforce adept in handling sophisticated machinery.\n
+Conclusion\n
+The coke oven plant sector in India presents a lucrative opportunity for businesses to invest in domestic manufacturing. By aligning with national initiatives and focusing on technological advancements, companies can play a pivotal role in transforming this sector into a self-reliant and sustainable industry.\n
+For a detailed analysis and strategic insights,,go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
    {
     title: "Seizing the 'Make in India' Opportunity in Wireless Audio Systems",
     date: "2025-10-07",
