@@ -1,5 +1,23 @@
 // posts.js
 const posts = [
+       {
+    title: "Exploring Export Opportunities in HSN Code 21069099",
+    date: "2025-10-08",
+    content: `
+India's export of food preparations under HSN Code 21069099 has shown promising growth, reaching approximately ₹5970 inr cr last year. This category includes a wide array of products that cater to both domestic and international markets.\n
+Key Products Under HSN Code 21069099:\n
+Textured Vegetable Proteins: These are plant-based protein alternatives, such as soya bari and mungodi, which are gaining popularity globally due to the rising demand for vegetarian and vegan diets.\n
+Namkeens and Bhujia: Ready-to-eat snacks that are staples in Indian cuisine and have a growing consumer base abroad.\n
+Sweetmeats and Pinni: Traditional Indian sweets that offer a unique taste experience, appealing to the diaspora and international consumers seeking authentic flavors.\n
+Chutney Powders and Custard Powders: Essential ingredients in Indian cooking, these products have potential in international markets where Indian cuisine is gaining traction.\n
+Prasadam: Religious offerings that are part of cultural practices, with potential for export to countries with significant Indian communities.\n
+Diabetic Foods and Miltone: Specialized dietary products catering to health-conscious consumers, a segment that is expanding globally.\n
+Market Potential and Growth:\n
+The import-to-export value ratio for this category is notably low, indicating a strong export potential. Countries like the United States, Australia, and Canada are significant importers of these products, presenting lucrative opportunities for Indian exporters.\n
+For businesses looking to capitalize on this growing sector, understanding the nuances of these products and identifying the right markets is crucial. Detailed insights and strategies are available in our comprehensive report: go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
       {
     title: "Exploring the Export Landscape of Cotton Bedsheets & Bed Covers (HSN Code 63041910)",
     date: "2025-10-06",
