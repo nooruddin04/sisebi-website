@@ -1,6 +1,27 @@
 // posts.js
 const posts = [
   {
+    title: "Galvannealed Steel: A Strategic Opportunity for 'Make in India'",
+    date: "2025-10-03",
+    content: `
+Galvannealed steel, characterized by its zinc coating and heat treatment, offers enhanced durability and is integral to various industries, including automotive, construction, and home appliances. Despite its importance, India continues to import a significant quantity of these products.\n
+Market Overview\n
+In the last fiscal year, India imported galvanized steel products under HSN Code 72104910 valued at approximately ₹21,188 crore (USD 238.82 million). Over the past four years, imports have grown at an average annual rate of 13.7%. However, the import-to-export ratio remains high at 84.69%, suggesting a substantial domestic market gap.\n
+Key Import Sources\n
+India's primary suppliers of galvannealed steel include:\n
+- Japan\n
+- South Korea\n
+- Brazil\n
+These countries have established themselves as reliable exporters, but the growing Indian demand presents an opportunity for local manufacturers to enter the market.\n
+Strategic Advantage for Indian Manufacturers\n
+The 'Make in India' initiative aims to boost domestic manufacturing and reduce reliance on imports. By focusing on producing high-quality galvannealed steel, Indian manufacturers can cater to the growing demand in sectors like automotive and construction. Investing in advanced manufacturing technologies and adhering to international quality standards will be crucial for success.\n
+Conclusion\n
+The current import scenario presents a strategic opportunity for Indian manufacturers to invest in galvannealed steel production. By aligning with national initiatives and focusing on quality, there's potential to capture a significant share of the domestic market.\n
+For more detailed insights and strategies, go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+  {
     title: "Unveiling a Hidden Export Powerhouse: HSN 87032291 – Motor Cars (1,000-1,500 cc, Spark-Ignition)",
     date: "2025-10-02",
     content: `
