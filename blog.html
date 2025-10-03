@@ -65,7 +65,15 @@
     <h1>SISEBI Insights</h1>
     <p>Latest analysis on India’s trade, import substitution & export opportunities</p>
   </header>
-
+  <form name="newsletter" action="/thank-you" netlify style="max-width:400px; margin:0 auto;">
+  <!--<input type="hidden" name="form-name" value="newsletter">-->
+  <input type="email" name="email" placeholder="Enter your email address" required 
+         style="width:100%; padding:12px; border:1px solid #ccc; border-radius:6px; margin-bottom:15px;">
+  <button type="submit" 
+          style="background:#0077cc; color:#fff; padding:12px 20px; border:none; border-radius:6px; cursor:pointer; width:100%;">
+    Subscribe
+  </button>
+</form>
   <div class="container" id="posts-container"></div>
 
   <script src="posts.js"></script>
