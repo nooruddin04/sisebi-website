@@ -1,5 +1,22 @@
 // posts.js
 const posts = [
+        {
+    title: "Exploring the Growth of India's Compact Goods Transport Vehicles",
+    date: "2025-10-12",
+    content: `
+India's export landscape for compact goods transport vehicles, classified under HSN Code 87042100, has experienced significant growth in recent years. These vehicles, with a GVW not exceeding 5 tonnes, are pivotal in sectors such as e-commerce, logistics, and urban delivery services.\n
+Export Performance\n
+In the fiscal year 2024-2025, India's export of these vehicles reached approximately ₹4700 crores (USD 529.22 million), marking a substantial increase from the previous year. This growth trajectory reflects the global shift towards smaller, more efficient transport solutions.\n
+Market Dynamics\n
+The import/export ratio for these vehicles stands at zero, highlighting India's strong position as a net exporter in this segment. Countries like Bangladesh, Georgia, and Tanzania have been significant importers, accounting for a substantial share of India's exports in this category.\n
+Opportunities for Manufacturers\n
+The rising demand for compact goods transport vehicles presents lucrative opportunities for Indian manufacturers. Leveraging India's manufacturing capabilities and the 'Make in India' initiative can enhance competitiveness in the global market.\n
+Conclusion\n
+The growth of India's export in the compact goods transport vehicle sector underscores the nation's potential as a manufacturing hub for efficient and sustainable transport solutions. Stakeholders in the automotive and logistics industries are encouraged to explore this expanding market to capitalize on emerging opportunities.\n
+For more detailed insights and data on this sector, visit our full report at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
        {
     title: "Exploring the Global Market for Cumin Seeds (HSN Code 9093129): A Strategic Export Opportunity",
     date: "2025-10-10",
