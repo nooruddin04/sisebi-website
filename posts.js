@@ -1,5 +1,27 @@
 // posts.js
 const posts = [
+     {
+    title: "Exploring the Surge in India's Anticancer Drug Exports: A Strategic Overview",
+    date: "2025-10-04",
+    content: `
+India's pharmaceutical industry has firmly established itself as a global leader, particularly in the export of anticancer drugs categorized under HSN Code 30049049. In the previous year, exports in this category reached approximately ₹202.5 billion (USD 2.29 billion), reflecting a robust growth trajectory.\n
+Key Highlights:\n
+Impressive Export Growth: The average annual export growth rate over the past four years stands at 57%, underscoring the increasing international demand for India's anticancer formulations.\n
+Minimal Import Dependency: With an import-to-export ratio of just 0.03 over the last four years, India demonstrates a high degree of self-sufficiency in producing and exporting these critical medications.\n
+Diverse Product Range: The category encompasses a wide array of anticancer drugs, including:\n
+Imatinib (400 mg tablets)\n
+Oxaliplatin (5 mg/ml injections)\n
+Arsenic Trioxide (1 mg/ml injections)\n
+Lenalidomide (10 mg capsules)\n
+Letrozole (2.5 mg tablets)\n
+Megestrol Acetate (40 mg tablets)\n
+This diverse portfolio positions India as a comprehensive supplier in the global oncology market.\n
+Strategic Implications:\n
+For manufacturers and exporters, this surge presents a compelling "Make in India" opportunity. By aligning with international quality standards and leveraging India's competitive advantages, stakeholders can capitalize on the expanding global demand for anticancer medications.\n
+To gain a comprehensive understanding and explore actionable strategies, go to <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
     {
     title: "Exploring the Ink Cartridge Market Under HSN Code 84439952: A Strategic Opportunity for Indian Manufacturers",
     date: "2025-10-11",
