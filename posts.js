@@ -1,6 +1,29 @@
 // posts.js
 const posts = [
         {
+    title: "HSN 85183020 — Headphones & Earphones (wired, with/without mic) — The Big India Gap",
+    date: "2025-10-13",
+    content: `
+Last financial year, India imported US$ 101.64 million under HSN 85183020 (wired headphones and earphones with or without microphone). That works out to nearly ₹ 904–918 crore.\n
+Over the past 4 years, cumulative import growth has averaged 14.88% per annum.\n
+Meanwhile, India’s import vs export value ratio in this segment has persistently hovered around 32×— i.e. imports are 32 times export in value.\n
+That glaring asymmetry points to an urgent ‘Make in India’ opportunity:\n
+The commodity (HSN 85183020) covers wired headphones, earphones, and headsets (wired, with mic).\n
+Also relevant within the broader HSN 85 class: amplifiers, loudspeakers, microphones, audio parts.\n 
+India currently imposes a 20% basic customs duty + 10% social welfare surcharge on these imports. \n
+The domestic cost structure (parts, labour, logistics) can often compete — if scale, quality, and supply chains are built carefully.\n
+For a manufacturer or investor, here’s why this is compelling:\n
+- Reduction of import leakages — direct replacement of a ₹ 900+ crore import market.\n
+- Export potential upside — build infrastructure, capture global orders.\n
+- Value chain creation — enclosures, drivers, wiring, assembly, testing.\n
+- Government support alignment — incentives under PLI, electronics manufacturing, export incentives.\n
+- Margins above commodity electronics — brand premium, design, accessory bundling.\n
+Want full access, download complete report on the <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+  
+        {
     title: "Exploring the Growth of India's Compact Goods Transport Vehicles",
     date: "2025-10-12",
     content: `
