@@ -1,6 +1,37 @@
 // posts.js
 const posts = [
         {
+    title: "India’s Instant Coffee Export — The Make in India Frontier",
+    date: "2025-10-15",
+    content: `
+India is uniquely positioned to scale in instant coffee / coffee extracts (HSN 21011120).\n
+Here’s a snapshot:\n
+- Last year’s export value: USD 478.67 million → approximately ₹4246 cr (₹88.71 per USD).\n
+- Four-year average growth (CAGR): 21.88%.\n
+- Import:Export value ratio last year and over 4 years: 0.02 (i.e., India’s exports dominate).\n
+Key variants and adjacent HS codes:\n
+ • 21011120 — Instant coffee, not flavoured / coffee extracts\n
+ • 21011130 — Coffee aroma / aromatic extracts\n
+ • 21011200 — Preparations based on coffee extracts or concentrates\n
+The global demand for soluble coffee, especially in markets with limited local coffee cultivation, is growing steadily.\n
+Why this is a compelling “Make in India” play\n
+- Low import reliance — margins protected by our net-export status.\n
+- Strong growth tailwinds — consistent 20-25% growth regimes.\n
+- Product differentiation scope — value-added extracts, flavours, specialty coffee blends.\n
+- Untapped markets & niches — many importing countries rely heavily on a few suppliers (so switching is possible).\n
+- Government support & export incentives under MEIS / export reward schemes. \n
+Risks & considerations\n
+- Quality and reliability of supply chain (green bean sourcing, roasting, extraction)\n
+ Compliance, food safety regulations & certification for target countries\n
+- Logistics costs, competitive pricing from established exporters\n
+- Currency fluctuations, and tariff / non-tariff barriers\n
+Call to action\n
+- If you are an exporter, brand owner, investor or entrepreneur — this is one of those rare sectors with validated demand, margin potential and growth.\n
+And if you like what you see, explore more opportunities and updates, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+        {
     title: "HSN 85183020 — Headphones & Earphones (wired, with/without mic) — The Big India Gap",
     date: "2025-10-13",
     content: `
