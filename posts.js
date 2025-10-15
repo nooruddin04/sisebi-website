@@ -1,8 +1,38 @@
 // posts.js
 const posts = [
         {
-    title: "India’s Instant Coffee Export — The Make in India Frontier",
+    title: "Import Disruption Opportunity: HSN 85182290 – Multi-Driver Loudspeaker Enclosures",
     date: "2025-10-15",
+    content: `
+India continues to rely heavily on imports for complex loudspeaker modules. A closer look:\n
+Commodity & Description\n
+Under HSN 85182290, goods are classified as “Loudspeakers, whether or not mounted in their enclosures: multiple loudspeakers, mounted in the same enclosure: other.” \n
+Related HSN variants include wireless multi-speaker modules (85182210) and “other” loudspeakers (85182900/85182990). \n
+In practice, this covers devices like sound bars, stereo speaker modules, PA column speakers, multi-driver enclosures and integrated multi-speaker modules in a single enclosure.\n
+Trade Data & Financials\n
+- Last year’s imports in this HSN stood at USD 100.04 million, translating to ~ ₹ 887 crores (at ₹ 88.71/USD).\n
+- The 4-year CAGR of imports is ~ 13.19% annually.\n
+- India’s import-to-export ratio is ~ 14.78× in the last year, and ~ 15.77× over 4 years—i.e., exports are negligible compared to imports.\n
+Cost Pressures & Duty Regime\n
+- The Basic Customs Duty (BCD) is 20%, and there is a Social Welfare Charge of ~ 10% on this HSN. \n
+- Those import barriers, shipping costs, currency fluctuations and lead times make domestic high-quality manufacturing more viable.\n
+Opportunity Case: Make in India\n
+- Given the strong demand, upward trend, and structural import dependence, this is a prime sector for import substitution.\n
+- If Indian manufacturers can match or exceed global quality, margin, and scale, a domestic ecosystem of design → acoustics → enclosure → export is possible.\n
+- Early movers can capture a large market share before global suppliers respond.\n
+Questions to Explore / Call to Action\n
+- Are there existing Indian players in multi-driver enclosures at scale?\n
+- What are cost benchmarks (components, drivers, enclosures, electronics) globally vs. locally?\n
+- What technology partnerships (e.g. with acoustics firms, DSP firms) are needed?\n
+- What export markets could we serve once we achieve scale?\n
+- What policy support (subsidies, incentives, import duty safeguards) would accelerate growth?\n
+We at SISEBI see this as a compelling thrust area. We will be publishing a deeper whitepaper soon. For now, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+        {
+    title: "India’s Instant Coffee Export — The Make in India Frontier",
+    date: "2025-10-14",
     content: `
 India is uniquely positioned to scale in instant coffee / coffee extracts (HSN 21011120).\n
 Here’s a snapshot:\n
