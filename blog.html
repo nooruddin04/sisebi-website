@@ -58,13 +58,75 @@
       font-weight: bold;
       cursor: pointer;
     }
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+  max-height: 80vh;   /* restrict popup height to 80% of screen */
+  overflow-y: auto;   /* enable vertical scroll inside */
+  padding-right: 10px; /* avoid scrollbar overlap */
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
   </style>
 </head>
 <body>
+  
   <header>
     <h1>SISEBI Insights</h1>
     <p>Latest analysis on India’s trade, import substitution & export opportunities</p>
   </header>
+  <div style="display:flex; justify-content:center; gap:20px; margin:20px 0;">
+  <button onclick="openModal('aboutModal')" 
+          style="padding:10px 20px; background:#007bff; color:white; border:none; border-radius:6px; cursor:pointer;">
+    🌍 About SISEBI
+  </button>
+      <button onclick="openhomepage()" 
+        style="padding:10px 20px; background:#ba0645; color:white; border:none; border-radius:6px; cursor:pointer;">
+  📰 Blog
+</button>
+</div>
+  <div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+    <h3>🌍 About SISEBI</h3>
+    <p>
+      SISEBI (Scope for Import Substitution and Export Business in India) is a trade intelligence platform (supported by India's last 8 years Import/ Export total 40 crore data points covering all '12000 +' 8 digit HSN codes, 253 country codes)  that empowers businesses, policymakers, and entrepreneurs with actionable insights.  
+      <br><br>
+      Our platform provides <b>data-driven reports on HSN codes</b>, highlighting areas where India can substitute imports with domestic production and expand exports globally.  
+      <br><br>
+      Whether you are a <b>manufacturer, exporter, or policymaker</b>, SISEBI helps you discover untapped opportunities, track import/ exports, and stay ahead in global trade.
+    </p>
+      <div id="ds">
+        The data, statistics, and analysis presented in this report are primarily derived from the DGCI&S' open-source trade data and other publicly available sources
+     </div>
+  </div>
+</div>
   <section id="subscribe" class="subscribe-section" style="padding:40px; text-align:center; background:#f9f9f9;">
   <h2 style="margin-bottom:15px;">📩 Get Weekly Exclusive Business Opportunities</h2>
   <p style="margin-bottom:20px;">Sign up with your email to receive curated import–export insights and India’s hottest trade opportunities every week.</p>
@@ -77,6 +139,7 @@
     Subscribe
   </button>
 </form>
+  </section>
   <div class="container" id="posts-container"></div>
 
   <script src="posts.js"></script>
@@ -110,6 +173,15 @@
         toggleBtn.innerText = "Read More";
       }
     }
+    function openModal(id) {
+  document.getElementById(id).style.display = "block";
+}
+    function openhomepage() {
+   window.open("index.html", "_blank");
+  }
+    function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
   </script>
 </body>
 </html>
