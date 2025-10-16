@@ -1,5 +1,31 @@
 // posts.js
 const posts = [
+         {
+    title: "HSN 13021919: Unlocking India’s Export Edge in Botanical & Vegetable Extracts",
+    date: "2025-10-16",
+    content: `
+Under HSN 13021919 — classified as “Other Vegetable Saps & Extracts; Pectic Substances; Agar-agar & Other Mucilages / Thickeners – other extracts” — India is already leading in global trade. \n
+Key Highlights:\n
+- Last year, exports under this heading hit US 439.45 million (~₹3,902 crore).\n
+- Historical 4-year CAGR of exports: 17.07%.\n
+- Import/Export ratio: ~0.07 last year; ~0.08 average over 4 years — meaning India exports ~13–14× more value than it imports in this segment.\n
+- India dominates global shipments in this category, with herbal extracts among the most active sub-segments. \n
+Relevant Sub-Commodities (for relatability & targeting):\n
+- Amla extract (strong export records) \n
+- Shilajit extract (recent export ~US 0.67 million) \n
+- Neem, ginseng, botanical / herbal extracts, mucilages, plant saps & thickeners \n
+- Nutraceutical / herbal powders shipped under 13021919 in trade manifests (e.g. botanical supplement powders) \n
+What This Implies for Industry / Entrepreneurs:\n
+- Very high growth potential with proven export performance.\n
+- Low domestic import presence suggests strong local supply and export competitiveness.\n
+- Existing global demand from markets such as U.S., EU, Australia — proven buyer base. \n
+- Leverage India’s strength in botanical, herbal, and plant extract processing.\n
+Takeaways / Call to Action:\n
+- If you are in herbal / nutraceutical / botanical extract, plant processing, or allied industries — this is a segment to scale.\n
+👉 Read the complete report at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
         {
     title: "Import Disruption Opportunity: HSN 85182290 – Multi-Driver Loudspeaker Enclosures",
     date: "2025-10-15",
