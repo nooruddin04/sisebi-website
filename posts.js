@@ -1,5 +1,26 @@
 // posts.js
 const posts = [
+                {
+    title: "HSN 84621900 – Hot-forming / Die-forging Machines: A Strategic Import-Replacement Opportunity",
+    date: "2025-10-21",
+    content: `
+India’s imports under HSN 84621900 (hot forming machines for forging, die forging including presses and hot hammers, “other”) reached USD 95.04 million, which is nearly ₹842 crore (conversion rate ₹88.71 per USD). \n
+- Over the past four years, imports in this class have grown at 13.26% CAGR — indicating sustained demand.\n
+O- ur import/export ratio is striking: 41.32× last year, and 22.29× across four years.\n
+That disparity means India imports far more of these machines than it exports — a pronounced dependency.\n
+Commodity clarity: These are hot forming / forging / die-forging machines, presses, hot hammers — machines used for shaping and forging metal under heat. \n
+Globally, these machines are critical in aerospace, automotive, heavy engineering, defense, and metal components manufacturing.\n
+The window is open: if domestic players step up with quality, cost competitiveness, and scale, India can displace imports.\n
+We see this as a high-potential “Make in India” / import-substitution play, especially given government support for capital goods and strategic manufacturing.\n
+Questions to explore further\n
+What are the key cost levers (casting, forging, control systems, materials)?\n
+Who are the incumbent global suppliers (China, Japan, Europe) and how do they price?\n
+Where in India can we build clusters or ecosystems (forging hubs, metal clusters) to enable scale?\n
+What government support, incentives, or tariffs can help domestic manufacturers break in?\n
+To explore all our curated business intelligence insights and opportunity pipelines, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
             {
     title: "HSN 85182190: The ₹854 Crore Import Opportunity for India’s Loudspeaker Makers",
     date: "2025-10-19",
