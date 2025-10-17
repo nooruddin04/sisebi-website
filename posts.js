@@ -1,5 +1,30 @@
 // posts.js
 const posts = [
+            {
+    title: "HSN 85182190: The ₹854 Crore Import Opportunity for India’s Loudspeaker Makers",
+    date: "2025-10-19",
+    content: `
+Introduction:\n
+India’s dependence on imported single loudspeakers (HSN 85182190 – “other single loudspeakers, mounted in enclosures”) has created a large market void. Last year, imports hit US 96.3 million, which at the current exchange rate (₹88.71 / USD) translates to approximately ₹854 million.\n
+Key Trade Metrics:\n
+- 4-year average import growth: 11.43%\n
+- Import/Export value ratio last year: 20.4 × (4-yr average 22.3)\n
+- Customs duty rate (on this sub-heading): 20% basic + 10% social welfare surcharge \n
+Commodity Scope / Related Products:\n
+Under HSN 85182190 you’ll find:\n
+- Single loudspeakers (other types)\n
+- Wired or passive loudspeakers in enclosures\n
+- Ceiling speakers, wall-mounted single units\n
+- Mini-speakers, backup audio units included in this “other” bucket\n
+Why This Is a Prime Make-in-India Opportunity:\n
+- Huge import volumes with strong growth\n
+- Very high import/export ratio — Indian producers are capturing only ~5% of domestic demand\n
+- Duty structure offers some protection, but domestic efficiency and innovation will be key\n
+Key import sources: China dominates supply for this HSN globally \n
+You’ll also find related opportunities, data reports, and regular alerts on such high-impact import substitution sectors, just visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
           {
     title: "Unlocking India’s Auto Self-Reliance: The HSN 87034030 Opportunity",
     date: "2025-10-17",
