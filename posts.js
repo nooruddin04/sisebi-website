@@ -1,5 +1,33 @@
 // posts.js
 const posts = [
+        {
+    title: "HSN 30041090 — The Untapped Export Engine in Antibiotic Derivatives",
+    date: "2025-10-20",
+    content: `
+HSN 30041090 pertains to medicaments “containing penicillins or derivatives thereof (with a penicillanic acid structure), or streptomycins or their derivatives — other” \n
+Sub-codes under 300410 include specific penicillins (e.g. ampicillin, amoxicillin, cloxacillin) but “90” is the residual “other” category. \n
+Key Figures\n
+- Last year’s export from India: USD 418.6 million ≈ ₹3,716 crore\n
+- 4-year average annual export growth: 15.3%\n
+- Import/Export ratio (last year): 0.01, indicating negligible import compared to exports\n
+- Import/Export ratio over 4 years: approximately 0.0 — consistent net exporter\n
+These numbers reflect a sector where India already dominates, with minimal backward reliance on imports.\n
+Why this is a Make in India opportunity\n
+- High export potential with strong growth momentum — antibiotics remain vital globally; derivatives command premium margins.\n
+- Low import dependence — supply chain risk is manageable\n
+- Global demand for generics & APIs — western markets, emerging markets, Africa, Latin America.\n
+- Regulatory and quality barriers act as moat — once capabilities are built, they deter casual entrants.\n
+What to watch / queries to explore\n
+- Which markets currently import the “other” derivatives — segmentation by geography\n
+- Regulatory or patent / exclusivity constraints in target geographies\n
+- Cost arbitrage: raw material sourcing, quality control, certification (GMP, WHO, etc.)\n
+- Logistics, compliance, local registration in import markets\n
+- Alliances or acquisitions to fast-enter constrained geographies\n
+At SISEBI, we regularly surface such niche export plays as part of our opportunity radar.\n
+Explore more export opportunities at our <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
        {
     title: "HSN 0703 10 19: India’s Untapped Onion Export Frontier",
     date: "2025-10-18",
