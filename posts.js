@@ -1,5 +1,39 @@
 // posts.js
 const posts = [
+          {
+    title: "HSN 94049000: A Hidden Export Gem for India’s Furniture & Bedding Sector",
+    date: "2025-10-22",
+    content: `
+If you are exploring export opportunities today, few categories match the promise held by HSN 94049000 — “Other articles of bedding and similar furnishing, mattress supports, cushions, etc.” \n
+Here’s what makes this sub-segment worth a deep look:\n
+- Last year’s export value: USD 397.53 million → approximately ₹ 3528 crores (at ₹ 88.71/USD)\n
+- Four-year average export growth: ~31.6% CAGR\n
+- Import / Export ratio (last year): 0.01\n
+- Import / Export ratio (4-year average): 0.01\n
+In effect, this means India is exporting vastly more than it is importing in this category — a strong competitive edge.\n
+What kind of products fall under HSN 94049000?\n
+These include (but are not limited to):\n
+- Cushions, bolsters, pillows (filled or unfilled)\n
+- Pouffes, ottomans made with stuffed interiors\n
+- Mattress supports, non-standard articles of bedding & similar furnishing\n
+- “Other” bedding items that don’t fall into mattress, quilt, down comforter or spring mattresses categories \n
+Why is this a “Make in India” export win zone?\n
+- Existing export momentum backed by 30%+ growth\n
+- Minimal competition on the import side (low import ratio)\n
+- Leverage India’s strengths in textiles, stuffing, craftsmanship, and supply chain\n
+- Possibility of value addition via design, brand, eco-materials\n
+What questions remain & what should you assess?\n
+- What are the major global markets importing these “other bedding/furnishing” products (geographies, tariffs, compliance)?\n
+- What is the product mix/packaging/quality thresholds demanded?\n
+- Which Indian clusters are already active — where scale & skilled labor exist?\n
+- What certifications (flammability, hygiene, chemical, sustainability) are demanded?\n
+- How to structure export frameworks, logistics, trade finance, and market entry?\n
+At SISEBI, we scan and surface such high-potential export opportunities daily.\n
+If you want a detailed report, comparative markets — reach out via our website.\n
+To explore more such opportunities, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
         {
     title: "HSN 30041090 — The Untapped Export Engine in Antibiotic Derivatives",
     date: "2025-10-20",
