@@ -1,5 +1,40 @@
 // posts.js
 const posts = [
+          {
+    title: "Unlocking India’s Auto Self-Reliance: The HSN 87034030 Opportunity",
+    date: "2025-10-17",
+    content: `
+HSN 87034030 covers motor cars and other passenger transport vehicles, including station wagons, racing cars, hybrids and plug-in combos. \n
+Here’s where the data tells a clear story:\n
+- Import value last year: US 97.48 million → ~ ₹ 865 crore (₹ 88.71 = 1 US$).\n
+- 4-year CAGR (imports): ~ 10.42%\n
+- Import/Export ratio (last year): 70.64\n
+- Import/Export ratio (4-year avg): 44.07\n
+These figures reveal a structural trade deficit: India is importing far more passenger vehicles than it exports.\n
+Why this is a golden window for “Make in India”\n
+- Demand tailwinds\n
+- Rising incomes, urbanization, EV adoption — consumers want more variety, better tech, local brand resonance.\n
+- Policy & fiscal levers available\n
+- With the right incentives (tax breaks, FAME-like support, localization requirements), India can shift from importer to exporter.\n
+Segment-wise entry paths\n
+- Electric / hybrid passenger cars — high potential, low global moats today\n
+- Compact / sub-compact ICE / hybrid — easier to localise\n
+- Performance / niche / specialty vehicles — premium value addition\n
+- Export potential\n
+- Once local capacity matures, vehicles can be exported to neighboring markets (SAARC, Africa, ASEAN), improving the import/export balance.\n
+- Key risk & challenge map\n
+- Supply chain bottlenecks (critical parts, semiconductors)\n
+- Scale economics before volume builds\n
+- Certification, emission norms, safety\n
+- Currency fluctuations & raw material import dependencies\n
+Your Call to Action\n
+- If you're in the auto, EV, component, investment, or policy domain — this is your moment.\n
+- Which subsegments are you strongest in? Where would you place your bets (EV / hybrid / premium / compact)?\n
+- What partnerships or support do you need to move fast?\n
+ for daily trade intelligence, sectoral alerts and more “Make in India” ideas, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
          {
     title: "HSN 13021919: Unlocking India’s Export Edge in Botanical & Vegetable Extracts",
     date: "2025-10-16",
