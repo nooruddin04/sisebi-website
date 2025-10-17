@@ -1,5 +1,30 @@
 // posts.js
 const posts = [
+       {
+    title: "HSN 0703 10 19: India’s Untapped Onion Export Frontier",
+    date: "2025-10-18",
+    content: `
+India’s agricultural export narrative is evolving — and HSN 0703.10.19 (fresh or chilled onions, under “other onions” classification) is quietly emerging as a high-leverage opportunity.\n
+What the numbers say\n
+- Last year, exports under this code hit US 425.39 million (≈ ₹3,774 crore, at ₹88.71/USD).\n
+- Over the last 4 years, average annual export growth in this code has been ~97%.\n
+- Imports in this classification are negligible — import/export ratio ~0.01 last year; ~0.02 over 4 years.\n
+In short: domestic production vs external demand is strongly skewed in India’s favor.\n
+Why this matters\n
+- Because the “other onions” category (beyond common onion grades) includes mixed varieties and lesser-known onions, there’s space for niche exporters to establish dominance. \n
+- The low import volume means minimal domestic competition from foreign suppliers.\n
+- Recent DGFT policy allows exports of this commodity to Sri Lanka and UAE (10,000 MT each) under HSN 07031019. \n
+- India already exports this product to over 140 countries — Bangladesh, Singapore, Malaysia among the top markets. \n
+Key questions for strategy\n
+- Which “other onion” varieties (red, white, specialty, bagged blends) have the best global margins?\n
+- What are the post-harvest, cold-chain, quality, and phytosanitary standards needed, especially for distant markets?\n
+- Which port gateways, logistics corridors and trade routes minimize transit loss?\n
+- How to secure market access and navigate buyer compliance (packaging, residue norms, certifications)?\n
+- Which new markets are underserved and offer first-mover benefits?\n
+If you want detailed market report, Visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
                 {
     title: "HSN 84621900 – Hot-forming / Die-forging Machines: A Strategic Import-Replacement Opportunity",
     date: "2025-10-21",
