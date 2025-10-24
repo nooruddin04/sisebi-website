@@ -1,5 +1,23 @@
 // posts.js
 const posts = [
+              {
+    title: "HSN 97069000 — “Antiques (100+ years)”: High growth import, low domestic supply & a striking Make-in-India opportunity",
+    date: "2025-10-26",
+    content: `
+The commodity under HSN Code 97069000 is defined as: “Works of art, collector’s pieces and antiques; antiques of an age exceeding one hundred years – other”. \n
+Sub-categories include: antique furniture and parts thereof (97069010), articles of antique carpets (97069020), articles of antique paintings and calligraphy (97069030), and other antiques (97069090). \n
+- In India last year, imports stood at US$ 87.46 million – converting to approx. ₹ 777 crores inr (US$ × ₹ 88.71 rate).\n
+- The 4-year average growth of imports is 70.56%, signalling an accelerating trend in demand.\n
+- Meanwhile, the import/export value ratio last year was 27.94, and averaged 33.95 over 4 years – i.e., far more value is coming in than going out.\n
+Such metrics point to a significant import-substitution window: domestic manufacturing, restoration/antique-art workflows or heritage-design products could plug the gap.\n
+Additionally, as India emphasises its cultural heritage and luxury/collectible segments, the upscale segment is witnessing fast growth. For example: in 2024, India’s art & antiques imports rose sharply. \n
+Yet the domestic supply side is relatively under-developed for true antiques (100+ years) in scale, verified provenance, restoration, verification and high-end finishing.\n
+Hence for entrepreneurs, MSMEs or heritage-art players this category offers a two-fold advantage: (i) leveraging strong import demand, and (ii) aligning with “Make in India”/Aatmanirbhar themes.\n
+To succeed, players must focus on: verified sourcing or restoration of antiques, certified provenance, matching global quality expectations, establishing domestic finishing/repair workshops, and building export-capable brands.\n
+At SISEBI we track such high-potential commodity flows daily. Read full report and complete dataset at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
            {
     title: "HSN 72103099 – Flat-Rolled Non-Alloy Steel, Width ≥ 600 mm, Electrolytically Zinc-Coated: A Key Import-Substitution Opportunity for India",
     date: "2025-10-24",
