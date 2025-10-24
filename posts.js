@@ -1,5 +1,43 @@
 // posts.js
 const posts = [
+           {
+    title: "HSN 72103099 – Flat-Rolled Non-Alloy Steel, Width ≥ 600 mm, Electrolytically Zinc-Coated: A Key Import-Substitution Opportunity for India",
+    date: "2025-10-24",
+    content: `
+In this edition of our Commodity Opportunity Series, we deep-dive into HSN 72103099, which covers flat-rolled products of iron or non-alloy steel, of width 600 mm or more, clad, plated or coated — specifically electrolytically plated/coated with zinc, “other” (i.e., not corrugated or galvannealed). \n
+This classification captures products often referred to in industry parlance as electro-galvanised steel coil/sheet, zinc-coated flat steel, or simply EG/GI flat-rolled steel ≥600 mm width.\n
+Why the opportunity is compelling:\n
+- Last year India’s imports for this HSN stood at US$ 94.99 million (≈ ₹ 842 crores).\n
+- The average growth rate of imports over the last four years: ~11.79 % p.a.\n
+- The import/export ratio in value last year: ~287.85 — meaning imports vastly outweigh exports.\n
+- Over the past four years the import/export ratio averaged ~278.03 — consistent high gap.\n
+These metrics reflect a skew where India is heavily reliant on imports for this product category, opening room for domestic manufacture or downstream processing.\n
+Key product features:\n
+- Flat-rolled, non-alloy steel, width ≥ 600 mm.\n
+- Electrolytically zinc-plated/coated (not simply hot-dip); “other” categories excluding corrugated, galvannealed etc.\n
+- Uses: likely in automotive, construction, appliances, roofing/cladding, infrastructure applications where coated steel is required.\n
+- Import replacement potential because supply can be sourced locally and incremental value-addition (coating, processing, finishing) adds margins.\n
+Market and policy tailwinds:\n
+- Recent trade-remedy actions: India’s Directorate General of Trade Remedies (DGTR) has recommended sovereign safeguard duties on flat-steel imports to protect the domestic industry. \n
+- Regulatory push for steel input quality: domestic rules now require imported finished steel and inputs to meet Indian standards, favouring local production. \n
+- With the government’s “Make in India” and downstream-value-addition thrust, coated/galvanised flat steel is a strong strategic segment to localise.\n
+Implications for business/investors:\n
+- A manufacturer or downstream processor that sets up coating/plate-line capacity for steel flats width ≥ 600 mm, zinc-electrolytic coating, could reduce dependence on imports.\n
+- Supply chain advantage: integrate from flat-rolled base steel to coated finished product; opportunity for domestic value-addition and export later.\n
+- Given the large import-export gap, even a modest share shift to domestic could deliver meaningful growth.\n
+- Enterprises already doing cold-rolled or coated steel (or considering expansion) should evaluate this HSN segment specifically.\n
+What to explore further:\n
+- Identify current importers and their volumes (to target for domestic supply).\n
+- Assess domestic manufacturing capacity for flat-rolled and electro-zinc coating lines; feasibilities.\n
+- Understand quality / certification requirements (e.g., BIS, coating specs) applicable to coating operations.\n
+- Review trade-remedy/risk environment for imports (which may favour domestic players).\n
+- Financial modelling: cap-ex for coating line + processing vs landed cost of imports + margin uplift.\n
+Conclusion:\n
+- For industrialists, steel-fabricators, investors or policy analysts focusing on import-substitution in India, HSN 72103099 (zinc-electrolytic-coated flat steel width ≥ 600 mm) stands out. The data signals both a high import dependency and steady growth. With policy tailwinds and domestic manufacturing ambitions, this is a strategically timed window.\n
+To access full data tables, trend charts, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
           {
     title: "HSN 94049000: A Hidden Export Gem for India’s Furniture & Bedding Sector",
     date: "2025-10-22",
