@@ -1,5 +1,30 @@
 // posts.js
 const posts = [
+     {
+    title: "Deep Dive: Export Potential of HSN 12119032 – Psyllium Husk (Isabgul Husk) from India",
+    date: "2025-10-25",
+    content: `
+India has positioned itself as a dominant global supplier of psyllium husk (HSN 12119032). This code is defined as “bark, husk and rind: psyllium (Isabgul husk)”. \n
+Key highlights:\n
+- Last year India’s export value stood at USD 366.22 million, which at ₹ 88.71/USD converts to approximately ₹ 32,50 crore (₹ 3250 million) — underscoring strong commercial scale.\n
+- The four-year average annual export growth rate is 10.74%, signalling steady upward momentum.\n
+- The import to export value ratio is extremely low (0 to 0.01) in India, meaning domestic import competition is negligible and export opportunity remains high.\n
+- In global trade data, India accounts for about 90%+ of exports under HS code 121190 (including psyllium husk) according to recent shipments. \n
+- The product goes by several names that buyers relate to: “Psyllium Husk”, “Isabgul Husk”, “Ispaghula Husk”, “Plantago Ovata Husk”. Using any of these in your sales collateral helps ensure recognition across markets.\n
+Why this is a strong “Make in India” opportunity:\n
+- Dominant export share gives Indian suppliers credibility in key markets.\n
+- Low domestic import levels mean less supply chain complexity and fewer entrenched competitors.\n
+- Growth rate over 10% points to long-term sustainability rather than a short-term trend.\n
+What you should evaluate:\n
+- Ensure product quality & specification (purity levels, mesh size, packaging) match buyer expectations. For example, exports show “psyllium husk powder 95% purity 60 mesh” to the U.S. market. \n
+- Mapping target export geographies (USA, Europe, Middle East) and identifying active buyers/importers. Global data shows buyers in USA, Germany, Bangladesh among others. \n
+- Regulatory and documentation requirements (HSN classification, export clearance, quality certification) for smooth export operations.\n
+- Supply chain considerations: raw seed procurement, processing, husk extraction, packaging & shipping. With India being dominant, local sourcing should be leveraged.\n
+Conclusion: If you are looking for an actionable export business opportunity with existing large markets, steady growth, low domestic import pressure and India-led advantage — HSN 12119032 psyllium husk meets all the criteria.\n
+To explore full data sets and strategic recommendations, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
               {
     title: "HSN 97069000 — “Antiques (100+ years)”: High growth import, low domestic supply & a striking Make-in-India opportunity",
     date: "2025-10-26",
