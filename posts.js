@@ -1,6 +1,27 @@
 // posts.js
 const posts = [
      {
+    title: "Unlocking the Export Potential of HSN 30024129 (Pentavalent Vaccines) – A Strategic “Make in India” Proposition",
+    date: "2025-10-27",
+    content: `
+The HSN code 30024129 covers mixed human vaccines, specifically the DTP-HepB-Hib pentavalent vaccines (Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae type b). \n
+- India’s export for this commodity last year stood at US $ 358.74 million (~₹ 3184 crores at ₹ 88.71 per US$).\n
+- The four-year average export growth rate is an impressive ~40.11 % — signalling strong underlying demand and Indian competitive strength.\n
+- The import/export ratio in value terms is extremely low (0.06 last year, 0.07 average), showing India is primarily an exporter in this category — large external opportunity.\n
+What this means: Indian manufacturers have a lead; global buyers are actively sourcing; you can align your export strategy accordingly.\n
+Key segments: combined paediatric vaccines (single-vial, multi-dose liquid presentations) that integrate multiple antigens — reducing logistics & cost burdens for importing countries. \n
+Major destinations for India’s exports include Pakistan, Bangladesh, Cambodia among others. 
+Given the “Make in India” push, favourable regulatory & institutional support, and vast manufacturing base, this segment is a prime candidate for export-led growth.\n
+Strategic questions for players:\n
+- Do you have/manufacture the vaccine under HSN 30024129 (or can partner with a manufacturer)?\n
+ Have you mapped buyer countries beyond the obvious (look into Africa, SE Asia)?\n
+- Are you prepared for cold‐chain, regulatory, GMP compliance and international supply-chain demands?\n
+- Do you have a marketing/lead-gen plan to reach importers & procurement agencies?\n
+At SISEBI, we document these high-potential HSN opportunities and provide data‐driven intelligence to help you enter or expand in export markets. For more details, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+     {
     title: "Deep Dive: Export Potential of HSN 12119032 – Psyllium Husk (Isabgul Husk) from India",
     date: "2025-10-25",
     content: `
