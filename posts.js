@@ -1,6 +1,31 @@
 // posts.js
 const posts = [
      {
+    title: "Strategic Import-Substitution Opportunity in India: HSN 88022000 – Light Aircraft & Powered Aircraft (≤ 2,000 kg)",
+    date: "2025-10-28",
+    content: `
+The Indian aerospace manufacturing ecosystem stands at a pivotal moment. We examine HSN 88022000 – “Aeroplanes and other powered aircraft of an unladen weight not exceeding 2,000 kg (for example small business aeroplanes, utility aircraft, trainer aircraft).” \n
+- Import figures: Last year India imported around US $ 79.56 million (≈ ₹ 706 crores at ₹ 88.71/USD).\n
+- Growth trend: The average annual import growth over the past four years is 11.61%.\n
+- Trade balance: Import/Export ratio (value) last year: 95.86. Over the last 4 years: 36.14.\n
+Interpretation:\n
+- High import value and strong growth indicate growing domestic demand for aircraft in this segment.\n
+- Import/export ratio last year means nearly all demand is met via imports, signalling a large gap for domestic production.\n
+- Over the 4-year window, the import/export ratio of ~36 suggests opportunity for exports too once local manufacturing capabilities scale.\n
+Why this is a “Make in India” win:\n
+- India has rising demand for light aircraft for training, regional connectivity, private ownership, charter services and utility operations.\n
+- Localising manufacture (or assembly) of aircraft ≤2,000 kg or key subsystems (engines, avionics, composites, landing-gear, interiors) can capture both domestic replacement and future export potential.\n
+- With advanced manufacturing clusters, aerospace parks, composite hubs and government incentives emerging, the timing is favourable.\n
+Action matters:\n
+- If you are in precision-engineering, composites, systems integration, avionics or sub-component supply chain — evaluate how you can align with this opportunity.\n
+- Map your technology readiness, capacity build-up, supply-chain partnerships and certification journeys (DGCA/EASA/FAR) now.\n
+- Consider alliances or joint ventures to ramp up quickly rather than start from scratch.\n
+- Conclusion: HSN 88022000 presents a clear import-substitution and export-leverage opportunity. Don’t wait until the gap closes.\n
+For detailed data, visit our full report at: <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+     {
     title: "Unlocking the Export Potential of HSN 30024129 (Pentavalent Vaccines) – A Strategic “Make in India” Proposition",
     date: "2025-10-27",
     content: `
