@@ -1,5 +1,35 @@
 // posts.js
 const posts = [
+      {
+    title: "Export Growth Spotlight: HSN Code 73084000 – Scaffolding & Shuttering Equipment from India",
+    date: "2025-10-30",
+    content: `
+When we talk about “Make in India” opportunities, the export success of HSN 73084000 stands out. This code covers “equipment for scaffolding, shuttering, propping or pit-propping (excluding composite sheet-piling products and form-work panels for poured-in-place concrete)”. \n
+Here are key metrics:\n
+- Last year’s exports from India: US $ 357.83 million → approx ₹ 3,175 crore (using ₹ 88.71/USD).\n
+- Four-year average annual growth: 21.17%.\n
+- Import/export value ratio: 0.09 (both last year and on four-year average).\n
+These numbers tell a clear story: India is exporting far more than it is importing in this segment. Such a low import/export ratio signals strong domestic manufacturing capability aligned with global demand.\n
+Why this matters\n
+- A CAGR of ~21% means sustained global demand in scaffolding/shuttering equipment.\n
+- A low import ratio suggests India is not heavily reliant on imports for this code, so opportunities exist for domestic suppliers to capture export markets.\n
+- The scope covers scaffolding structures, shuttering systems, propping and pit-propping equipment — all critical in construction, infrastructure and civil works globally.\n
+What to watch\n
+- Product-specific breakdown: While the code groups several equipment types, companies should identify sub-segments (scaffolding frames, shuttering systems, props, pit-props) with highest growth or margin.\n
+- Quality, certification and standards: Global buyers expect compliance with norms (e.g., ISO, EN). India exporters must ensure these to scale.\n
+- Markets and buyers: Export intelligence to identify high demand geographies, trade flows and emerging markets is key. For example, India is already among global exporters in this space. \n
+- Competitive positioning: With growth rates strong, differentiation (pricing, lead time, service) will matter.\n
+- Value chain & localisation: “Make in India” leverage means optimising manufacturing, sourcing and export logistics to serve global clients cost-effectively.\n
+What you can do\n
+- If you manufacture or plan to manufacture scaffolding/shuttering/propping equipment in India, review export data, identify target geographies and map buyer requirements.\n
+- Consider working with trade-service providers or export-intelligence platforms to zoom into sub-segments of HSN 73084000.\n
+- Engage relevant trade bodies, infrastructure / construction associations to align production capacity with export demand.\n
+- Promote your “Made in India” credentials and global compliance credentials to win clients abroad.\n
+In summary: HSN 73084000 presents a compelling export-led growth opportunity under the Make in India agenda. With the right strategy, Indian manufacturers can scale in global scaffolding/shuttering/propping equipment markets.\n
+For full report and detailed segmentation, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
      {
     title: "Strategic Import-Substitution Opportunity in India: HSN 88022000 – Light Aircraft & Powered Aircraft (≤ 2,000 kg)",
     date: "2025-10-28",
