@@ -1,5 +1,36 @@
 // posts.js
 const posts = [
+        {
+    title: "HSN 87112019 – Scooter Exports (50-250 cc): Indian Supply Chain & “Make in India” Opportunity",
+    date: "2025-11-01",
+    content: `
+The Indian export story of scooters in the 50-250 cc engine class is emerging as a compelling case for manufacturers, component suppliers and export-oriented entrepreneurs. Under HSN 87112019 (Scooters – Other) India reported exports of US$ 356.69 million last year, and has delivered an average export growth of 13.81 % over the past four years.\n
+Key details:\n
+Commodity description: HSN 87112019 covers “Motorcycles (including mopeds) and cycles fitted with an auxiliary motor; with reciprocating internal-combustion piston engine of cylinder capacity exceeding 50 cc but not exceeding 250 cc: Scooters – Other”. \n
+This means scooters in the conventional ICE segment within 50-250 cc fall into this category.\n
+- Export value and INR equivalent: US$ 356.69 million ≈ ₹ 3,165 crore (1 USD ≈ ₹ 88.71).\n
+- Growth trend: Average export growth over the last four years is 13.81 %.\n
+- Import/Export ratio: The import value is essentially zero and the import/export ratio is negligible — indicating India is a net-exporter in this category.\n
+Why this is a “Make in India” chance:\n
+- The domestic scooter value-chain is mature (R&D, manufacturing, tooling, component ecosystem).\n
+- Export trend and growth signal global demand.\n
+- Minimal import competition suggests Indian firms are already competitive.\n
+- With the right focus on quality, certification, and export markets, there is space for new entrants or expansions.\n
+- Who can benefit: OEMs of scooters, tier-1 and tier-2 component suppliers, export trading houses, country-specific distributor networks looking for “Indian-made” advantage, investors seeking export play in automotive manufacturing.\n
+What to check:\n
+- Target export markets & duty/FTA benefits.\n
+- Engine emission norms, homologation requirements in overseas markets.\n
+- Cost position vs regional competitors (SE Asia, Vietnam, Thailand).\n
+- After-sales and service network abroad (key for scooters).\n
+- Supply-chain resilience—components, sub-assemblies, logistics.\n
+- Actionable next step: We recommend running a quick feasibility scan – identify top 3 export destination markets, assess Indian cost base vs competitor, map out regulatory/approval path. If this matches your business objective, start engaging suppliers or set up JV/contract manufacture.\n
+Conclusion:
+HSN 87112019 presents a strong export-driven opportunity under the “Make in India” banner for scooters in the 50-250 cc range. With export value topping US$ 350 million and four-year growth in double-digits, the timing is right. If you are positioned in the ecosystem, the next 12-24 months could define significant advantage.\n
+For the full dataset, destination insights, supplier list and strategic guidance visit our platform at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+
        {
     title: "Make-in-India Opportunity in HSN 85141900: Industrial Electric Furnaces & Ovens",
     date: "2025-11-02",
