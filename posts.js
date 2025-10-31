@@ -1,6 +1,33 @@
 // posts.js
 const posts = [
       {
+    title: "Seizing the Import-Substitution Window: HSN 84623200 – Slitting & Cut-to-Length Lines",
+    date: "2025-10-31",
+    content: `
+The recently analysed import-data for the Indian market presents a compelling story for any player in the metal-processing machinery space. Consider the numbers under HSN 84623200 — described as “slitting lines, cut-to-length lines and other shearing machines (excluding presses) for flat products”. \n
+- Last year India imported US $73.41 million, which at today’s exchange rate (~₹ 88.71/US$) translates to approximately ₹ 651 crore.\n
+- The average growth rate of imports over the last four years is 3016% — indicating explosive momentum in this category.\n
+- Import/Export value ratio last year was 26.27 — meaning for roughly every ₹1 of exports, ₹26 of imports took place. The four-year average ratio is around 33, underscoring a consistent structural dependence on imports.\n
+What does this tell us?\n
+- Domestic manufacturing in this machine-tool niche remains under-served.\n
+- A large market that continues to import signals strong potential for “Make in India” manufacturing, local assembly or strategic partnerships.\n
+- Stakeholders: equipment manufacturers, machine-tool integrators, metal-formers, sheet-metal fabricators, steel/coating lines — all stand to gain if local supply can be built.\n
+- With the government’s push on domestic manufacturing, aligned incentives and rising metal-processing capacity in India make this an opportune time.\n
+Why this category specifically?\n
+- Because slitting lines and cut-to-length lines are key enablers in sheet-metal, coil-processing, steel plates and downstream fabrication. Having a local manufacturing base reduces lead times, forex exposure, import-duty pressures and supply-chain risks.\n
+Recommended strategic actions:\n
+- Map current importers and major users under HSN 84623200 to understand demand pockets.\n
+- Evaluate technical capabilities required — for instance automation, precision, integration with coil handling or downstream lines.\n
+- Consider tie-ups with existing global OEMs for licence manufacturing or local assembly.\n
+- Monitor government schemes (PLI, MSME, capital-goods incentives) targeted at metal-processing and machine-tools.\n
+- Position your value proposition around “local manufacturing + aftermarket support + faster delivery” to win customers migrating from imports.\n
+Call to readers:\n
+- If you are a machine-tool manufacturer, metal-processing plant owner, a procurement executive or investment-analyst looking at domestic manufacturing opportunities — let’s talk. What questions do you have? Which sub-segments of slitting/cut-to-length lines are you focusing on? Let’s explore the potential together.\n
+- For the full database-driven insight and market-opportunity deck, visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+      {
     title: "Export Growth Spotlight: HSN Code 73084000 – Scaffolding & Shuttering Equipment from India",
     date: "2025-10-30",
     content: `
