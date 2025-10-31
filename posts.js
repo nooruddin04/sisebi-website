@@ -1,5 +1,35 @@
 // posts.js
 const posts = [
+       {
+    title: "Make-in-India Opportunity in HSN 85141900: Industrial Electric Furnaces & Ovens",
+    date: "2025-11-02",
+    content: `
+In our latest insight, we examine HSN 85141900, which represents “Resistance heated furnaces and ovens: Other” — listed under industrial or laboratory electric furnaces and ovens. \n
+Key Statistics\n
+- Last year India’s import value for this heading was US $ 72.63 million, equivalent to approximately ₹ 644 million at an exchange rate of ₹ 88.71 per US $ (today’s rate).\n
+- The four-year average annual import growth rate is ~12.11%.\n
+- The import/export value ratio last year was ~14, and over the past four years it has averaged ~11 — indicating that for every ₹ 1 in exports, India imported ~₹ 11-₹ 14.\n
+What does this imply?\n
+- Such a high import volume, positive growth rate and strong import/export gap points to a sizeable domestic manufacturing opportunity. India currently depends heavily on imports for this category, which suggests latent demand for local production.\n
+- Commodity Scope\n
+- While the heading says “Other”, the typical products captured under HSN 85141900 include resistance-heated industrial furnaces and ovens, hot-air chambers, reflow ovens, high-temperature processing furnaces used in laboratory, research, manufacturing settings. \n
+Why this is a game-changer\n
+- Import substitution reduces foreign exchange outflow and strengthens local manufacturing.\n
+- With steady import growth (~12% p.a.) the market is not stagnating — there is expanding demand.\n
+- The import/export ratio highlights that domestic production is lagging far behind imports — a gap to be filled.\n
+Actionable steps for licensees/manufacturers\n
+- Evaluate the manufacturing cost base for resistance-heated furnaces — consider design, component sourcing, assembly, quality standards.\n
+- Assess whether you can meet applications across laboratory, industrial, research segments.\n
+- Identify niche segments (e.g., reflow ovens, hot-air chambers, vacuum ovens) where imports dominate and local manufacturing is low.\n
+- Leverage policy incentives under the Make-in-India, Production Linked Incentive (PLI) or other schemes for capital goods / capital-intensive manufacturing.\n
+Why SISEBI’s report matters\n
+- We provide compiled trade-data, growth trends, competitive landscape and actionable insights — so businesses can make informed decisions quickly.\n
+Conclusion\n
+- HSN 85141900 presents a compelling import-substitution opportunity in India’s industrial/equipment manufacturing ecosystem. With strong import growth, a high import/export ratio and an obvious gap in domestic production — forward-looking manufacturers or investors should pay attention now.\n
+- Read further for full data tables, trend graphs and competitive analysis at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
       {
     title: "Seizing the Import-Substitution Window: HSN 84623200 – Slitting & Cut-to-Length Lines",
     date: "2025-10-31",
