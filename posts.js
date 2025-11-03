@@ -1,5 +1,33 @@
 // posts.js
 const posts = [
+        const posts = [
+        {
+    title: "Capturing Export Growth in HSN 15081000 (Ground-nut Oil Crude) — A Strategic “Make in India” Proposition",
+    date: "2025-11-03",
+    content: `
+India’s export basket offers a standout opportunity under HSN 15081000 — defined as Ground-nut Oil and its fractions, whether or not refined, but not chemically modified crude oil. \n
+Let’s unpack the case:\n
+- Last year exports from India: US$ 355.89 million (approx. ₹ 3,157 crore at US$ = ₹ 88.71)\n
+- Four-year average annual growth rate: ~61.25%\n
+- Import/export value ratio: zero (i.e., India is virtually not importing this line while exporting strongly)\n
+- These figures point to a high-growth export line with minimal domestic import pressure — an ideal scenario for Indian firms to either scale production or integrate processing & value addition.\n
+Why this matters:\n
+- A four-year CAGR of ~61% is rare in commodity exports — indicates strong global demand and India’s increasing competitiveness.\n
+- Zero import ratio means domestic processing does not face fierce import-substitution pressure; also implies export-oriented supply chains are relatively clean.\n
+- The classification (HSN 15081000) covers crude ground-nut oil (unrefined/non-modified) which means Indian producers can focus on upstream and logistics efficiencies rather than heavy downstream processing.\n
+Key strategic questions for your business to explore:\n
+- What are the top destination markets for India’s crude ground-nut oil exports, and what are their import tariffs / quality standards?\n
+- Does the “crude” product require downstream refining or can exported crude itself command a premium?\n
+- What are India’s domestic bottlenecks — e.g., ground-nut cultivation, oil-extraction capacity, logistics/port-access — that may limit scale-up?\n
+- Are there opportunities for value-addition (refining, speciality grades) to capture higher margins versus simply exporting crude?\n
+What trade policy or incentives exist (MEIS/SEIS, export finance) to accelerate growth in this line?\n
+In summary: for Indian firms seeking a “Make in India” export push, HSN 15081000 offers an attractive combination — strong export growth, minimal import competition, and scope to scale.\n
+Explore the full report with market graphs, country-level import trends, buyer lists and execution checklists on our site.\n
+Visit <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+
         {
     title: "HSN 87112019 – Scooter Exports (50-250 cc): Indian Supply Chain & “Make in India” Opportunity",
     date: "2025-11-01",
