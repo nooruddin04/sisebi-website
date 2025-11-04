@@ -1,7 +1,33 @@
 // posts.js
 const posts = [
-        const posts = [
-        {
+                   {
+    title: "HSN 85249110 – Strategic Import Substitution Opportunity for India’s Display Module Industry",
+    date: "2025-11-04",
+    content: `
+The product classification under HSN 85249110 refers to:\n
+“Flat panel display modules, whether or not incorporating touch-sensitive screens – Other: of liquid crystals: for the goods of sub-heading 8471.30 or 8471.41.” \n
+In plain language this covers liquid-crystal display (LCD) modules used in automatic data-processing machines (portable and non-portable computers/ systems) under headings 8471.30 (portable machines) and 8471.41 (machines comprising CPU + input/output). \n
+Key statistics:\n
+- India’s imports last year: US $62.82 million → ~ ₹ 557 crores (₹88.71 per US$).\n
+- Four-year average import growth: ~11.9% p.a.\n
+- Import/export value ratio last year: ~9.53; four-year average: ~11.26.\n
+What this means: The country is importing far more of these modules than exporting, and the gap is growing steadily. This points to a clear domestic manufacturing / assembly opportunity under ‘Make in India’.\n
+Why this is attractive:\n
+- The modules are critical components in laptops, desktops, tablets, all-in-one PCs and other ADP machines.\n
+- Given high import dependency, setting up local assembly or module manufacturing offers supply-chain advantage, cost savings, faster turnaround and import duty / logistics benefits.\n
+- With average annual import growth at ~12 %, future volumes look promising for upstream suppliers and contract manufacturers.\n
+What to look out for / next-steps:\n
+- Map local electronics cluster capacity in module assembly, panel bonding, back-lighting, driver circuit integration.\n
+- Analyse current import sources: which countries dominate supply, landed cost, tariff/disincentives.\n
+- Identify whether full module manufacturing (glass panel + driver + housing) or regional assembly (import sub-assembly, integrate locally) is more viable.\n
+- Engage with major OEMs/ODM to secure off-take agreements and long-term contracts.\n
+- Explore incentives and policy support: electronics manufacturing clusters, PLI schemes, import-duty rationalisation, export-linked benefits.\n
+In conclusion: HSN 85249110 represents a niche but high-potential segment for import substitution. With solid growth, large import volumes and limited domestic manufacturing, the window is open for industry players, investors and policy-makers alike.\n
+For a detailed breakdown, supplier map, cost structure and actionable business model, visit our full report at <a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+                {
     title: "Capturing Export Growth in HSN 15081000 (Ground-nut Oil Crude) — A Strategic “Make in India” Proposition",
     date: "2025-11-03",
     content: `
