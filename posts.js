@@ -1,5 +1,27 @@
 // posts.js
 const posts = [
+    {
+    title: "Unlocking Export Potential in HSN 19053100 – Sweet Biscuits (Cookies, Cream Biscuits & Wafers)",
+    date: "2025-11-06",
+    content: `
+The commodity heading HSN 19053100 is described as: “Sweet biscuits; waffles and wafers – sweet biscuits.” \n
+Common items under this heading include: cream biscuits, cookie-style sweet biscuits, chocolate-coated biscuits, wafers, and assorted packet biscuits.\n
+Here’s why this trade-segment matters for India:\n
+- Last-year exports from India for HSN 19053100 stood at US$ 340.64 million (~₹ 3,024 crore at US$1 = ₹ 88.71).\n
+- Four-year average annual export growth rate is 15.8% — strong and sustained.\n
+- India’s import/export value ratio for this heading is only 0.04, implying that we largely export and import very little — giving Indian producers a clear structural advantage.\n
+- Classification clarity: HSN 1905 covers bread, pastry, cakes, biscuits and other bakers’ wares. The sub-heading 19053100 is specifically for sweet biscuits (excluding crispbread, gingerbread, etc). \n
+- This segment aligns well with the “Make in India” strategy: low import competition, rising global demand for branded and private-label biscuits, and established Indian capacity in confectionery and bakery manufacturing.\n
+Key considerations for players looking to enter or scale-up:\n
+- Product differentiation: cream-filled biscuits, chocolate-coated variants, value-packs for export markets.\n
+- Compliance: correct HSN classification, export documentation, quality and packaging standards.\n
+- Target markets: While many Indian exports go to Africa and South-Asia, growing demand in Middle-East, ASEAN and Latin-America should be explored. \n
+- Supply-chain and cost advantage: With import competition very low, Indian exporters can gain ground provided production cost, logistics and branding are managed well.\n
+For any exporter or manufacturing entrepreneur this is a strong lead-sector: well-defined classification, quantified export amount, strong growth trend, and favourable trade-structure.\n
+If you would like the full breakdown of markets, top buyers, pricing benchmarks, and strategy guidelines for HSN 19053100 — head to our full report at<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
                    {
     title: "HSN 85249110 – Strategic Import Substitution Opportunity for India’s Display Module Industry",
     date: "2025-11-04",
