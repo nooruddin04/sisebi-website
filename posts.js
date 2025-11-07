@@ -1,6 +1,33 @@
 // posts.js
 const posts = [
     {
+    title: "HSN 44012200 – Non-Coniferous Wood Waste (Chips / Sawdust / Briquettes) & the “Make in India” Opportunity",
+    date: "2025-11-07",
+    content: `
+The code HSN 44012200 covers non-coniferous wood in chips or particles; sawdust and wood-waste and scrap, whether or not agglomerated in logs, briquettes or pellets. \n
+Why this code merits attention:\n
+- Last year India’s import value was USD 58.47 million – converting at ₹ 88.71/USD this comes to approximately ₹ 519 crores.\n
+- The average import growth over the past 4 years has been 62.4 % annually – a clear upward trend in demand.\n
+- The 4-year ratio stands at 1,456:1, meaning imports hugely eclipse exports – a textbook import-substitution opening.\n
+- Key end-uses include briquettes/pellets, biomass fuel, industrial boilers, paper and pulp feedstock. For example, India’s biomass briquette/pellet market is growing rapidly thanks to industrial demand and policy push. \n
+What this means for manufacturing/entrepreneurs:\n
+- With high import growth and negligible domestic export, there’s a gap in domestic supply that can be addressed.\n
+- Feed-stock (sawdust, wood chips, wood waste) is available in saw-mill regions, agro-industrial zones and forestry by-products.\n
+- Given policy support for biomass, pellets and “waste to wealth” models in India, this segment offers favourable alignment with sustainability, energy transition and circular economy agendas.\n
+- Domestic “Make in India” manufacturing of logs/briquettes/pellets from non-coniferous wood waste could substitute for imported volumes, retain value domestically, create jobs and reduce exposure to import dependencies.\n
+What to evaluate before jumping in:\n
+- Availability and cost of raw material (non-coniferous wood waste, sawdust) in your region.\n
+- Capital and operational cost for processing (drying, chipping, agglomeration into briquettes/pellets) – such business models are already underway in India. \n
+- End-market demand: industrial boilers, cement/kiln fuel substitution, biomass co-firing, paper/pulp feedstock, rural fuel, export potential.\n
+- Regulatory and policy factors: subsidies for biomass/pellet manufacturing, mandates on co-firing, waste-to-energy schemes. \n
+- Logistics and supply-chain: collection of the waste, processing and agglomeration, storage, transport.\n
+In summary: For those in the wood-waste, sawmill by-product, biomass fuel or briquette/pellet manufacturing ecosystem, HSN 44012200 presents a very compelling import-substitution opportunity. National demand is rising, imports are large and growing, domestic supply is weak.
+Want the full data-sheet, list of domestic and global players, feed-stock mapping, investment sizing and project metrics? Visit our website now.
+Explore more at<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+    {
     title: "Unlocking Export Potential in HSN 19053100 – Sweet Biscuits (Cookies, Cream Biscuits & Wafers)",
     date: "2025-11-06",
     content: `
