@@ -1,6 +1,28 @@
 // posts.js
 const posts = [
     {
+    title: "Deep Dive: Import-Substitution Opportunity for HSN 71159010 – Strategic Insight for Indian Manufacturers",
+    date: "2025-11-08",
+    content: `
+The Harmonised System Nomenclature (HSN) Code 71159010 is defined as “Other articles of precious metal or of metal-clad with precious metal – Other: laboratory and industrial articles of precious metal.” \n
+In practical trading terms, this includes items such as precision laboratory components made of silver, gold-plated or metal-clad precious metals for industrial use and other specialised articles.\n
+According to recent import-export data for India:\n
+- Last year’s import value: US$ 55.33 million → approximately ₹ 490 crores inr at ~₹ 88.71/US$.\n
+- Four-year average import growth rate: ~17.66%\n
+- Import/Export value ratio last year: ~23.95\n
+- Import/Export value ratio over past four years: ~16.74\n
+These metrics confirm that India is heavily reliant on imports under this code, with exports being extremely limited in value terms.\n
+From a policy and manufacturing perspective, this signals a clear import-substitution zone:\n
+Domestic manufacturers can potentially fill the gap in supplying industrial and laboratory-grade precious-metal articles.\n
+The high growth rate shows demand is not static—there is a dynamic market.\n
+The high import/export ratio implies that India currently exports very little of this category, so the domestic value-chain is underdeveloped.\n
+For companies and entrepreneurs looking into manufacturing opportunities or supply-chain plays, this is a fertile domain.\n
+At SISEBI we track such trade-intelligence insights daily. If you would like the full breakdown (by country of import, exact product sub-categories, tariff dynamics and market entry suggestions) please download the report via our website.\n
+Read the full analysis and next-steps here<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+    {
     title: "HSN 44012200 – Non-Coniferous Wood Waste (Chips / Sawdust / Briquettes) & the “Make in India” Opportunity",
     date: "2025-11-07",
     content: `
