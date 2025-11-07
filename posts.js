@@ -1,8 +1,26 @@
 // posts.js
 const posts = [
+     {
+    title: "HSN 09011141 – Green Coffee (Robusta Cherry AB Grade): Rapid-Growth Export Opportunity from India",
+    date: "2025-11-08",
+    content: `
+The HSN code 09011141 corresponds to “Coffee, whether or not roasted or decaffeinated; coffee husks and skins; coffee substitutes containing coffee in any proportion – coffee, not roasted : not decaffeinated : Robusta Cherry AB Grade”. \n
+This grade is a key export-item for India, driven by global demand for Robusta beans used in blends, instant coffee and growing specialty segments. Key reasons this is a high-opportunity category now:\n
+- India’s last-year exports of this commodity stood at US$ 337.87 million (≈ ₹2,999.4 crore at ₹88.71/US$).\n
+- The four-year average annual growth rate is ~38.28%, signalling strong momentum.\n
+- Import/Export ratio in values for India is zero: essentially no competing imports.\n
+The combination of zero import competition + export-only focus + high growth means exporters, growers and processors are well placed to scale.\n
+Grades such as Robusta Cherry AB (and variants like PB, C, BBB etc) are increasingly sought by European and other international buyers. \n
+India is recognized among the top coffee producers/exporters and is building specialty/quality branding which adds value. \n
+For growers, processors and export houses this means: scale up supply of Robusta Cherry AB grade, secure buyer networks abroad, optimise logistics for export-focused channels, and emphasise quality/traceability to capture premium demand.\n
+We invite you to explore how your business can plug into this opportunity: download our detailed report, check grade/market breakdowns, understand buyer geographies, and ask your specific questions below.\n
+Follow us for daily exclusive business insights and opportunity alerts.<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
     {
     title: "Deep Dive: Import-Substitution Opportunity for HSN 71159010 – Strategic Insight for Indian Manufacturers",
-    date: "2025-11-08",
+    date: "2025-11-09",
     content: `
 The Harmonised System Nomenclature (HSN) Code 71159010 is defined as “Other articles of precious metal or of metal-clad with precious metal – Other: laboratory and industrial articles of precious metal.” \n
 In practical trading terms, this includes items such as precision laboratory components made of silver, gold-plated or metal-clad precious metals for industrial use and other specialised articles.\n
