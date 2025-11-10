@@ -1,5 +1,30 @@
 // posts.js
 const posts = [
+      {
+    title: "Make-in-India Export Surge: HSN 13023239 – Guar Gum Powder & Related Grades",
+    date: "2025-11-10",
+    content: `
+How India’s Guar-Derived Thickeners (HSN 13023239) Open Up High-Growth Export Pathways\n
+In India’s export landscape, the category under HSN 13023239 merits serious attention. This classification covers mucilages and thickeners “derived from locust beans, locust-bean seeds or guar seeds” — essentially including products marketed as guar gum powder, treated/pulverised guar gum, high-viscosity guar gum, and other guar‐based thickeners. \n
+Let’s unpack why this is a strategic export window:\n
+- Large-scale current exports – US$ 337.82 million in the last year (~₹ 2,997 crore at US$1 = ₹ 88.71) shows the category already has strong market traction.\n
+- Explosive growth – With a 4-year CAGR of ~112.53 %, demand is accelerating rapidly, which signals rising global appetite and/or supply gap.\n
+- Favourable trade position – The import/export ratio is effectively zero for imports, meaning India is primarily an exporter, not importer, of this product category — indicating strong domestic raw material/processing capability and export-readiness.\n
+- Wide end-use spectrum – Guar gum and related thickeners are used in food applications (as thickener or stabiliser), oil & gas industry (fracturing fluids), paper and textiles, and personal care/cosmetics. \n
+- Value-addition potential – Rather than exporting raw guar seed, turning it into processed derivatives (powders, specialised grades) allows Indian players to capture higher margins, control quality, and meet demanding industrial specifications.\n
+- “Make in India” alignment – Given the vast guar seed resource base (in India’s north-west regions) and the export success, this presents a perfect fit for India’s manufacturing/export push.\n
+What to focus on if you want to tap this opportunity:\n
+- Establish or upgrade processing units to produce consistent grades (food-grade, high-viscosity, treated/pulverised etc).\n
+- Ensure international quality-compliance (food-grade certifications, industry-specific grades for oil & gas, etc).\n
+- Build direct export linkages and understand the destination markets (including pricing, logistics, certificates of origin, buyer specifications).\n
+- Harness domestic raw-material supply (guar seeds), ensure continuity and cost control.\n
+- Monitor global industry drivers (e.g., drilling activity in oil & gas, food-industry demand for plant-based thickening agents, growth of hygiene/cosmetics sectors).\n
+In conclusion: HSN 13023239 stands out today as a ready-to-scale, globally-competitive export commodity for Indian manufacturers and exporters. With the right investment in processing and market access, the gains could be significant.\n
+Want to explore detailed country-wise data, pricing benchmarks, competitor mapping, and action plan? Visit our full report.\n
+Continue reading at:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
      {
     title: "HSN 09011141 – Green Coffee (Robusta Cherry AB Grade): Rapid-Growth Export Opportunity from India",
     date: "2025-11-08",
