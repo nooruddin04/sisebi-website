@@ -1,6 +1,36 @@
 // posts.js
 const posts = [
       {
+    title: "Closed‐Die Forging Machines (HSN 84621100) – Strategic Import-Substitution & “Make in India” Play",
+    date: "2025-11-11",
+    content: `
+The global heavy-metal forming equipment segment is increasingly relevant for India’s industrialisation drive. In particular, machines classified under HSN 84621100 — namely closed-die forging machines (i.e., high-precision forging presses and die-forging equipment) — present a strong domestic manufacturing opportunity.\n
+Here are the key facts:\n
+- India imported ~USD 53.38 million (~₹ 473 crore) worth of these machines last year.\n
+- The four-year average import growth rate is ~28% annually.\n
+- Last year’s import/export value ratio was ~177 (i.e., imports were 177 times exports) and over the past four years the ratio averaged ~105 — indicating minimal exports and heavy import dependency.\n
+- Under HSN heading 8462 (machine-tools for working metal by forging, etc.), the subheading 84621100 is explicitly described as “Closed die forging machines”. \n
+- GST / Customs cross-reference shows that machine-tools under 8462 are subject to 18% GST in India. \n
+Why this is a compelling “Make in India” case:\n
+- Significant import volume with strong growth means a deep addressable market.\n
+- Import/export imbalance signals domestic manufacturing gap and opportunity for substitution.\n
+- The Indian government’s focus on capital-goods, heavy equipment and manufacturing ecosystem support aligns with such opportunities.\n
+- Upgrading domestic machine-tool production also bolsters the supply chain for automotive, aerospace, power, infrastructure and high-end engineering sectors.\n
+- Establishing capability in closed-die forging presses provides technological spill-over into allied equipment categories (forging hammers, transfer presses, precision presses) — broadening business potential.\n
+What to evaluate / questions to ask if you’re entering this space:\n
+- What is the current domestic capacity for manufacturing closed-die forging machines (design, casting, forging, finishing, control systems) and how many suppliers exist?\n
+- What are the typical imported brands/types and what specification gaps exist (tonnage, automation, controls, service support)?\n
+- What are the key end-user industries (automotive, aerospace, energy) and what are their future capex plans for forging equipment?\n
+- What policy/incentive mechanisms exist (Make in India, PLI schemes, import-duty safeguards, localisation mandates) that could de-risk investment?\n
+- What is the competitive intensity (imported-OEMs, Chinese/Korean/European machines) and how can a domestic entrant differentiate (cost, service, localisation, supply chain responsiveness)?\n
+- What export potential exists once domestic substitution begins — the import/export ratio suggests very low current exports. Could India become an exporter of such machines?\n
+In summary:\n
+With HSN 84621100 marking the segment of closed-die forging machines, India faces a clear import-dependency and high-growth opportunity for domestic manufacturing. For industrial players, equipment manufacturers, capital-goods investors and policy-oriented strategists, this is a market ripe for action.\n
+Continue reading our full report for detailed market sizing, company-profiles, supply-chain maps and actionable SWOT analysis<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
+      {
     title: "Make-in-India Export Surge: HSN 13023239 – Guar Gum Powder & Related Grades",
     date: "2025-11-10",
     content: `
