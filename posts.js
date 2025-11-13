@@ -1,5 +1,28 @@
 // posts.js
 const posts = [
+        {
+    title: "HSN 03061740 – Black Tiger Shrimp (Penaeus monodon): A High-Growth Export Story for India",
+    date: "2025-11-13",
+    content: `
+The Indian export story in seafood continues to shine, and one of the most compelling opportunities right now lies in HSN 03061740 – which classifies frozen/fresh “Black Tiger Shrimp (Penaeus monodon)”. \n
+Here’s why this commodity is attracting attention:\n
+- Strong current export base – India achieved exports of US$ 327.61 million in the last year alone (≈ ₹ 2907 crores inr at US$1 = ₹ 88.71).\n
+- Exceptional growth rate – The four-year average export growth rate stands at 34.2 %, signalling robust momentum.\n
+- Minimal import competition – Import/Export ratio is essentially zero in India for this code, indicating India is not significantly importing what it is exporting.\n
+- Well-defined HS/HSN classification – HSN 03061740 is clearly demarcated for Black Tiger Shrimp (Penaeus monodon) under crustaceans (Chapter 03) in India’s trade system. \n
+- Global demand trend – Indian exporters are supplying the product to key global markets and the crustacean export segment is an established strength for India. \n
+- Make in India relevance – Given the growth, scale and low import penetration, the segment offers “Make in India” manufacturers, exporters and supply-chain players a strategic entry point.\n
+Business-lead action points – For companies or entrepreneurs:\n
+- Register under the correct HS/HSN (03061740) classification.\n
+- Establish reliable aquaculture/supply-chain of Penaeus monodon with export-grade quality and certifications.\n
+- Map buyers and markets (US, Japan, EU, China etc) and offer competitive pricing, logistics and quality compliance.\n
+- Leverage India’s export reputation and act early because rapid growth means competition may rise.\n
+- Risk and compliance considerations – Ensure you are aligned with export regulations: product hygiene standards, shipping in frozen/fresh form as per classification, correct port & logistics infrastructure, accurate HS code usage.\n
+- In short: HSN 03061740 – Black Tiger Shrimp (Penaeus monodon) combines high growth, proven export performance and clear “Make in India” potential. If you are exploring commodities to export, this deserves front-line consideration.\n
+For a deeper dive—detailed data, port-wise breakdowns, pricing trends, top buyer countries—visit our full report on SISEBI:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">
+      Homepage</a>\n
+.`
+  },
       {
     title: "Closed‐Die Forging Machines (HSN 84621100) – Strategic Import-Substitution & “Make in India” Play",
     date: "2025-11-11",
