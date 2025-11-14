@@ -1,5 +1,18 @@
 // posts.js
 const posts = [
+      {
+    title: "HSN 08039010 – India’s Rapidly Expanding Banana Export Opportunity",
+    date: "2025-11-15",
+    content: `
+India’s banana exports (HSN 08039010: Fresh Bananas, Cavendish Bananas, Green Bananas) reached ₹2,870 crore in the last financial year, reflecting strong global demand for Indian fresh fruit. This segment has recorded an exceptional average growth rate of 54.93% over the past four years, placing it among the fastest-growing fresh produce export categories from India.\n
+The export landscape is dominated by markets in the Middle East, South Asia, and parts of Africa, where Indian bananas are recognised for quality, pricing, and consistent supply volumes. Importantly, India’s import–export ratio for this commodity is zero, demonstrating complete domestic capability without any dependency on foreign supply.\n
+Industry data indicates that expanding pack-house infrastructure, improved cold-chain support, and rising global preference for Cavendish varieties have strengthened India’s competitive position. States such as Maharashtra, Gujarat, Andhra Pradesh, and Tamil Nadu are primary contributors to export-grade produce, supported by farmer clusters and contract-growing networks.\n
+Under the Make in India framework, this category presents a compelling opportunity for exporters, aggregators, logistics providers, and agri-startups. With sustained demand from international retail chains and wholesalers, entry barriers remain low while scale potential remains high.\n
+Our detailed report covers key buyer markets, pricing patterns, quality parameters, common trade challenges, and a step-by-step view of opportunity expansion in this product category.\n
+Explore the complete analysis and more export-ready opportunities at:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
              {
     title: "HSN Code 38089361 – Spotting the Import-Substitution Window",
     date: "2025-11-16",
