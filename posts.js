@@ -1,5 +1,35 @@
 // posts.js
 const posts = [
+             {
+    title: "HSN Code 38089361 – Spotting the Import-Substitution Window",
+    date: "2025-11-16",
+    content: `
+We are analysing commodity under HSN 38089361: goods covered in the supplementary note to Chapter 38 – namely packaged insecticides / rodenticides / fungicides / herbicides / anti-sprouting products / plant-growth regulators sold in prepared form for retail. \n
+Key data at a glance\n
+Last year’s Indian imports: US 46.18 million ≈ ₹ 409.6 crores (at US $1 = ₹88.71).\n
+Average import growth over last 4 years: 17.34%.\n
+Import/Export ratio (by value) last year: 577. Over last 4 years: 977.\n
+These ratios suggest exports are tiny relative to imports – a large dependence on foreign supply.\n
+Why this matters\n
+A high import/exports ratio signals minimal domestic manufacturing relative to demand: a clear void to fill.\n
+Sustained growth in imports (~17% p.a) indicates rising market demand and opportunity for local players to step in.\n
+Under the “Make in India” banner, domestic production of such goods can reduce import dependency, capture value-chain margin and serve both Indian and global markets.\n
+What types of goods are we talking about?\n
+Retail-packaged insecticides/rodenticides/fungicides for crop protection.\n
+Herbicides and anti-sprouting agents.\n
+Plant-growth regulators in boxed or pre-prepared form for agriculture or horticulture.\n
+All these fall under the broad umbrella of Chapter 38 miscellaneous chemical products. \n
+Action items for industry players\n
+Identify potential formulations which India currently imports in large volumes.\n
+Assess capability to manufacture (or partner) in-country – packaging, formulation, regulatory approvals.\n
+Map supply-chain costs, raw-material sourcing, compliance (agro-chemical regulation).\n
+Explore export potential: if domestic market is reliant on imports, manufactured output may be exportable.\n
+Conclusion\n
+HSN 38089361 presents a very good import-substitution and “Make in India” opportunity. The numbers show a clear gap in domestic supply and rising demand. For entrepreneurs, chemical manufacturers, agritech firms and investment analysts this is a signal worth exploring.\n
+For a detailed breakdown, competitor mapping and step-by-step opportunity assessment, visit our full analysis. Follow us here for daily exclusive business opportunities and head to our website for the complete report →<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
           {
     title: "Nickel-Metal Hydride (NiMH) Batteries: A High-Potential Make in India Opportunity Under HSN 85075000",
     date: "2025-11-14",
