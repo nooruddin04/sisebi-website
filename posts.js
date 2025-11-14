@@ -1,5 +1,19 @@
 // posts.js
 const posts = [
+          {
+    title: "Nickel-Metal Hydride (NiMH) Batteries: A High-Potential Make in India Opportunity Under HSN 85075000",
+    date: "2025-11-14",
+    content: `
+India’s transition toward hybrid mobility, industrial automation, and power-backup electronics has pushed NiMH battery demand steadily upward. Classified under HSN 85075000, this category covers Nickel-Metal Hydride batteries, rechargeable NiMH accumulators, hybrid vehicle battery modules, and industrial NiMH packs widely used in automotive, power tools, emergency lighting, and medical devices.\n
+Last year, India imported ₹451.6 crore worth of NiMH batteries. More importantly, the import-to-export ratio stood at 462:1, reflecting a deep reliance on global suppliers. Over the last four years, imports have grown at an average rate of 20.06%, driven by hybrid automotive components, utility metering upgrades, and growth in small industrial electronics.\n
+Despite increasing adoption of lithium-ion systems, NiMH batteries continue to remain essential in several use cases where safety, stability, and lifecycle consistency are required. Hybrid vehicle OEMs in particular continue to rely heavily on NiMH modules, and India currently imports the majority of its demand.\n
+The domestic manufacturing base in this segment is limited, with most value addition occurring overseas. This gap presents one of the strongest import substitution opportunities in India’s energy storage and mobility ecosystem. NiMH technology also benefits from established chemistry, mature supply chains, and lower certification barriers compared to advanced Li-ion systems.\n
+A focused Make in India strategy — supported by vendor development, local pack assembly, and component-level backward integration — can reduce dependency, strengthen supply security, and o3pen export avenues to developing markets.\n
+We have compiled a structured view of market drivers, risk factors, value chain gaps, and investment feasibility for stakeholders studying the NiMH opportunity.\n
+To explore more insights and daily business opportunities, visit:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
         {
     title: "HSN 03061740 – Black Tiger Shrimp (Penaeus monodon): A High-Growth Export Story for India",
     date: "2025-11-13",
