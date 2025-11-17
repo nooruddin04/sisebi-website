@@ -1,5 +1,23 @@
 // posts.js
 const posts = [
+       {
+    title: "HSN 2501 Export Opportunity: India’s Rising Influence in Global Salt Markets",
+    date: "2025-11-17",
+    content: `
+India’s salt exports under HSN Code 2501 have quietly grown into a high-value category with strong year-on-year momentum. This HSN code covers all forms of salt including sea salt, rock salt, edible salt, industrial salt, and salt used in chemical and processing industries.\n
+- In the last financial year, India exported $317.45 million (₹2,816.9 crore) worth of salt products, reflecting rising competitiveness and increasing global acceptance of Indian-origin material.\n
+- The long-term trend is equally promising. Over the past four years, India has recorded an average export growth rate of 32.62%, a strong indicator of expanding international demand across multiple regions.\n
+- Import dependence remains negligible. With an import-to-export ratio of 0.06 last year and a four-year average of 0.04, India is structurally positioned as a net surplus producer with strong Make-in-India potential.\n
+- This creates a compelling scenario for new entrants as well as established exporters looking to diversify into value-added salt segments such as food-grade refined salt, pharmaceutical salt, industrial salt for chlor-alkali industries, and specialty salts demanded in emerging markets.\n
+- Global demand is being shaped by rising food processing requirements, chemical industry expansion, increasing consumption of purified salt, and stable long-term contracts from traditional markets.\n
+- India’s geographic and climatic advantages give producers significant cost competitiveness, especially in large-volume categories.\n
+- Our research highlights key destination markets, buyer clusters, and potential export corridors with attractive near-term opportunities.\n
+- For manufacturers seeking predictable demand and low volatility, this category stands out as one of the most stable among mineral-based exports.\n
+- To access the full insights, data tables, market segmentation, and strategy notes, explore additional reports and tools available on SISEBI.\n
+- Visit the main site for more commodity analyses and trade intelligence:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
       {
     title: "HSN 08039010 – India’s Rapidly Expanding Banana Export Opportunity",
     date: "2025-11-15",
