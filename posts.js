@@ -1,5 +1,24 @@
 // posts.js
 const posts = [
+        {
+    title: "India’s High-Potential Make in India Opportunity: Optical Devices & Instruments (HSN 90138000)",
+    date: "2025-11-18",
+    content: `
+HSN Code 90138000 includes specialised optical instruments used across defence, industrial measurement, surveying, optical calibration, R&D labs and precision engineering. This category typically covers devices such as optical range-finders, alignment systems, optical measuring instruments, and other optical appliances that support high-accuracy operations.\n
+India imported USD 43.4 million worth of these products last year, translating to approximately Rs 384 crores at today’s exchange rate of Rs 88.71 per USD. More importantly, imports in this category have risen consistently with a four-year average growth rate of 12.52 percent.\n
+While India has growing capability in optics, photonics and precision engineering, the import-to-export ratio of 25.99 shows how wide the technology and manufacturing gap still is. The four-year ratio of 13.9 further confirms chronic dependence on foreign suppliers.\n
+This creates a sizeable Make in India opportunity for companies exploring:\n
+• Advanced optical manufacturing\n
+• Defence and strategic optics supply\n
+• Scientific instrument fabrication\n
+• Industrial alignment or calibration equipment\n
+• High-precision measuring device production\n
+Demand is driven by sectors that require accuracy, reliability and standardisation—areas where domestic manufacturing is emerging but still limited in depth. Market indicators suggest space for both import substitution and export-oriented manufacturing if supported by quality, certification and performance capabilities.\n
+In this detailed SISEBI analysis, we map the market drivers, global suppliers, capability gaps, pricing patterns and long-term feasibility for Indian manufacturing.\n
+Explore the full insight and additional HSN-based opportunity reports at:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
        {
     title: "HSN 2501 Export Opportunity: India’s Rising Influence in Global Salt Markets",
     date: "2025-11-17",
