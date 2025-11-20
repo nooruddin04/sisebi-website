@@ -1,6 +1,20 @@
 // posts.js
 const posts = [
         {
+    title: "Coco Peat (Coconut Coir Pith) – HSN 53050040 – A Strong Make in India Export Growth Story",
+    date: "2025-11-20",
+    content: `
+Coco Peat, also known as Coconut Coir Pith, Coconut Dust, Coco Soil, or Coir Fibre Dust, has become one of India’s fastest-growing natural horticulture exports. This lightweight, biodegradable growing medium is used extensively in hydroponics, nursery propagation, greenhouse cultivation, mushroom farming, potting mixes, and soil revitalisation.\n
+In FY last year, India exported Coco Peat worth USD 304.42 million, equivalent to more than ₹2,700 crore, reflecting significant global demand. The sector has registered a 13.66% average annual export growth over the past four years, indicating consistent expansion across major markets such as the US, Netherlands, China, South Korea, and the Middle East.\n
+Notably, India’s Import/Export ratio remains zero, meaning the country is purely an exporter with no import dependence — a strong strategic advantage for Make in India manufacturers, coir processors, and new entrants.\n
+The global boom in sustainable agriculture, increased adoption of hydroponics, and the move away from peat moss are driving Coco Peat consumption worldwide. India, with its established coir industry and raw material availability, is positioned to dominate this shift.\n
+In our detailed report, we break down export geographies, price trends, competitor mapping, logistics considerations, and specific sub-products (5kg blocks, grow bags, loose peat, discs).\n
+We also highlight market-entry recommendations for MSMEs looking to expand into this fast-growing segment with minimal capital risk.\n
+Read the full breakdown and access data-backed opportunities at:<a href="https://sisebi.netlify.app/" target="_blank" style="color:#004080; text-decoration:underline;">\n
+      Homepage</a>\n
+.`
+  },
+          {
     title: "India’s High-Potential Make in India Opportunity: Optical Devices & Instruments (HSN 90138000)",
     date: "2025-11-18",
     content: `
