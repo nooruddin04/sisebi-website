@@ -375,7 +375,7 @@
 -->
   <div style="margin-top:15px;">
   <input type="text" id="nlQuery" style="width:60%"
-         placeholder="Ask like ChatGPT: e.g. FY25 import > 100 and country in China, USA">
+         placeholder="Ask like ChatGPT: e.g. Provide import export data for all commodities for which FY25 import in million $ is < 10 and last 4 years export growth rate is greater than 10 ">
   <button onclick="applyNaturalLanguageFilter()">Submit</button>
   <button onclick="clearNaturalLanguageFilter()">Clear</button>
 </div>
@@ -472,15 +472,6 @@ const columnAliases = {
     }
   }
   return null;
-}
-
-
-let nlFilters = [];
-
-// Utility: parse numeric safely
-function num(val) {
-  if (!val) return NaN;
-  return parseFloat(val.toString().replace(/,/g, ""));
 }
 
 let nlFilters = [];
@@ -1231,6 +1222,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
