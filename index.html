@@ -387,25 +387,25 @@ const columnAliases = {
   "fy25 import": {
     col: 3,
     aliases: [
-      "fy25 import","fy 25 import","f y25 import","fy25import","fy25 imports", "last year import"
+      "fy25 import","fy 25 import","f y25 import","fy25import","fy25 imports", "last year import", "import"
     ]
   },
   "fy25 export": {
     col: 5,
     aliases: [
-      "fy25 export","fy 25 export","f y25 export","fy25export","fy25 exports", "last year export"
+      "fy25 export","fy 25 export","f y25 export","fy25export","fy25 exports", "last year export", "export"
     ]
   },
   "fy25 import price": {
     col: 10,
     aliases: [
-      "fy25 import price","fy 25 import price","fy25importprice","last year import price"
+      "fy25 import price","fy 25 import price","fy25importprice","last year import price", "import price"
     ]
   },
   "fy25 export price": {
     col: 12,
     aliases: [
-      "fy25 export price","fy 25 export price","fy25exportprice","last year export price"
+      "fy25 export price","fy 25 export price","fy25exportprice","last year export price", "export price"
     ]
   },
   "last 4 years import growth rate": {
@@ -481,37 +481,61 @@ function num(val) {
   return parseFloat(val.toString().replace(/,/g, ""));
 }
 
-function parseNLQuery(rawQuery) {
+function parseNLQuery(query) {
   nlFilters = [];
-  let q = normalizeOperators(rawQuery.toLowerCase());
+  const q = normalizeText(query);
 
-  // Split OR blocks
-  let orBlocks = q.split(/\s+or\s+/);
+  const colMatch = detectColumn(q);
+  if (!colMatch) return;
 
-  orBlocks.forEach(block => {
-    let andParts = block.split(/\s+and\s+/);
-    let conditions = [];
+  const col = colMatch.col;
 
-    andParts.forEach(part => {
-      let colInfo = findColumn(part);
-      if (!colInfo) return;
-
-      let valueMatch = part.match(/([<>]=?|=)\s*([\d.]+)/);
-      if (!valueMatch) return;
-
-      conditions.push({
-        col: colInfo.col,
-        op: valueMatch[1],
-        val: parseFloat(valueMatch[2])
-      });
+  // BETWEEN
+  let between = q.match(/(\d+(?:\.\d+)?)\s*(to|and)\s*(\d+(?:\.\d+)?)/);
+  if (between) {
+    nlFilters.push({
+      type: "between",
+      col,
+      min: parseFloat(between[1]),
+      max: parseFloat(between[3])
     });
+    return;
+  }
 
-    if (conditions.length) nlFilters.push(conditions);
-  });
+  // >=
+  if (q.match(/>=|greater than or equal|more than or equal/)) {
+    let v = q.match(/(\d+(?:\.\d+)?)/);
+    if (v) nlFilters.push({ type: "gte", col, val: +v[1] });
+    return;
+  }
 
-  console.log("Parsed NLP:", nlFilters);
+  // <=
+  if (q.match(/<=|less than or equal|lower than or equal/)) {
+    let v = q.match(/(\d+(?:\.\d+)?)/);
+    if (v) nlFilters.push({ type: "lte", col, val: +v[1] });
+    return;
+  }
+
+  // >
+  if (q.match(/>|greater|more|bigger|big/)) {
+    let v = q.match(/(\d+(?:\.\d+)?)/);
+    if (v) nlFilters.push({ type: "gt", col, val: +v[1] });
+    return;
+  }
+
+  // <
+  if (q.match(/<|less|lower|smaller|small/)) {
+    let v = q.match(/(\d+(?:\.\d+)?)/);
+    if (v) nlFilters.push({ type: "lt", col, val: +v[1] });
+    return;
+  }
+
+  // =
+  if (q.match(/=|equal|equals|is/)) {
+    let v = q.match(/(\d+(?:\.\d+)?)/);
+    if (v) nlFilters.push({ type: "eq", col, val: +v[1] });
+  }
 }
-
 
 // ONE unified filter (safe)
 $.fn.dataTable.ext.search.push(function(settings, row) {
@@ -561,6 +585,38 @@ function clearNaturalLanguageFilter() {
       }
     });
   });
+  function normalizeText(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+  const sortedAliasMatchers = Object.entries(columnAliases)
+  .flatMap(([canonical, cfg]) =>
+    cfg.aliases.map(alias => ({
+      canonical,
+      alias,
+      normAlias: normalizeText(alias),
+      col: cfg.col
+    }))
+  )
+  // 🔥 MOST IMPORTANT LINE
+  .sort((a, b) => b.normAlias.length - a.normAlias.length);
+
+  function detectColumn(query) {
+  const q = normalizeText(query);
+
+  for (const m of sortedAliasMatchers) {
+    const re = new RegExp(`\\b${m.normAlias}\\b`);
+    if (re.test(q)) {
+      return m; // FIRST (most specific) match wins
+    }
+  }
+  return null;
+}
+
+
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1222,6 +1278,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
