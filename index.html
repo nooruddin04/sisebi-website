@@ -483,69 +483,59 @@ function num(val) {
 
 function parseNLQuery(rawQuery) {
   nlFilters = [];
-
   if (!rawQuery || !rawQuery.trim()) return;
 
-  // ✅ normalize operators + text
-  let q = normalizeText(normalizeOperators(rawQuery));
+  const raw = normalizeOperators(rawQuery.toLowerCase());
+  const q = normalizeText(raw);
 
   const colMatch = detectColumn(q);
   if (!colMatch) {
-    console.warn("No column detected for query:", rawQuery);
+    console.warn("No column detected:", rawQuery);
     return;
   }
 
   const col = colMatch.col;
 
-  // BETWEEN (x to y / x and y)
-  let between = q.match(/(\d+(?:\.\d+)?)\s*(to|and)\s*(\d+(?:\.\d+)?)/);
+  // BETWEEN
+  let between = raw.match(/(\d+(?:\.\d+)?)\s*(to|and)\s*(\d+(?:\.\d+)?)/);
   if (between) {
-    nlFilters.push([{
-      type: "between",
-      col,
-      min: parseFloat(between[1]),
-      max: parseFloat(between[3])
-    }]);
+    nlFilters.push([{ type: "between", col, min: +between[1], max: +between[3] }]);
     return;
   }
 
-  // >=
-  if (q.includes(">=")) {
-    let v = q.match(/(\d+(?:\.\d+)?)/);
+  if (raw.includes(">=")) {
+    let v = raw.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "gte", col, val: +v[1] }]);
     return;
   }
 
-  // <=
-  if (q.includes("<=")) {
-    let v = q.match(/(\d+(?:\.\d+)?)/);
+  if (raw.includes("<=")) {
+    let v = raw.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "lte", col, val: +v[1] }]);
     return;
   }
 
-  // >
-  if (q.includes(">")) {
-    let v = q.match(/(\d+(?:\.\d+)?)/);
+  if (raw.includes(">")) {
+    let v = raw.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "gt", col, val: +v[1] }]);
     return;
   }
 
-  // <
-  if (q.includes("<")) {
-    let v = q.match(/(\d+(?:\.\d+)?)/);
+  if (raw.includes("<")) {
+    let v = raw.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "lt", col, val: +v[1] }]);
     return;
   }
 
-  // =
-  if (q.includes("=")) {
-    let v = q.match(/(\d+(?:\.\d+)?)/);
+  if (raw.includes("=")) {
+    let v = raw.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "eq", col, val: +v[1] }]);
     return;
   }
 
   console.warn("Query parsed but no operator found:", rawQuery);
 }
+
 
 // ONE unified filter (safe)
 $.fn.dataTable.ext.search.push(function (settings, row) {
@@ -1295,6 +1285,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
