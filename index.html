@@ -373,6 +373,100 @@
 
 <div id="result"></div>
 -->
+  <div style="margin-top:15px;">
+  <input type="text" id="nlQuery" style="width:60%"
+         placeholder="Ask like ChatGPT: e.g. FY25 import > 100 and country in China, USA">
+  <button onclick="applyNaturalLanguageFilter()">Apply</button>
+  <button onclick="clearNaturalLanguageFilter()">Clear</button>
+</div>
+<script>
+  const columnMap = {
+  "hsn": 1, 
+  "fy25 import": 2,
+  "fy25 export": 4,
+  "fy25 import price": 9,
+  "fy25 export price": 11,
+  "last 4 years import growth rate": 3,
+  "last 4 years export growth rate": 5
+};
+
+  let nlFilters = [];
+
+function parseNLQuery(query) {
+  nlFilters = [];
+  query = query.toLowerCase();
+
+  // numeric comparisons
+  Object.keys(columnMap).forEach(key => {
+    let colIndex = columnMap[key];
+
+    // greater than
+    let gt = query.match(new RegExp(`${key}[^0-9]*>[^0-9]*(\\d+(\\.\\d+)?)`));
+    if (gt) nlFilters.push({ type: "gt", col: colIndex, val: parseFloat(gt[1]) });
+
+    // less than
+    let lt = query.match(new RegExp(`${key}[^0-9]*<[^0-9]*(\\d+(\\.\\d+)?)`));
+    if (lt) nlFilters.push({ type: "lt", col: colIndex, val: parseFloat(lt[1]) });
+
+    // between
+    let between = query.match(
+      new RegExp(`${key}[^0-9]*(\\d+(\\.\\d+)?)[^0-9]+and[^0-9]+(\\d+(\\.\\d+)?)`)
+    );
+    if (between) {
+      nlFilters.push({
+        type: "between",
+        col: colIndex,
+        min: parseFloat(between[1]),
+        max: parseFloat(between[3])
+      });
+    }
+  });
+
+  // country in list
+  let countryMatch = query.match(/country in ([a-z, ]+)/);
+  if (countryMatch) {
+    let countries = countryMatch[1].split(",").map(c => c.trim());
+    nlFilters.push({ type: "in", col: columnMap["country"], list: countries });
+  }
+
+  // country =
+  let countryEq = query.match(/country *= *([a-z ]+)/);
+  if (countryEq) {
+    nlFilters.push({ type: "eq", col: columnMap["country"], val: countryEq[1].trim() });
+  }
+}
+
+  $.fn.dataTable.ext.search.push(function(settings, row) {
+  if (!nlFilters.length) return true;
+
+  for (let f of nlFilters) {
+    let cell = row[f.col] || "";
+
+    if (f.type === "gt" && parseFloat(cell) <= f.val) return false;
+    if (f.type === "lt" && parseFloat(cell) >= f.val) return false;
+    if (f.type === "between") {
+      let v = parseFloat(cell);
+      if (v < f.min || v > f.max) return false;
+    }
+    if (f.type === "eq" && cell.toLowerCase() !== f.val) return false;
+    if (f.type === "in" && !f.list.includes(cell.toLowerCase())) return false;
+  }
+  return true;
+});
+
+  function applyNaturalLanguageFilter() {
+  let q = document.getElementById("nlQuery").value;
+  parseNLQuery(q);
+  table.draw();
+}
+
+function clearNaturalLanguageFilter() {
+  nlFilters = [];
+  document.getElementById("nlQuery").value = "";
+  table.draw();
+}
+
+</script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
   ⏳ Loading data, it might take one minute, please wait..
@@ -1033,6 +1127,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
