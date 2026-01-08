@@ -493,67 +493,74 @@ function parseNLQuery(query) {
   // BETWEEN
   let between = q.match(/(\d+(?:\.\d+)?)\s*(to|and)\s*(\d+(?:\.\d+)?)/);
   if (between) {
-    nlFilters.push({
+    nlFilters.push([{
       type: "between",
       col,
       min: parseFloat(between[1]),
       max: parseFloat(between[3])
-    });
+    }]);
     return;
   }
 
   // >=
   if (q.match(/>=|greater than or equal|more than or equal/)) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push({ type: "gte", col, val: +v[1] });
+    if (v) nlFilters.push([{ type: "gte", col, val: +v[1] }]);
     return;
   }
 
   // <=
   if (q.match(/<=|less than or equal|lower than or equal/)) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push({ type: "lte", col, val: +v[1] });
+    if (v) nlFilters.push([{ type: "lte", col, val: +v[1] }]);
     return;
   }
 
   // >
   if (q.match(/>|greater|more|bigger|big/)) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push({ type: "gt", col, val: +v[1] });
+    if (v) nlFilters.push([{ type: "gt", col, val: +v[1] }]);
     return;
   }
 
   // <
   if (q.match(/<|less|lower|smaller|small/)) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push({ type: "lt", col, val: +v[1] });
+    if (v) nlFilters.push([{ type: "lt", col, val: +v[1] }]);
     return;
   }
 
   // =
   if (q.match(/=|equal|equals|is/)) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push({ type: "eq", col, val: +v[1] });
+    if (v) nlFilters.push([{ type: "eq", col, val: +v[1] }]);
   }
 }
 
 // ONE unified filter (safe)
-$.fn.dataTable.ext.search.push(function(settings, row) {
+$.fn.dataTable.ext.search.push(function (settings, row) {
   if (!nlFilters.length) return true;
 
-  // OR logic
+  // OR between groups
   return nlFilters.some(andGroup => {
-    // AND logic
-    return andGroup.every(cond => {
-      let cell = num(row[cond.col]);
 
-      if (isNaN(cell)) return false;
+    if (!Array.isArray(andGroup)) return true; // safety net
 
-      if (cond.op === ">" && !(cell > cond.val)) return false;
-      if (cond.op === "<" && !(cell < cond.val)) return false;
-      if (cond.op === ">=" && !(cell >= cond.val)) return false;
-      if (cond.op === "<=" && !(cell <= cond.val)) return false;
-      if (cond.op === "=" && !(cell === cond.val)) return false;
+    // AND inside group
+    return andGroup.every(f => {
+      let cell = row[f.col] || "";
+      let v = parseFloat(cell.replace(/,/g, "")) || 0;
+
+      if (f.type === "gt") return v > f.val;
+      if (f.type === "gte") return v >= f.val;
+      if (f.type === "lt") return v < f.val;
+      if (f.type === "lte") return v <= f.val;
+      if (f.type === "eq") return v === f.val;
+      if (f.type === "between") return v >= f.min && v <= f.max;
+
+      if (f.type === "in") {
+        return f.list.includes(cell.toLowerCase());
+      }
 
       return true;
     });
@@ -1278,6 +1285,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
