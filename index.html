@@ -481,16 +481,23 @@ function num(val) {
   return parseFloat(val.toString().replace(/,/g, ""));
 }
 
-function parseNLQuery(query) {
+function parseNLQuery(rawQuery) {
   nlFilters = [];
-  const q = normalizeText(query);
+
+  if (!rawQuery || !rawQuery.trim()) return;
+
+  // ✅ normalize operators + text
+  let q = normalizeText(normalizeOperators(rawQuery));
 
   const colMatch = detectColumn(q);
-  if (!colMatch) return;
+  if (!colMatch) {
+    console.warn("No column detected for query:", rawQuery);
+    return;
+  }
 
   const col = colMatch.col;
 
-  // BETWEEN
+  // BETWEEN (x to y / x and y)
   let between = q.match(/(\d+(?:\.\d+)?)\s*(to|and)\s*(\d+(?:\.\d+)?)/);
   if (between) {
     nlFilters.push([{
@@ -503,38 +510,41 @@ function parseNLQuery(query) {
   }
 
   // >=
-  if (q.match(/>=|greater than or equal|more than or equal/)) {
+  if (q.includes(">=")) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "gte", col, val: +v[1] }]);
     return;
   }
 
   // <=
-  if (q.match(/<=|less than or equal|lower than or equal/)) {
+  if (q.includes("<=")) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "lte", col, val: +v[1] }]);
     return;
   }
 
   // >
-  if (q.match(/>|greater|more|bigger|big/)) {
+  if (q.includes(">")) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "gt", col, val: +v[1] }]);
     return;
   }
 
   // <
-  if (q.match(/<|less|lower|smaller|small/)) {
+  if (q.includes("<")) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "lt", col, val: +v[1] }]);
     return;
   }
 
   // =
-  if (q.match(/=|equal|equals|is/)) {
+  if (q.includes("=")) {
     let v = q.match(/(\d+(?:\.\d+)?)/);
     if (v) nlFilters.push([{ type: "eq", col, val: +v[1] }]);
+    return;
   }
+
+  console.warn("Query parsed but no operator found:", rawQuery);
 }
 
 // ONE unified filter (safe)
@@ -1285,6 +1295,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
