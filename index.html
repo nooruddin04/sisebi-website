@@ -380,33 +380,43 @@
   <button onclick="clearNaturalLanguageFilter()">Clear</button>
 </div>
 <script>
-  const columnMap = {
-  "hsn": 1, 
-  "fy25 import": 2,
-  "fy25 export": 4,
-  "fy25 import price": 9,
-  "fy25 export price": 11,
-  "last 4 years import growth rate": 3,
-  "last 4 years export growth rate": 5
+/* =======================
+   NATURAL LANGUAGE FILTER
+   ======================= */
+
+const columnMap = {
+  "hsn": 1,
+  "country": 3,
+  "fy25 import": 4,
+  "fy25 export": 6,
+  "fy25 import price": 11,
+  "fy25 export price": 13,
+  "last 4 years import growth rate": 5,
+  "last 4 years export growth rate": 7
 };
 
-  let nlFilters = [];
+let nlFilters = [];
+
+// Utility: parse numeric safely
+function num(val) {
+  if (!val) return NaN;
+  return parseFloat(val.toString().replace(/,/g, ""));
+}
 
 function parseNLQuery(query) {
   nlFilters = [];
   query = query.toLowerCase();
 
-  // numeric comparisons
   Object.keys(columnMap).forEach(key => {
-    let colIndex = columnMap[key];
+    const col = columnMap[key];
 
-    // greater than
+    // >
     let gt = query.match(new RegExp(`${key}[^0-9]*>[^0-9]*(\\d+(\\.\\d+)?)`));
-    if (gt) nlFilters.push({ type: "gt", col: colIndex, val: parseFloat(gt[1]) });
+    if (gt) nlFilters.push({ type: "gt", col, val: parseFloat(gt[1]) });
 
-    // less than
+    // <
     let lt = query.match(new RegExp(`${key}[^0-9]*<[^0-9]*(\\d+(\\.\\d+)?)`));
-    if (lt) nlFilters.push({ type: "lt", col: colIndex, val: parseFloat(lt[1]) });
+    if (lt) nlFilters.push({ type: "lt", col, val: parseFloat(lt[1]) });
 
     // between
     let between = query.match(
@@ -415,7 +425,7 @@ function parseNLQuery(query) {
     if (between) {
       nlFilters.push({
         type: "between",
-        col: colIndex,
+        col,
         min: parseFloat(between[1]),
         max: parseFloat(between[3])
       });
@@ -423,41 +433,55 @@ function parseNLQuery(query) {
   });
 
   // country in list
-  let countryMatch = query.match(/country in ([a-z, ]+)/);
-  if (countryMatch) {
-    let countries = countryMatch[1].split(",").map(c => c.trim());
-    nlFilters.push({ type: "in", col: columnMap["country"], list: countries });
+  let countryIn = query.match(/country in ([a-z, ]+)/);
+  if (countryIn) {
+    nlFilters.push({
+      type: "in",
+      col: columnMap["country"],
+      list: countryIn[1].split(",").map(c => c.trim())
+    });
   }
 
   // country =
   let countryEq = query.match(/country *= *([a-z ]+)/);
   if (countryEq) {
-    nlFilters.push({ type: "eq", col: columnMap["country"], val: countryEq[1].trim() });
+    nlFilters.push({
+      type: "eq",
+      col: columnMap["country"],
+      val: countryEq[1].trim()
+    });
   }
+
+  console.log("NLP Filters:", nlFilters);
 }
 
-  $.fn.dataTable.ext.search.push(function(settings, row) {
+// ONE unified filter (safe)
+$.fn.dataTable.ext.search.push(function(settings, row) {
   if (!nlFilters.length) return true;
 
   for (let f of nlFilters) {
     let cell = row[f.col] || "";
 
-    if (f.type === "gt" && parseFloat(cell) <= f.val) return false;
-    if (f.type === "lt" && parseFloat(cell) >= f.val) return false;
+    if (f.type === "gt" && num(cell) <= f.val) return false;
+    if (f.type === "lt" && num(cell) >= f.val) return false;
+
     if (f.type === "between") {
-      let v = parseFloat(cell);
-      if (v < f.min || v > f.max) return false;
+      let v = num(cell);
+      if (isNaN(v) || v < f.min || v > f.max) return false;
     }
+
     if (f.type === "eq" && cell.toLowerCase() !== f.val) return false;
     if (f.type === "in" && !f.list.includes(cell.toLowerCase())) return false;
   }
   return true;
 });
 
-  function applyNaturalLanguageFilter() {
-  let q = document.getElementById("nlQuery").value;
+function applyNaturalLanguageFilter() {
+  showSpinner();
+  const q = document.getElementById("nlQuery").value;
   parseNLQuery(q);
   table.draw();
+  hideSpinner();
 }
 
 function clearNaturalLanguageFilter() {
@@ -465,7 +489,6 @@ function clearNaturalLanguageFilter() {
   document.getElementById("nlQuery").value = "";
   table.draw();
 }
-
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1127,6 +1150,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
