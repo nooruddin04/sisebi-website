@@ -549,6 +549,7 @@ const columnAliases = {
   },
         "commodity name": {
     col: 1,
+          type: "text",
           unit: "commodity",
     aliases: ["commodity","commodity name","product","commodityname"]
   }
@@ -571,6 +572,10 @@ const columnAliases = {
 
     // >= <=
     .replace(/greater\s*than\s*or\s*equal\s*to|more\s*than\s*or\s*equal\s*to/g, ">=")
+    // text operators
+.replace(/contains|containing|having/g, " contains ")
+.replace(/starts\s*with|starting\s*with|begins\s*with/g, " startswith ")
+
     .replace(/less\s*than\s*or\s*equal\s*to|lower\s*than\s*or\s*equal\s*to/g, "<=");
 }
 
@@ -609,21 +614,62 @@ function parseNLQuery(rawQuery) {
     let andParts = block.split(/\s+and\s+/);
     let conditions = [];
 
-    andParts.forEach(part => {
-      let colInfo = findColumn(part);
-      if (!colInfo) return;
+andParts.forEach(part => {
+  let colInfo = findColumn(part);
+  if (!colInfo) return;
 
-      let valueMatch = part.match(/([<>]=?|=)\s*([\d.]+)/);
-      if (!valueMatch) return;
+// TEXT COLUMN
+if (colInfo.type === "text") {
 
-     conditions.push({
-  key: colInfo.key,   // ✅ store canonical key
-  col: colInfo.col,
-  op: valueMatch[1],
-  val: parseFloat(valueMatch[2])
+  // contains
+  let containsMatch = part.match(/contains\s+(.+)$/);
+  if (containsMatch) {
+    conditions.push({
+      col: colInfo.col,
+      op: "contains",
+      val: containsMatch[1].trim().toLowerCase(),
+      type: "text"
+    });
+    return;
+  }
+
+  // starts with
+  let startsMatch = part.match(/startswith\s+(.+)$/);
+  if (startsMatch) {
+    conditions.push({
+      col: colInfo.col,
+      op: "starts_with",
+      val: startsMatch[1].trim().toLowerCase(),
+      type: "text"
+    });
+    return;
+  }
+
+  // equals
+  let eqMatch = part.match(/=\s*(.+)$/);
+  if (eqMatch) {
+    conditions.push({
+      col: colInfo.col,
+      op: "=",
+      val: eqMatch[1].trim().toLowerCase(),
+      type: "text"
+    });
+  }
+
+  return;
+}
+  // NUMERIC COLUMN
+  let valueMatch = part.match(/([<>]=?|=)\s*([\d.]+)/);
+  if (!valueMatch) return;
+
+  conditions.push({
+    col: colInfo.col,
+    op: valueMatch[1],
+    val: parseFloat(valueMatch[2]),
+    type: "number"
+  });
 });
 
-    });
 
     if (conditions.length) nlFilters.push(conditions);
   });
@@ -639,19 +685,33 @@ $.fn.dataTable.ext.search.push(function(settings, row) {
   // OR logic
   return nlFilters.some(andGroup => {
     // AND logic
-    return andGroup.every(cond => {
-      let cell = num(row[cond.col]);
+return andGroup.every(cond => {
+  let cell = row[cond.col];
 
-      if (isNaN(cell)) return false;
+if (cond.type === "text") {
+  if (!cell) return false;
 
-      if (cond.op === ">" && !(cell > cond.val)) return false;
-      if (cond.op === "<" && !(cell < cond.val)) return false;
-      if (cond.op === ">=" && !(cell >= cond.val)) return false;
-      if (cond.op === "<=" && !(cell <= cond.val)) return false;
-      if (cond.op === "=" && !(cell === cond.val)) return false;
+  let cellVal = cell.toLowerCase();
 
-      return true;
-    });
+  if (cond.op === "=" && cellVal !== cond.val) return false;
+  if (cond.op === "contains" && !cellVal.includes(cond.val)) return false;
+  if (cond.op === "starts_with" && !cellVal.startsWith(cond.val)) return false;
+
+  return true;
+}
+
+  let numCell = num(cell);
+  if (isNaN(numCell)) return false;
+
+  if (cond.op === ">" && !(numCell > cond.val)) return false;
+  if (cond.op === "<" && !(numCell < cond.val)) return false;
+  if (cond.op === ">=" && !(numCell >= cond.val)) return false;
+  if (cond.op === "<=" && !(numCell <= cond.val)) return false;
+  if (cond.op === "=" && !(numCell === cond.val)) return false;
+
+  return true;
+});
+
   });
 });
 
@@ -682,40 +742,66 @@ function clearNaturalLanguageFilter() {
         applyNaturalLanguageFilter(); // trigger NLP filter
       }
     });
-  });  
-
- 
+  });   
   
 function buildFilterSummary(nlFilters) {
   if (!nlFilters.length) return "";
 
-  let sentences = [];
+  let orSentences = [];
 
   nlFilters.forEach(andGroup => {
     let parts = [];
 
     andGroup.forEach(cond => {
-      const colDef = columnAliases[cond.key];
-      if (!colDef) return;
+      // find column definition by column index
+      const colEntry = Object.entries(columnAliases)
+        .find(([_, v]) => v.col === cond.col);
 
-      const opText = {
-        ">": "more than",
-        "<": "less than",
-        ">=": "greater than or equal to",
-        "<=": "less than or equal to",
-        "=": "equal to"
-      }[cond.op] || cond.op;
+      if (!colEntry) return;
 
-      parts.push(
-        `${cond.key} ${opText} ${cond.val} ${colDef.unit}`.trim()
-      );
+      const [canonicalName, colDef] = colEntry;
+
+      // Numeric conditions
+      if (cond.type === "number") {
+        const opText = {
+          ">": "more than",
+          "<": "less than",
+          ">=": "greater than or equal to",
+          "<=": "less than or equal to",
+          "=": "equal to"
+        }[cond.op] || cond.op;
+
+        parts.push(
+          `${canonicalName} ${opText} ${cond.val}`
+        );
+      }
+
+      // Text conditions
+      if (cond.type === "text") {
+        if (cond.op === "contains") {
+          parts.push(
+            `${canonicalName} containing "${cond.val.toUpperCase()}"`
+          );
+        }
+        if (cond.op === "starts_with") {
+          parts.push(
+            `${canonicalName} starting with "${cond.val.toUpperCase()}"`
+          );
+        }
+        if (cond.op === "=") {
+          parts.push(
+            `${canonicalName} equal to "${cond.val.toUpperCase()}"`
+          );
+        }
+      }
     });
 
-    if (parts.length) sentences.push(parts.join(" and "));
+    if (parts.length) {
+      orSentences.push(parts.join(" and "));
+    }
   });
 
-  return `Please find below the table containing Import/Export data for all commodities having ${sentences.join(" or ")}.`;
-
+  return `Please find below the table containing Import/Export data for all commodities having ${orSentences.join(" or ")}.`;
 }
 
   document.querySelectorAll(".ai-examples span").forEach(el => {
@@ -1386,6 +1472,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
