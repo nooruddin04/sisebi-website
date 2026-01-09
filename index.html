@@ -266,7 +266,7 @@
 
 .ai-summary {
   margin-top: 12px;
-  font-size: 14px;
+  font-size: 20px;
   color: #333;
   font-weight: 500;
 }
@@ -477,18 +477,17 @@
 
   <div class="ai-input-row">
     <input type="text" id="nlQuery"
-      placeholder="e.g. fy25 import > 100 and export price < 10"
+      placeholder="Ask like chatgpt. for e.g. Provide data for commodities having fy25 import value more than 100 million$ and export price < 10$/unit"
     >
     <button onclick="applyNaturalLanguageFilter()">Apply</button>
     <button class="secondary" onclick="clearNaturalLanguageFilter()">Clear</button>
   </div>
 
   <div class="ai-examples">
-    Try:
-    <span>import > 100</span>
-    <span>export price < 5</span>
-    <span>import > 50 or export > 80</span>
-  </div>
+    Try:<br>
+    <span>Share exim data for commodities having import growth greater than 10%</span><br>
+    <span>Tell all commodities having import/export ratio lower than 100</span>
+     </div>
 
   <div id="nlSummary" class="ai-summary"></div>
 </div>
@@ -1387,6 +1386,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
