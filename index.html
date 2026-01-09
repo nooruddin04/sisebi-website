@@ -388,46 +388,55 @@
 const columnAliases = {
    "last 4 years import growth rate": {
     col: 4,
+     unit: "%",
     aliases: ["last 4 years import growth rate","last 4 years import average growth rate","import CAGR","import growth rate","last 4 years' import average growth rate","import growth"]
   },
     "last 4 years export growth rate": {
     col: 6,
+      unit: "%",
     aliases: ["last 4 years export growth rate","last 4 years export average growth rate","export CAGR","export growth rate","last 4 years' export average growth rate","export growth"]
   },
   "fy25 import price": {
     col: 10,
+    unit: "$/unit",
     aliases: [
       "fy25 import price","fy 25 import price","fy25importprice","last year import price", "import price"
     ]
   },
   "fy25 export price": {
     col: 12,
+    unit: "$/unit",
     aliases: [
       "fy25 export price","fy 25 export price","fy25exportprice","last year export price", "export price"
     ]
   },
             "ratio": {
     col: 8,
+              unit: "ratio",
     aliases: ["ratio","import to export ratio","import is to export ratio","import and export ratio","import/export","import/export ratio","import/ export ratio","import /export ratio","import / export ratio"]
   },
   "fy25 import": {
     col: 3,
+    unit: "million $",
     aliases: [
       "fy25 import","fy 25 import","f y25 import","fy25import","fy25 imports", "last year import", "import"
     ]
   },
   "fy25 export": {
     col: 5,
+    unit: "million $",
     aliases: [
       "fy25 export","fy 25 export","f y25 export","fy25export","fy25 exports", "last year export", "export"
     ]
   },
        "HSCODE": {
     col: 2,
+         unit: "HSCODE",
     aliases: ["HSCODE","hsn code","hs code","hsncode"]
   },
         "commodity name": {
     col: 1,
+          unit: "commodity",
     aliases: ["commodity","commodity name","product","commodityname"]
   }
 };
@@ -577,65 +586,40 @@ function clearNaturalLanguageFilter() {
     unit: "$/unit"
   }
 };
-
-function normalizeText(str) {
-  return str
-    .toLowerCase()
-    .replace(/\s+/g, "")
-    .replace(/[^a-z0-9]/g, "");
-}
-
-function detectColumnKey(query) {
-  const q = normalizeText(query);
-
-  for (let key in columnDefinitions) {
-    if (q.includes(normalizeText(key))) {
-      return key;
-    }
-  }
-  return null;
-}
-
-function operatorToText(op) {
-  const map = {
-    ">": "more than",
-    "<": "less than",
-    ">=": "greater than or equal to",
-    "<=": "less than or equal to",
-    "=": "equal to"
-  };
-  return map[op] || op;
-}
   
 function buildFilterSummary(nlFilters, logic = "and") {
   if (!nlFilters.length) return "";
 
-  let parts = [];
+  let sentences = [];
 
-  nlFilters.forEach(f => {
-    const def = Object.values(columnDefinitions)
-                      .find(d => d.col === f.col);
-    if (!def) return;
+  nlFilters.forEach(andGroup => {
+    let parts = [];
 
-    if (f.type === "gt") {
-      parts.push(`${def.label} more than ${f.val} ${def.unit}`);
-    }
-    if (f.type === "lt") {
-      parts.push(`${def.label} less than ${f.val} ${def.unit}`);
-    }
-    if (f.type === "between") {
-      parts.push(`${def.label} between ${f.min} and ${f.max} ${def.unit}`);
-    }
-    if (f.type === "eq") {
-      parts.push(`${def.label} equal to ${f.val}`);
-    }
-    if (f.type === "in") {
-      parts.push(`${def.label} for countries ${f.list.join(", ")}`);
-    }
+    andGroup.forEach(cond => {
+      const colDef = Object.values(columnAliases)
+        .find(c => c.col === cond.col);
+
+      if (!colDef) return;
+
+      let opText = {
+        ">": "more than",
+        "<": "less than",
+        ">=": "greater than or equal to",
+        "<=": "less than or equal to",
+        "=": "equal to"
+      }[cond.op] || cond.op;
+
+      parts.push(
+        `${colDef.label} ${opText} ${cond.val} ${colDef.unit}`.trim()
+      );
+    });
+
+    if (parts.length) sentences.push(parts.join(" and "));
   });
 
-  return `Please find below the table containing Import/Export data for all commodities having ${parts.join(" " + logic + " ")}.`;
+  return `Please find below the table containing Import/Export data for all commodities having ${sentences.join(" or ")}.`;
 }
+
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1297,6 +1281,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
