@@ -375,10 +375,12 @@
 -->
   <div style="margin-top:15px;">
   <input type="text" id="nlQuery" style="width:60%"
-         placeholder="Ask like ChatGPT: e.g. Provide import export data for all commodities for which FY25 import in million $ is < 10 and last 4 years export growth rate is greater than 10 ">
+         placeholder="Ask like ChatGPT: e.g. Provide import export data for all commodities for which FY25 import is < 10 million $  ">
   <button onclick="applyNaturalLanguageFilter()">Submit</button>
   <button onclick="clearNaturalLanguageFilter()">Clear</button>
 </div>
+  <div id="nlSummary" style="margin-top:10px;font-style:italic;color:#444;"></div>
+
 <script>
 /* =======================
    NATURAL LANGUAGE FILTER
@@ -530,6 +532,8 @@ function applyNaturalLanguageFilter() {
   const q = document.getElementById("nlQuery").value;
   parseNLQuery(q);
   table.draw();
+  const summary = buildFilterSummary(nlFilters, q.includes(" or ") ? "or" : "and");
+  document.getElementById("nlSummary").innerText = summary;
   hideSpinner();
 }
 
@@ -550,6 +554,88 @@ function clearNaturalLanguageFilter() {
       }
     });
   });  
+
+  const columnDefinitions = {
+  "fy25 import price": {
+    col: columnMap["fy25 import price"],
+    label: "FY25 average import price ($/unit)",
+    unit: "$/unit"
+  },
+  "fy25 export": {
+    col: columnMap["fy25 export"],
+    label: "FY25 average export value",
+    unit: "million $"
+  },
+  "fy25 import": {
+    col: columnMap["fy25 import"],
+    label: "FY25 average import value",
+    unit: "million $"
+  },
+  "fy25 export price": {
+    col: columnMap["fy25 export price"],
+    label: "FY25 average export price ($/unit)",
+    unit: "$/unit"
+  }
+};
+
+function normalizeText(str) {
+  return str
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function detectColumnKey(query) {
+  const q = normalizeText(query);
+
+  for (let key in columnDefinitions) {
+    if (q.includes(normalizeText(key))) {
+      return key;
+    }
+  }
+  return null;
+}
+
+function operatorToText(op) {
+  const map = {
+    ">": "more than",
+    "<": "less than",
+    ">=": "greater than or equal to",
+    "<=": "less than or equal to",
+    "=": "equal to"
+  };
+  return map[op] || op;
+}
+  
+function buildFilterSummary(nlFilters, logic = "and") {
+  if (!nlFilters.length) return "";
+
+  let parts = [];
+
+  nlFilters.forEach(f => {
+    const def = Object.values(columnDefinitions)
+                      .find(d => d.col === f.col);
+    if (!def) return;
+
+    if (f.type === "gt") {
+      parts.push(`${def.label} more than ${f.val} ${def.unit}`);
+    }
+    if (f.type === "lt") {
+      parts.push(`${def.label} less than ${f.val} ${def.unit}`);
+    }
+    if (f.type === "between") {
+      parts.push(`${def.label} between ${f.min} and ${f.max} ${def.unit}`);
+    }
+    if (f.type === "eq") {
+      parts.push(`${def.label} equal to ${f.val}`);
+    }
+    if (f.type === "in") {
+      parts.push(`${def.label} for countries ${f.list.join(", ")}`);
+    }
+  });
+
+  return `Please find below the table containing Import/Export data for all commodities having ${parts.join(" " + logic + " ")}.`;
+}
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1211,6 +1297,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
