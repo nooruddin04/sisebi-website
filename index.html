@@ -580,21 +580,27 @@ const columnAliases = {
 }
 
   function findColumn(queryPart) {
-  const clean = queryPart.replace(/\s+/g, "");
+  const clean = queryPart.toLowerCase();
 
   for (let key in columnAliases) {
     for (let a of columnAliases[key].aliases) {
-      if (clean.includes(a.replace(/\s+/g, ""))) {
+      const alias = a.toLowerCase();
+
+      // match whole word OR start of phrase
+      if (
+        clean.includes(alias) ||
+        clean.startsWith(alias + " ") ||
+        clean === alias
+      ) {
         return {
-          key: key,              // ✅ canonical key
-          col: columnAliases[key].col
+          ...columnAliases[key],
+          key: key
         };
       }
     }
   }
   return null;
 }
-
 
 let nlFilters = [];
 
@@ -1473,6 +1479,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
