@@ -555,7 +555,7 @@ function applyNaturalLanguageFilter() {
 function clearNaturalLanguageFilter() {
   nlFilters = [];
   document.getElementById("nlQuery").value = "";
-  document.getElementById("nlSummary").value = "";
+  document.getElementById("nlSummary").innerText = "";
   table.draw();
 }
     document.addEventListener("DOMContentLoaded", function () {
@@ -1264,6 +1264,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
