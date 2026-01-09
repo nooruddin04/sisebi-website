@@ -66,15 +66,15 @@
 
 /* Info & Use Sections */
 .info-section, .use-section, .contact-section {
-  padding: 40px 20px;
+  padding: 20px 20px;
   background: #f9f9f9;
-  margin: 20px 0;
+  margin: 10px 0;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .info-section h2, .use-section h2, .contact-section h2 {
   color: #004aad;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .info-section p, .use-section p, .contact-section p {
   font-size: 1.1rem;
@@ -1074,8 +1074,8 @@ function googleSignIn() {
 
 // Subscription plans
 const plans = [
-    {id: 'monthly10', name: '10 reports/month', price: 2000, downloads: 10, durationDays: 30},
-    {id: 'yearly200', name: '200 reports/year', price: 20000, downloads: 200, durationDays: 365}
+    {id: 'monthly10', name: '1 report in a month', price: 999, downloads: 1, durationDays: 30},
+    {id: 'yearly200', name: '10 reports in a year', price: 4999, downloads: 10, durationDays: 365}
 ];
 
 // Check subscription
@@ -1386,6 +1386,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
