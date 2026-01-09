@@ -373,13 +373,35 @@
 
 <div id="result"></div>
 -->
-  <div style="margin-top:15px;">
-  <input type="text" id="nlQuery" style="width:60%"
-         placeholder="Ask like ChatGPT: e.g. Provide import export data for all commodities for which FY25 import is < 10 million $  ">
-  <button onclick="applyNaturalLanguageFilter()">Submit</button>
-  <button onclick="clearNaturalLanguageFilter()">Clear</button>
+ <div class="ai-query-card">
+  <div class="ai-header">
+    🤖 Smart AI Query
+    <span class="ai-badge">NEW</span>
+  </div>
+
+  <div class="ai-subtext">
+    Ask in plain English. No filters. No formulas.
+  </div>
+
+  <div class="ai-input-row">
+    <input type="text" id="nlQuery"
+      placeholder="e.g. fy25 import > 100 and export price < 10"
+    >
+    <button onclick="applyNaturalLanguageFilter()">Apply</button>
+    <button class="secondary" onclick="clearNaturalLanguageFilter()">Clear</button>
+  </div>
+
+  <div class="ai-examples">
+    Try:
+    <span>import > 100</span>
+    <span>export price < 5</span>
+    <span>import > 50 or export > 80</span>
+  </div>
+
+  <div id="nlSummary" class="ai-summary"></div>
 </div>
-  <div id="nlSummary" style="margin-top:10px;font-style:italic;color:#444;"></div>
+
+ <!-- <div id="nlSummary" style="margin-top:10px;font-style:italic;color:#444;"></div>-->
 
 <script>
 /* =======================
@@ -602,7 +624,16 @@ function buildFilterSummary(nlFilters) {
   });
 
   return `Please find below the table containing Import/Export data for all commodities having ${sentences.join(" or ")}.`;
+
 }
+
+  document.querySelectorAll(".ai-examples span").forEach(el => {
+  el.addEventListener("click", () => {
+    document.getElementById("nlQuery").value = el.innerText;
+    applyNaturalLanguageFilter();
+  });
+});
+
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1264,6 +1295,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
