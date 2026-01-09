@@ -564,28 +564,7 @@ function clearNaturalLanguageFilter() {
     });
   });  
 
-  const columnDefinitions = {
-  "fy25 import price": {
-    col: columnMap["fy25 import price"],
-    label: "FY25 average import price ($/unit)",
-    unit: "$/unit"
-  },
-  "fy25 export": {
-    col: columnMap["fy25 export"],
-    label: "FY25 average export value",
-    unit: "million $"
-  },
-  "fy25 import": {
-    col: columnMap["fy25 import"],
-    label: "FY25 average import value",
-    unit: "million $"
-  },
-  "fy25 export price": {
-    col: columnMap["fy25 export price"],
-    label: "FY25 average export price ($/unit)",
-    unit: "$/unit"
-  }
-};
+ 
   
 function buildFilterSummary(nlFilters, logic = "and") {
   if (!nlFilters.length) return "";
@@ -1281,6 +1260,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
