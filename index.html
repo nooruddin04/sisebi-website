@@ -384,17 +384,13 @@
    NATURAL LANGUAGE FILTER
    ======================= */
 const columnAliases = {
-  "fy25 import": {
-    col: 3,
-    aliases: [
-      "fy25 import","fy 25 import","f y25 import","fy25import","fy25 imports", "last year import", "import"
-    ]
+   "last 4 years import growth rate": {
+    col: 4,
+    aliases: ["last 4 years import growth rate","last 4 years import average growth rate","import CAGR","import growth rate","last 4 years' import average growth rate","import growth"]
   },
-  "fy25 export": {
-    col: 5,
-    aliases: [
-      "fy25 export","fy 25 export","f y25 export","fy25export","fy25 exports", "last year export", "export"
-    ]
+    "last 4 years export growth rate": {
+    col: 6,
+    aliases: ["last 4 years export growth rate","last 4 years export average growth rate","export CAGR","export growth rate","last 4 years' export average growth rate","export growth"]
   },
   "fy25 import price": {
     col: 10,
@@ -408,40 +404,33 @@ const columnAliases = {
       "fy25 export price","fy 25 export price","fy25exportprice","last year export price", "export price"
     ]
   },
-  "last 4 years import growth rate": {
-    col: 4,
-    aliases: ["last 4 years import growth rate","last 4 years import average growth rate","import CAGR","import growth rate","last 4 years' import average growth rate","import growth"]
+            "ratio": {
+    col: 8,
+    aliases: ["ratio","import to export ratio","import is to export ratio","import and export ratio","import/export","import/export ratio","import/ export ratio","import /export ratio","import / export ratio"]
   },
-    "last 4 years export growth rate": {
-    col: 6,
-    aliases: ["last 4 years export growth rate","last 4 years export average growth rate","export CAGR","export growth rate","last 4 years' export average growth rate","export growth"]
+  "fy25 import": {
+    col: 3,
+    aliases: [
+      "fy25 import","fy 25 import","f y25 import","fy25import","fy25 imports", "last year import", "import"
+    ]
   },
-      "HSCODE": {
+  "fy25 export": {
+    col: 5,
+    aliases: [
+      "fy25 export","fy 25 export","f y25 export","fy25export","fy25 exports", "last year export", "export"
+    ]
+  },
+       "HSCODE": {
     col: 2,
     aliases: ["HSCODE","hsn code","hs code","hsncode"]
   },
         "commodity name": {
     col: 1,
     aliases: ["commodity","commodity name","product","commodityname"]
-  },
-          "ratio": {
-    col: 1,
-    aliases: ["ratio","import to export ratio","import is to export ratio","import and export ratio","import/export","import/export ratio","import/ export ratio","import /export ratio","import / export ratio"]
-  },
+  }
 };
-
-/*const columnMap = {
-  "hsn": 2,
-  //"country": 3,
-  "fy25 import": 3,
-  "fy25 export": 5,
-  "fy25 import price": 10,
-  "fy25 export price": 12,
-  "last 4 years import growth rate": 4,
-  "last 4 years export growth rate": 6
-};*/
-
-  function normalizeOperators(q) {
+  
+ function normalizeOperators(q) {
   return q
     // logical
     .replace(/\s*&\s*/g, " and ")
@@ -483,84 +472,53 @@ function num(val) {
 
 function parseNLQuery(rawQuery) {
   nlFilters = [];
-  if (!rawQuery || !rawQuery.trim()) return;
+  let q = normalizeOperators(rawQuery.toLowerCase());
 
-  const raw = normalizeOperators(rawQuery.toLowerCase());
-  const q = normalizeText(raw);
+  // Split OR blocks
+  let orBlocks = q.split(/\s+or\s+/);
 
-  const colMatch = detectColumn(q);
-  if (!colMatch) {
-    console.warn("No column detected:", rawQuery);
-    return;
-  }
+  orBlocks.forEach(block => {
+    let andParts = block.split(/\s+and\s+/);
+    let conditions = [];
 
-  const col = colMatch.col;
+    andParts.forEach(part => {
+      let colInfo = findColumn(part);
+      if (!colInfo) return;
 
-  // BETWEEN
-  let between = raw.match(/(\d+(?:\.\d+)?)\s*(to|and)\s*(\d+(?:\.\d+)?)/);
-  if (between) {
-    nlFilters.push([{ type: "between", col, min: +between[1], max: +between[3] }]);
-    return;
-  }
+      let valueMatch = part.match(/([<>]=?|=)\s*([\d.]+)/);
+      if (!valueMatch) return;
 
-  if (raw.includes(">=")) {
-    let v = raw.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push([{ type: "gte", col, val: +v[1] }]);
-    return;
-  }
+      conditions.push({
+        col: colInfo.col,
+        op: valueMatch[1],
+        val: parseFloat(valueMatch[2])
+      });
+    });
 
-  if (raw.includes("<=")) {
-    let v = raw.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push([{ type: "lte", col, val: +v[1] }]);
-    return;
-  }
+    if (conditions.length) nlFilters.push(conditions);
+  });
 
-  if (raw.includes(">")) {
-    let v = raw.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push([{ type: "gt", col, val: +v[1] }]);
-    return;
-  }
-
-  if (raw.includes("<")) {
-    let v = raw.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push([{ type: "lt", col, val: +v[1] }]);
-    return;
-  }
-
-  if (raw.includes("=")) {
-    let v = raw.match(/(\d+(?:\.\d+)?)/);
-    if (v) nlFilters.push([{ type: "eq", col, val: +v[1] }]);
-    return;
-  }
-
-  console.warn("Query parsed but no operator found:", rawQuery);
+  console.log("Parsed NLP:", nlFilters);
 }
 
 
 // ONE unified filter (safe)
-$.fn.dataTable.ext.search.push(function (settings, row) {
+$.fn.dataTable.ext.search.push(function(settings, row) {
   if (!nlFilters.length) return true;
 
-  // OR between groups
+  // OR logic
   return nlFilters.some(andGroup => {
+    // AND logic
+    return andGroup.every(cond => {
+      let cell = num(row[cond.col]);
 
-    if (!Array.isArray(andGroup)) return true; // safety net
+      if (isNaN(cell)) return false;
 
-    // AND inside group
-    return andGroup.every(f => {
-      let cell = row[f.col] || "";
-      let v = parseFloat(cell.replace(/,/g, "")) || 0;
-
-      if (f.type === "gt") return v > f.val;
-      if (f.type === "gte") return v >= f.val;
-      if (f.type === "lt") return v < f.val;
-      if (f.type === "lte") return v <= f.val;
-      if (f.type === "eq") return v === f.val;
-      if (f.type === "between") return v >= f.min && v <= f.max;
-
-      if (f.type === "in") {
-        return f.list.includes(cell.toLowerCase());
-      }
+      if (cond.op === ">" && !(cell > cond.val)) return false;
+      if (cond.op === "<" && !(cell < cond.val)) return false;
+      if (cond.op === ">=" && !(cell >= cond.val)) return false;
+      if (cond.op === "<=" && !(cell <= cond.val)) return false;
+      if (cond.op === "=" && !(cell === cond.val)) return false;
 
       return true;
     });
@@ -591,39 +549,7 @@ function clearNaturalLanguageFilter() {
         applyNaturalLanguageFilter(); // trigger NLP filter
       }
     });
-  });
-  function normalizeText(str) {
-  return str
-    .toLowerCase()
-    .replace(/[^a-z0-9 ]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-  const sortedAliasMatchers = Object.entries(columnAliases)
-  .flatMap(([canonical, cfg]) =>
-    cfg.aliases.map(alias => ({
-      canonical,
-      alias,
-      normAlias: normalizeText(alias),
-      col: cfg.col
-    }))
-  )
-  // 🔥 MOST IMPORTANT LINE
-  .sort((a, b) => b.normAlias.length - a.normAlias.length);
-
-  function detectColumn(query) {
-  const q = normalizeText(query);
-
-  for (const m of sortedAliasMatchers) {
-    const re = new RegExp(`\\b${m.normAlias}\\b`);
-    if (re.test(q)) {
-      return m; // FIRST (most specific) match wins
-    }
-  }
-  return null;
-}
-
-
+  });  
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1285,6 +1211,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
