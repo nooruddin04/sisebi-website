@@ -462,17 +462,21 @@ const columnAliases = {
 }
 
   function findColumn(queryPart) {
-  queryPart = queryPart.replace(/\s+/g, "");
+  const clean = queryPart.replace(/\s+/g, "");
 
   for (let key in columnAliases) {
     for (let a of columnAliases[key].aliases) {
-      if (queryPart.includes(a.replace(/\s+/g, ""))) {
-        return columnAliases[key];
+      if (clean.includes(a.replace(/\s+/g, ""))) {
+        return {
+          key: key,              // ✅ canonical key
+          col: columnAliases[key].col
+        };
       }
     }
   }
   return null;
 }
+
 
 let nlFilters = [];
 
@@ -499,11 +503,13 @@ function parseNLQuery(rawQuery) {
       let valueMatch = part.match(/([<>]=?|=)\s*([\d.]+)/);
       if (!valueMatch) return;
 
-      conditions.push({
-        col: colInfo.col,
-        op: valueMatch[1],
-        val: parseFloat(valueMatch[2])
-      });
+     conditions.push({
+  key: colInfo.key,   // ✅ store canonical key
+  col: colInfo.col,
+  op: valueMatch[1],
+  val: parseFloat(valueMatch[2])
+});
+
     });
 
     if (conditions.length) nlFilters.push(conditions);
@@ -566,7 +572,7 @@ function clearNaturalLanguageFilter() {
 
  
   
-function buildFilterSummary(nlFilters, logic = "and") {
+function buildFilterSummary(nlFilters) {
   if (!nlFilters.length) return "";
 
   let sentences = [];
@@ -575,12 +581,10 @@ function buildFilterSummary(nlFilters, logic = "and") {
     let parts = [];
 
     andGroup.forEach(cond => {
-      const colDef = Object.values(columnAliases)
-        .find(c => c.col === cond.col);
-
+      const colDef = columnAliases[cond.key];
       if (!colDef) return;
 
-      let opText = {
+      const opText = {
         ">": "more than",
         "<": "less than",
         ">=": "greater than or equal to",
@@ -589,7 +593,7 @@ function buildFilterSummary(nlFilters, logic = "and") {
       }[cond.op] || cond.op;
 
       parts.push(
-        `${colDef.label} ${opText} ${cond.val} ${colDef.unit}`.trim()
+        `${cond.key} ${opText} ${cond.val} ${colDef.unit}`.trim()
       );
     });
 
@@ -598,7 +602,6 @@ function buildFilterSummary(nlFilters, logic = "and") {
 
   return `Please find below the table containing Import/Export data for all commodities having ${sentences.join(" or ")}.`;
 }
-
 </script>
 <h2 style="margin-top:40px;">India Import Export Values, Prices and their last 4 year growth for all commodities</h2>
 <div id="loader" style="display:flex;align-items:center;justify-content:center;height:10vh;font-size:20px;background: rgba(255, 255, 255, 0.8);backdrop-filter: blur(4px);">
@@ -1260,6 +1263,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
