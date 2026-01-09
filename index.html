@@ -567,7 +567,7 @@ const columnAliases = {
     .replace(/less\s*than|lower\s*than|smaller\s*than|small\s*than|less\s*then|lower\s*then|smaller\s*then|small\s*then/g, "<")
 
     // equal
-    .replace(/is\s*equal\s*to|equals|equal\s*to/g, "=")
+    .replace(/is\s*equal\s*to|equals|equal\s*to/g|is, "=")
 
     // >= <=
     .replace(/greater\s*than\s*or\s*equal\s*to|more\s*than\s*or\s*equal\s*to/g, ">=")
@@ -1386,6 +1386,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
