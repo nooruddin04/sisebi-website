@@ -406,14 +406,15 @@
     <p>
      ✅ In the table on the website, <b>current & historical Import/ Export values, prices and growth rates</b> are available for all commodities</br><br>
      ✅ There are also <b>filters</b> and <b>sortings</b> available in each columns to easily find out specific products as per your expectation from huge dataset </br><br>
-     ✅ Click <b>Download</b> button which is there at the start of every row to request for the complete detailed report which includes <br><br>
+     ✅ Now, you can also search via <b>Smart search via AI</b> option. You can write queries in simple plain english like <b>chatgpt</b> to find any filtered/ sorted results using Artificial intelligence algorithms <br><br>
+     ✅ Click <b>Download</b> button which is there at the start of every row to request for the complete detailed report for any HSN code which includes <br><br>
            <b>Executive summary, country wise/ year wise Import/ Export data and analysis</b> to thoroughly guide you in prefeasibilty evaluation and decision makings </br><br>
       ✅ After login with Google, Popup will come, there you can preview the <b>outline report</b> to understand what all will be there in the complete report </br><br>
       ✅ To access the <b>complete report with detailed insights, trends,  analysis and historical data</b>,</br><br>
            a) choose a subscription plan if you are requesting the report for the time first or your subscription plan is expired.<br><br>
       ✅ You can choose between two available subscription plans <br>
-                1) 10 reports downloaded or 1 month subscription duration expired, whichever happens first.<br>
-                2) 200 reports downloaded or 365 days subscription duration expired, whichever happens first.<br><br>
+                1) 1 reports downloaded or 1 month subscription duration expired, whichever happens first.<br>
+                2) 10 reports downloaded or 365 days subscription duration expired, whichever happens first.<br><br>
       ✅ As per your selected subscription plan, you will directed to do payment via RazorPay.<br><br>
       ✅ After payment, you will get complete report within 24 hours in your gmail account.<br>.<br>
           b) If there's already active subscription plan, report request will be made immediately and will be sent to your gmail account within 24 hours<br><br><br>
@@ -1360,18 +1361,18 @@ function openReportModal(hsn) {
     const reportOutline = document.getElementById("reportOutline");
     reportOutline.innerHTML = `
       <ul style="line-height:1.6; padding-left:20px; font-size:15px; color:#444;">
-        <li>Executive summary</li>
-        <li>Major commodities covered</li>
-        <li>Commodities Major utilisation</li>
-        <li>India’s Import Export ratio in last year/ last 4 years/ last 8 years</li>
-         <li>India’s Top 5 Importing countries with values in last year/ last 4 years/ last 8 years</li>
-        <li>India’s Top 5 Exporting countries with values in last year/ last 4 years/ last 8 years</li>
-        <li>India’s Import values in last year and growth in last 4 years/ last 8 years</li>
-        <li>India’s Import price in last year and growth in last 4 years/ last 8 years</li>
-        <li>India’s Export values in last year and growth in last 4 years/ last 8 years</li>
-        <li>India’s Export price in last year and growth in last 4 years/ last 8 years</li>
+        <li>Executive summary for the selected HSN code</li>
+        <li>Major commodities covered in the selected HSN Code</li>
+        <li>Commodities Major utilisation of the selected HSN Code commodities </li>
+        <li>India’s Import Export ratio in last year/ last 4 years/ last 8 years for the selected HSN code</li>
+         <li>India’s Top 5 Importing countries with values in last year/ last 4 years/ last 8 years for the selected HSN code</li>
+        <li>India’s Top 5 Exporting countries with values in last year/ last 4 years/ last 8 years for the selected HSN code</li>
+        <li>India’s Import values in last year and growth in last 4 years/ last 8 years for the selected HSN code</li>
+        <li>India’s Import price in last year and growth in last 4 years/ last 8 years for the selected HSN code</li>
+        <li>India’s Export values in last year and growth in last 4 years/ last 8 years for the selected HSN code</li>
+        <li>India’s Export price in last year and growth in last 4 years/ last 8 years for the selected HSN code</li>
         <li>India’s Export Analysis of this HSN Code</li>
-        <li>Future prediction of Import and Export values and Volumes in near and long term</li>
+        <li>Future prediction of Import and Export values and Volumes in near and long term for the selected HSN code</li>
           <li>Annexure 1: Country & Year wise India’s Import value (₹ Crore)</li>
           <li>Annexure 2: Country & Year wise India’s Import value (US$ Mn)</li>
           <li>Annexure 3: Country & Year wise India’s Import volume (Units)</li>
@@ -1565,8 +1566,7 @@ function openBlog() {
   <div id="spinnerOverlay">
   <div class="loader"></div>
 </div>
-   <script>
- /* 
+   <script> 
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.onkeydown = function(e) {
   if (e.keyCode == 123 || // F12
@@ -1576,10 +1576,10 @@ document.onkeydown = function(e) {
     return false;
   }
 };
-*/
 </script>
 </body>
 </html>
+
 
 
 
