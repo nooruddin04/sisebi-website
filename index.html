@@ -576,7 +576,12 @@ const columnAliases = {
 .replace(/contains|containing|having/g, " contains ")
 .replace(/starts\s*with|starting\s*with|begins\s*with/g, " startswith ")
 
-    .replace(/less\s*than\s*or\s*equal\s*to|lower\s*than\s*or\s*equal\s*to/g, "<=");
+    .replace(/less\s*than\s*or\s*equal\s*to|lower\s*than\s*or\s*equal\s*to/g, "<=")
+    // sorting words
+.replace(/top\s*to\s*bottom|high\s*to\s*low|descending|desc|highest|biggest|largest|max/g, " desc ")
+.replace(/bottom\s*to\s*top|low\s*to\s*high|ascending|asc|lowest|smallest|min/g, " asc ")
+.replace(/arrange|sort|order|show|display/g, " sort ")
+;
 }
 
   function findColumn(queryPart) {
@@ -608,6 +613,8 @@ function num(val) {
   if (!val) return NaN;
   return parseFloat(val.toString().replace(/,/g, ""));
 }
+
+  let nlSort = null;   // { col: number, dir: "asc" | "desc" }
 
 function parseNLQuery(rawQuery) {
   nlFilters = [];
@@ -682,6 +689,28 @@ if (colInfo.type === "text") {
 
   console.log("Parsed NLP:", nlFilters);
   console.log("Parsed NLP filters:", JSON.stringify(nlFilters, null, 2));
+
+  // ---------- SORT PARSING ----------
+nlSort = null;
+
+let sortMatch = q.match(/sort\s+(.*)/);
+if (sortMatch) {
+  let sortPart = sortMatch[1];
+
+  let colInfo = findColumn(sortPart);
+  if (colInfo) {
+    let dir = sortPart.includes("asc") ? "asc" :
+              sortPart.includes("desc") ? "desc" : null;
+
+    if (dir) {
+      nlSort = {
+        col: colInfo.col,
+        dir: dir
+      };
+    }
+  }
+}
+
 }
 
 
@@ -727,6 +756,9 @@ function applyNaturalLanguageFilter() {
   const q = document.getElementById("nlQuery").value;
   parseNLQuery(q);
   table.draw();
+    if (nlSort) {
+    table.order([nlSort.col, nlSort.dir]).draw(false);
+  }
   const summary = buildFilterSummary(nlFilters, q.includes(" or ") ? "or" : "and");
   document.getElementById("nlSummary").innerText = summary;
   hideSpinner();
@@ -807,8 +839,21 @@ function buildFilterSummary(nlFilters) {
       orSentences.push(parts.join(" and "));
     }
   });
+  let summary = `Please find below the table containing Import/Export data for all commodities having ${orSentences.join(" or ")}.`;
+  //return `Please find below the table containing Import/Export data for all commodities having ${orSentences.join(" or ")}.`;
 
-  return `Please find below the table containing Import/Export data for all commodities having ${orSentences.join(" or ")}.`;
+  if (nlSort) {
+  const colEntry = Object.entries(columnAliases)
+    .find(([_, v]) => v.col === nlSort.col);
+
+  if (colEntry) {
+    const colName = colEntry[0];
+    const dirText = nlSort.dir === "desc" ? "in descending order" : "in ascending order";
+
+    return summary + ` The data is arranged by ${colName} ${dirText}.`;
+  }
+}
+else{return summary;}
 }
 
   document.querySelectorAll(".ai-examples span").forEach(el => {
@@ -1479,6 +1524,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
