@@ -797,7 +797,7 @@ function buildFilterSummary(nlFilters) {
         }
         if (cond.op === "=") {
           parts.push(
-            `${canonicalName} equal to "${cond.val.toUpperCase()}"`
+            `${canonicalName} equal to "${cond.val.toUpperCase()} ${colDef.unit}"`
           );
         }
       }
@@ -1479,6 +1479,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
