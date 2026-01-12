@@ -273,6 +273,36 @@
   color: #333;
   font-weight: 500;
 }
+    .ai-launcher {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0056a6;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 24px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-launcher:hover {
+  background: #003f73;
+}
+.ai-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -467,7 +497,23 @@
 <button onclick="searchHSCode()">Search</button>
 
 <div id="result"></div>
--->
+-->   
+  <div id="smartsearch" class="ai-launcher" onclick="openAI()">
+  🤖 Smart Search with AI
+  <span class="ai-badge">NEW</span>
+</div>
+ <script>
+function openAI() {
+  document.getElementById("ai").style.display = "block";
+  document.getElementById("smartsearch").style.display = "none";
+}
+
+function closeAI() {
+  document.getElementById("ai").style.display = "none";
+  document.getElementById("smartsearch").style.display = "flex";
+}
+</script>
+ <div id="ai" class="ai-overlay" style="display:none;">
  <div class="ai-query-card">
   <div class="ai-header">
     🤖 Smart AI Query
@@ -495,7 +541,7 @@
 
   <div id="nlSummary" class="ai-summary"></div>
 </div>
-
+  </div>
  <!-- <div id="nlSummary" style="margin-top:10px;font-style:italic;color:#444;"></div>-->
 
 <script>
@@ -1528,6 +1574,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
