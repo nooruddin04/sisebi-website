@@ -779,7 +779,7 @@ function buildFilterSummary(nlFilters) {
         }[cond.op] || cond.op;
 
         parts.push(
-          `${canonicalName} ${opText} ${cond.val}`
+          `${canonicalName} ${opText} ${cond.val} ${colDef.unit}`
         );
       }
 
@@ -787,12 +787,12 @@ function buildFilterSummary(nlFilters) {
       if (cond.type === "text") {
         if (cond.op === "contains") {
           parts.push(
-            `${canonicalName} containing "${cond.val.toUpperCase()}"`
+            `${canonicalName} containing "${cond.val.toUpperCase()} ${colDef.unit}"`
           );
         }
         if (cond.op === "starts_with") {
           parts.push(
-            `${canonicalName} starting with "${cond.val.toUpperCase()}"`
+            `${canonicalName} starting with "${cond.val.toUpperCase()} ${colDef.unit}"`
           );
         }
         if (cond.op === "=") {
@@ -1479,6 +1479,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
