@@ -787,17 +787,17 @@ function buildFilterSummary(nlFilters) {
       if (cond.type === "text") {
         if (cond.op === "contains") {
           parts.push(
-            `${canonicalName} containing "${cond.val.toUpperCase()} ${colDef.unit}"`
+            `${canonicalName} containing "${cond.val.toUpperCase()}"`
           );
         }
         if (cond.op === "starts_with") {
           parts.push(
-            `${canonicalName} starting with "${cond.val.toUpperCase()} ${colDef.unit}"`
+            `${canonicalName} starting with "${cond.val.toUpperCase()}"`
           );
         }
         if (cond.op === "=") {
           parts.push(
-            `${canonicalName} equal to "${cond.val.toUpperCase()} ${colDef.unit}"`
+            `${canonicalName} equal to "${cond.val.toUpperCase()}"`
           );
         }
       }
@@ -1479,6 +1479,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
