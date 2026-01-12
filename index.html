@@ -515,6 +515,7 @@ function closeAI() {
 </script>
  <div id="ai" class="ai-overlay" style="display:none;">
  <div class="ai-query-card">
+    <button class="ai-close" onclick="closeAI()">✕</button>
   <div class="ai-header">
     🤖 Smart AI Query
     <span class="ai-badge">NEW</span>
@@ -527,7 +528,7 @@ function closeAI() {
     Try:
     <span>Share exim data for commodities having import growth greater than 10%. Arrange import price in descending order</span>
     <span>Tell all commodities having import/export ratio lower than 100 and last year import >25 million$</span>
-   <span>Provide import export data for all commodities for which commodity name containing petrol</span>
+   <span>Provide import export data for all commodities for which commodity name contains petrol</span>
      </div>
   <div class="ai-input-row">
     <input type="text" id="nlQuery"
@@ -1574,6 +1575,7 @@ document.onkeydown = function(e) {
 </script>
 </body>
 </html>
+
 
 
 
